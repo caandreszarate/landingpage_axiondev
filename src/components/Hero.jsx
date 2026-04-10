@@ -5,7 +5,7 @@ const ease = [0.25, 0.1, 0.25, 1];
 const container = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.13, delayChildren: 0.15 },
   },
 };
 
@@ -33,29 +33,58 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="max-w-4xl mx-auto text-center relative z-10"
+        className="max-w-5xl mx-auto text-center relative z-10"
       >
+        <motion.div variants={fadeUp} className="mb-8">
+          <span className="inline-flex items-center gap-2 text-accent text-sm font-medium tracking-widest uppercase border border-accent/20 bg-accent/5 px-4 py-1.5 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            Available for new projects
+          </span>
+        </motion.div>
+
         <motion.p
           variants={fadeUp}
-          className="text-accent text-sm font-medium tracking-widest uppercase mb-6"
+          className="text-neutral-500 text-base md:text-lg font-medium uppercase tracking-wide mb-5"
         >
-          AI-Powered Web Development
+          Your website is losing you clients. Let's fix that.
         </motion.p>
 
         <motion.h1
           variants={fadeUp}
-          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-neutral-100 leading-[1.1] mb-6"
+          className="text-4xl sm:text-6xl md:text-[5.2rem] font-bold tracking-tight text-neutral-100 leading-[1.05] mb-8"
         >
-          I build high-converting websites{' '}
-          <span className="text-accent">powered by AI.</span>
+          I build websites that{' '}
+          <span className="text-accent">generate clients</span>
+          <br className="hidden sm:block" />
+          — not just look good.
         </motion.h1>
 
         <motion.p
           variants={fadeUp}
-          className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-10"
+          className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-6 leading-relaxed"
         >
-          Helping startups and businesses launch faster, smarter, and more efficiently.
+          AI-powered development that launches in{' '}
+          <span className="text-neutral-200 font-semibold">days, not months</span>.
+          Designed to convert visitors into paying customers.
         </motion.p>
+
+        <motion.div
+          variants={fadeUp}
+          className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 mb-12"
+        >
+          <span className="flex items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-accent"><path d="M20 6L9 17l-5-5" /></svg>
+            10+ projects shipped
+          </span>
+          <span className="flex items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-accent"><path d="M20 6L9 17l-5-5" /></svg>
+            Under 2-week delivery
+          </span>
+          <span className="flex items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-accent"><path d="M20 6L9 17l-5-5" /></svg>
+            AI-first workflow
+          </span>
+        </motion.div>
 
         <motion.div
           variants={scaleFade}
@@ -63,16 +92,16 @@ export default function Hero() {
         >
           <a
             href="#contact"
-            className="group relative inline-flex items-center justify-center bg-accent text-white font-medium px-8 py-3.5 rounded-lg text-base overflow-hidden transition-shadow hover:shadow-[0_0_30px_rgba(99,102,241,0.3)]"
+            className="group relative inline-flex items-center justify-center bg-accent text-white font-semibold px-10 py-4 rounded-lg text-base overflow-hidden transition-shadow hover:shadow-[0_0_40px_rgba(99,102,241,0.35)]"
           >
-            <span className="relative z-10">Book a call</span>
+            <span className="relative z-10">Start your project &rarr;</span>
             <span className="absolute inset-0 bg-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </a>
           <a
             href="#portfolio"
-            className="inline-flex items-center justify-center border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-neutral-100 font-medium px-8 py-3.5 rounded-lg transition-all duration-300 text-base hover:shadow-[0_0_20px_rgba(255,255,255,0.04)]"
+            className="inline-flex items-center justify-center border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-neutral-100 font-medium px-10 py-4 rounded-lg transition-all duration-300 text-base hover:shadow-[0_0_20px_rgba(255,255,255,0.04)]"
           >
-            View projects
+            See my work
           </a>
         </motion.div>
       </motion.div>
