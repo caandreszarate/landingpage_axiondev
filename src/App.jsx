@@ -11,6 +11,7 @@ const Portfolio = lazy(() => import('./components/Portfolio'));
 const Trust = lazy(() => import('./components/Trust'));
 const Process = lazy(() => import('./components/Process'));
 const Offers = lazy(() => import('./components/Offers'));
+const FAQ = lazy(() => import('./components/FAQ'));
 const CTA = lazy(() => import('./components/CTA'));
 const Footer = lazy(() => import('./components/Footer'));
 
@@ -24,11 +25,12 @@ export default function App() {
           <SocialProof />
           <Services />
           <MidCTA />
-          <ValueProposition />
           <Portfolio />
+          <ValueProposition />
           <Trust />
           <Process />
           <Offers />
+          <FAQ />
           <CTA />
         </Suspense>
       </main>

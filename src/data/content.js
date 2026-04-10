@@ -2,13 +2,13 @@ export const NAV_LINKS = [
   { label: 'Services', href: '#services' },
   { label: 'Work', href: '#portfolio' },
   { label: 'Process', href: '#process' },
-  { label: 'Offers', href: '#offers' },
+  { label: 'Pricing', href: '#offers' },
 ];
 
 export const STATS = [
-  { value: '10+', label: 'Projects delivered' },
-  { value: '< 2 weeks', label: 'Average turnaround' },
-  { value: 'AI-first', label: 'Development approach' },
+  { value: '10+', label: 'Projects shipped on time' },
+  { value: '< 14 days', label: 'Average delivery time' },
+  { value: '4.2%', label: 'Avg. conversion rate' },
 ];
 
 export const SERVICES = [
@@ -228,6 +228,33 @@ export const GUARANTEES = [
     title: 'Post-launch support',
     description: 'Every project includes free support after launch. You are never left alone with a broken site.',
     icon: 'support',
+  },
+];
+
+export const FAQ = [
+  {
+    question: "How can you deliver a full website in under 14 days?",
+    answer: "AI-powered workflows. I use AI for code generation, design iteration, and testing — cutting out the manual bottlenecks that make agencies take months. The result is the same quality in a fraction of the time.",
+  },
+  {
+    question: "What if I'm not happy with the final result?",
+    answer: "You get a full money-back guarantee. If the final delivery doesn't meet what we agreed on, you pay nothing. I also include revision rounds during the build so you're never surprised.",
+  },
+  {
+    question: "Do you only work with startups?",
+    answer: "No. I work with startups, small businesses, agencies, and even government projects. If you need a website or automation that drives revenue, I can help — regardless of your industry or size.",
+  },
+  {
+    question: "What's included in the fixed price?",
+    answer: "Everything: design, development, copywriting assistance, SEO setup, hosting configuration, and post-launch support. No hidden fees, no hourly surprises. The price we agree on is the price you pay.",
+  },
+  {
+    question: "Can you work with my existing website or brand?",
+    answer: "Absolutely. I can redesign, optimize, or build on top of what you already have. During the discovery call, we'll figure out the fastest path to results — whether that's a fresh start or an upgrade.",
+  },
+  {
+    question: "What happens after my site goes live?",
+    answer: "Every package includes post-launch support (7–30 days depending on the plan). I monitor for bugs, help with content updates, and make sure everything runs smoothly. After that, I'm always a message away.",
   },
 ];
 

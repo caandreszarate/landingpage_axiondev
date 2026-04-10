@@ -84,13 +84,13 @@ export default function Hero() {
             variants={fadeUp}
             className="text-center text-[2.5rem] sm:text-6xl md:text-[5.5rem] font-bold tracking-tight text-neutral-100 leading-[1.05] mb-8"
           >
-            Your next website
-            <br />
-            will bring you clients
+            I build websites that
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
-              in days, not months.
+              bring you clients.
             </span>
+            <br />
+            <span className="text-neutral-500 text-[0.6em]">Not in months — in days.</span>
           </motion.h1>
         </motion.div>
 
@@ -99,10 +99,11 @@ export default function Hero() {
             variants={fadeUp}
             className="text-center text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            I use AI to build, ship, and optimize websites that
-            <span className="text-neutral-200 font-medium"> turn visitors into revenue</span>.
-            No bloated timelines. No agency overhead. Just a site that
-            works as hard as you do — live and converting in under 14 days.
+            For startups and businesses tired of paying agencies $10K+ for
+            websites that don't convert. I use AI to build
+            <span className="text-neutral-200 font-medium"> revenue-generating sites</span> —
+            live, optimized, and bringing in clients in under 14 days.
+            Fixed price. Money-back guarantee.
           </motion.p>
         </motion.div>
 
