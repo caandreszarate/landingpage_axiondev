@@ -48,7 +48,7 @@ export default function Hero() {
   const smoothScale = useSpring(scale, { stiffness: 80, damping: 30 });
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+    <section ref={ref} className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
       <motion.div
         style={{ y: smoothBgY }}
         className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--color-accent)_0%,_transparent_60%)] opacity-[0.06]"
