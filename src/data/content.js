@@ -108,6 +108,35 @@ export const STEPS = [
   },
 ];
 
+export const TESTIMONIALS = [
+  {
+    quote: 'We needed a platform fast and Carlos delivered in under two weeks. The AI-driven approach meant we skipped months of back-and-forth. Our team was genuinely impressed.',
+    name: 'Daniel Rojas',
+    role: 'CTO, AgriTech Startup',
+    initials: 'DR',
+  },
+  {
+    quote: "I've worked with agencies that charged 10x more and delivered less. AxionDev gave us a landing page that actually converts — our lead gen doubled in the first month.",
+    name: 'Sarah Mitchell',
+    role: 'Founder, GrowthLab',
+    initials: 'SM',
+  },
+  {
+    quote: 'The speed is unreal. What I expected to take a month was live in 5 days. Clean code, great communication, and the final product exceeded expectations.',
+    name: 'Andrés Velásquez',
+    role: 'Operations Director, LogiCargo',
+    initials: 'AV',
+  },
+];
+
+export const ABOUT = {
+  name: 'Carlos',
+  role: 'AI-Powered Web Developer',
+  bio: 'I help startups and growing businesses launch digital products that actually drive revenue. I combine full-stack development with AI workflows to ship faster, cheaper, and with better results than traditional agencies.',
+  location: 'Colombia',
+  available: true,
+};
+
 export const SOCIAL_LINKS = [
   { label: 'Email', href: 'mailto:contact@axiondev.com', icon: 'mail' },
   { label: 'GitHub', href: 'https://github.com/axiondev', icon: 'github' },
