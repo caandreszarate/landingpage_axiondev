@@ -1,16 +1,29 @@
 import { motion } from 'framer-motion';
 import { CONTACT_EMAIL } from '../data/content';
 
-export default function CTAButton({ label, microcopy, size = 'base', className = '' }) {
+export default function CTAButton({ label, microcopy, size = 'base', className = '', urgency, href }) {
   const sizes = {
     base: 'px-10 py-4 text-base',
-    lg: 'px-12 py-4.5 text-lg',
+    lg: 'px-12 py-5 text-lg',
+    sm: 'px-8 py-3.5 text-sm',
   };
 
   return (
     <div className={`inline-flex flex-col items-center gap-2 ${className}`}>
+      {urgency && (
+        <motion.p
+          initial={{ opacity: 0, y: 6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-1.5 text-xs text-amber-400 font-medium"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+          {urgency}
+        </motion.p>
+      )}
       <motion.a
-        href={CONTACT_EMAIL}
+        href={href || CONTACT_EMAIL}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.98 }}
         transition={{ type: 'spring', stiffness: 400, damping: 17 }}

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 import Section, { SectionHeader } from './Section';
+import CTAButton from './CTAButton';
 import { PROJECTS } from '../data/content';
 
 const cardHover = {
@@ -117,6 +118,20 @@ export default function Portfolio() {
           </FadeIn>
         ))}
       </div>
+
+      <FadeIn delay={0.2}>
+        <div className="mt-16 text-center">
+          <p className="text-neutral-400 text-lg mb-6">
+            Want results like these?{' '}
+            <span className="text-neutral-200 font-medium">Your project could be next.</span>
+          </p>
+          <CTAButton
+            label="Start my project &rarr;"
+            microcopy="Same quality. Same speed. Your business."
+            urgency="Taking on 2 new clients this month"
+          />
+        </div>
+      </FadeIn>
     </Section>
   );
 }

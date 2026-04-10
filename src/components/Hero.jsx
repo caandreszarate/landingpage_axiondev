@@ -84,14 +84,16 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <CTAButton
-            label="Get my free website audit &rarr;"
-            microcopy="I'll review your site and show you what's costing you clients"
+            label="Book a free strategy call &rarr;"
+            microcopy="Get your website live in days — not months"
+            urgency="Only 2 spots left this month"
+            size="lg"
           />
           <a
-            href="#portfolio"
+            href="#offers"
             className="inline-flex items-center justify-center border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-neutral-100 font-medium px-10 py-4 rounded-lg transition-all duration-300 text-base hover:shadow-[0_0_20px_rgba(255,255,255,0.04)]"
           >
-            See results
+            See pricing &amp; packages
           </a>
         </motion.div>
       </motion.div>

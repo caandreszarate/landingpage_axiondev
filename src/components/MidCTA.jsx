@@ -14,13 +14,17 @@ export default function MidCTA() {
       />
       <div className="max-w-3xl mx-auto text-center relative z-10">
         <FadeIn>
-          <p className="text-neutral-400 text-lg md:text-xl mb-8 leading-relaxed">
-            Stop waiting months for a website that doesn't convert.{' '}
-            <span className="text-neutral-200 font-medium">Get yours in days.</span>
+          <p className="text-neutral-400 text-lg md:text-xl mb-3 leading-relaxed">
+            Every week without a converting website is{' '}
+            <span className="text-red-400 font-medium">money left on the table</span>.
+          </p>
+          <p className="text-neutral-500 text-sm mb-8">
+            Your competitors already have one. How much longer will you wait?
           </p>
           <CTAButton
-            label="Let's talk about your project &rarr;"
-            microcopy="Get your website in days, not weeks"
+            label="Claim your free audit &rarr;"
+            microcopy="I'll show you exactly what's costing you clients — in 24 hours"
+            urgency="Limited availability — first come, first served"
           />
         </FadeIn>
       </div>

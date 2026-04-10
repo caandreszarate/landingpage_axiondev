@@ -17,20 +17,15 @@ export default function CTA() {
 
       <div className="max-w-3xl mx-auto text-center relative z-10">
         <FadeIn>
-          <motion.p
-            initial={{ opacity: 0, letterSpacing: '0.3em' }}
-            whileInView={{ opacity: 1, letterSpacing: '0.15em' }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease }}
-            className="text-sm text-accent uppercase font-medium mb-4"
-          >
-            Let's build something great
-          </motion.p>
+          <div className="inline-flex items-center gap-2 text-amber-400 text-xs font-semibold tracking-widest uppercase border border-amber-400/20 bg-amber-400/5 px-4 py-1.5 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+            Only 2 spots available this month
+          </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-6 leading-tight">
-            Your next website could be
+            Stop losing clients to a
             <br className="hidden sm:block" />
             <motion.span
               className="text-accent inline-block"
@@ -39,19 +34,40 @@ export default function CTA() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3, ease }}
             >
-              live in 2 weeks.
+              website that doesn't convert.
             </motion.span>
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <p className="text-neutral-400 text-lg mb-4 leading-relaxed max-w-xl mx-auto">
-            Every week you wait is a week your competitors are capturing
-            the clients you're missing. Let's change that — today.
+          <p className="text-neutral-400 text-lg mb-3 leading-relaxed max-w-xl mx-auto">
+            Every day without a high-converting website is{' '}
+            <span className="text-red-400 font-medium">revenue walking out the door</span>.
+            Let's fix that this week.
           </p>
-          <p className="text-neutral-500 text-sm mb-2">
-            Drop me a message and I'll reply within 24 hours.
-          </p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 mb-8">
+            <span className="flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                <path d="M22 4L12 14.01l-3-3" />
+              </svg>
+              Free strategy call
+            </span>
+            <span className="flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                <path d="M22 4L12 14.01l-3-3" />
+              </svg>
+              24h response guaranteed
+            </span>
+            <span className="flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                <path d="M22 4L12 14.01l-3-3" />
+              </svg>
+              Money-back guarantee
+            </span>
+          </div>
         </FadeIn>
 
         <FadeIn delay={0.3}>

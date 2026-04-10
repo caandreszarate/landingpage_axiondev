@@ -99,8 +99,8 @@ export default function Offers() {
 
               <div className="px-8 pb-8">
                 <CTAButton
-                  label={`Get started &rarr;`}
-                  microcopy="Free consultation — no commitment"
+                  label={pkg.cta}
+                  microcopy={pkg.ctaMicro}
                   className="w-full"
                 />
               </div>
