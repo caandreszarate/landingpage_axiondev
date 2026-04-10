@@ -1,23 +1,23 @@
 import { motion } from 'framer-motion';
 import CTAButton from './CTAButton';
 
-const ease = [0.25, 0.1, 0.25, 1];
+const ease = [0.22, 1, 0.36, 1];
 
 const container = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.13, delayChildren: 0.15 },
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
   },
 };
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40, filter: 'blur(6px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.8, ease } },
+  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.9, ease } },
 };
 
 const scaleFade = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease } },
+  hidden: { opacity: 0, scale: 0.92, filter: 'blur(4px)' },
+  visible: { opacity: 1, scale: 1, filter: 'blur(0px)', transition: { duration: 0.8, ease } },
 };
 
 export default function Hero() {

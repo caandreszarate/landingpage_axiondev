@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
+import { StaggerContainer, StaggerItem } from './FadeIn';
 import Section from './Section';
 import { TESTIMONIALS, ABOUT } from '../data/content';
-
-const ease = [0.25, 0.1, 0.25, 1];
 
 function StarIcon() {
   return (
@@ -21,16 +20,25 @@ function QuoteIcon() {
   );
 }
 
+const cardHover = {
+  y: -4,
+  transition: { type: 'spring', stiffness: 300, damping: 20 },
+};
+
 export default function Trust() {
   return (
     <Section id="trust" border>
       {/* About / Personal intro */}
       <div className="mb-20">
-        <FadeIn>
+        <FadeIn direction="left">
           <div className="flex flex-col md:flex-row items-start gap-8 max-w-3xl">
             <div className="shrink-0">
-              <div className="relative">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-accent-light flex items-center justify-center text-white text-2xl font-bold">
+              <motion.div
+                className="relative"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              >
+                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-accent-light flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-accent/20">
                   C
                 </div>
                 {ABOUT.available && (
@@ -38,7 +46,7 @@ export default function Trust() {
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
                   </div>
                 )}
-              </div>
+              </motion.div>
             </div>
             <div>
               <p className="text-sm text-accent uppercase tracking-widest mb-2">About me</p>
@@ -76,18 +84,38 @@ export default function Trust() {
       </FadeIn>
 
       {/* Testimonial cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {TESTIMONIALS.map((t, i) => (
-          <FadeIn key={t.name} delay={i * 0.1}>
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {TESTIMONIALS.map((t) => (
+          <StaggerItem key={t.name}>
             <motion.div
-              whileHover={{ y: -4, transition: { duration: 0.3, ease } }}
+              whileHover={cardHover}
               className="group relative flex flex-col h-full p-7 rounded-2xl border border-neutral-800/50 hover:border-accent/20 bg-neutral-900/30 hover:bg-neutral-900/50 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(99,102,241,0.06)]"
             >
-              <QuoteIcon />
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20, delay: 0.1 }}
+              >
+                <QuoteIcon />
+              </motion.div>
 
               <div className="flex gap-0.5 mt-3 mb-4">
                 {Array.from({ length: 5 }).map((_, j) => (
-                  <StarIcon key={j} />
+                  <motion.span
+                    key={j}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      type: 'spring',
+                      stiffness: 400,
+                      damping: 15,
+                      delay: 0.2 + j * 0.06,
+                    }}
+                  >
+                    <StarIcon />
+                  </motion.span>
                 ))}
               </div>
 
@@ -96,18 +124,22 @@ export default function Trust() {
               </blockquote>
 
               <div className="flex items-center gap-3 pt-5 border-t border-neutral-800/50">
-                <div className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-sm font-semibold text-neutral-300 shrink-0">
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                  className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-sm font-semibold text-neutral-300 shrink-0"
+                >
                   {t.initials}
-                </div>
+                </motion.div>
                 <div>
                   <p className="text-sm font-semibold text-neutral-200">{t.name}</p>
                   <p className="text-xs text-neutral-500">{t.role}</p>
                 </div>
               </div>
             </motion.div>
-          </FadeIn>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
     </Section>
   );
 }

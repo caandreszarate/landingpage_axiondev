@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
+import { StaggerContainer, StaggerItem } from './FadeIn';
 import Section from './Section';
 import { HIGHLIGHTS } from '../data/content';
-
-const ease = [0.25, 0.1, 0.25, 1];
 
 const ICONS = {
   speed: (
@@ -29,11 +28,16 @@ const ICONS = {
   ),
 };
 
+const cardHover = {
+  y: -4,
+  transition: { type: 'spring', stiffness: 300, damping: 20 },
+};
+
 export default function ValueProposition() {
   return (
     <Section border>
       <div className="mb-16 max-w-3xl">
-        <FadeIn>
+        <FadeIn direction="left">
           <p className="text-sm text-accent uppercase tracking-widest mb-4">Why AxionDev</p>
           <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-6 leading-tight">
             Faster than agencies.
@@ -50,18 +54,23 @@ export default function ValueProposition() {
         </FadeIn>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {HIGHLIGHTS.map((item, i) => (
-          <FadeIn key={item.title} delay={i * 0.1}>
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {HIGHLIGHTS.map((item) => (
+          <StaggerItem key={item.title}>
             <motion.div
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.3, ease }}
-              className="group p-6 rounded-2xl border border-neutral-800/50 hover:border-accent/30 bg-neutral-900/30 hover:bg-neutral-900/60 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(99,102,241,0.06)]"
+              whileHover={cardHover}
+              className="group h-full p-6 rounded-2xl border border-neutral-800/50 hover:border-accent/30 bg-neutral-900/30 hover:bg-neutral-900/60 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(99,102,241,0.06)]"
             >
               <div className="flex items-start gap-4">
-                <div className="mt-0.5 p-2 rounded-lg bg-accent/10 text-accent shrink-0 transition-colors duration-300 group-hover:bg-accent/20">
+                <motion.div
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 15, delay: 0.2 }}
+                  className="mt-0.5 p-2 rounded-lg bg-accent/10 text-accent shrink-0 transition-colors duration-300 group-hover:bg-accent/20"
+                >
                   {ICONS[item.icon]}
-                </div>
+                </motion.div>
                 <div>
                   <h3 className="text-lg font-semibold text-neutral-100 mb-2">
                     {item.title}
@@ -72,9 +81,9 @@ export default function ValueProposition() {
                 </div>
               </div>
             </motion.div>
-          </FadeIn>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
     </Section>
   );
 }
