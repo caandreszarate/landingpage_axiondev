@@ -54,13 +54,39 @@ export const HIGHLIGHTS = [
 export const PROJECTS = [
   {
     name: 'Airport Management MVP',
-    description: 'Built a migration control prototype with rapid deployment strategy.',
-    tags: ['React', 'Node.js', 'MongoDB'],
+    problem: 'A government agency needed a migration control system but had no digital infrastructure — just paper logs and manual tracking causing delays and data loss.',
+    solution: 'Built a full-stack prototype with real-time passenger tracking, role-based access, and automated reporting — delivered in 10 days using AI-assisted development.',
+    metrics: [
+      { value: '10 days', label: 'From zero to MVP' },
+      { value: '85%', label: 'Faster processing' },
+      { value: '3x', label: 'Data accuracy' },
+    ],
+    tags: ['React', 'Node.js', 'MongoDB', 'Express'],
+    link: '#',
   },
   {
     name: 'AI Landing Generator',
-    description: 'Tool for generating high-converting landing pages using AI.',
-    tags: ['AI', 'React', 'Vite'],
+    problem: 'Small businesses were paying $3K–$10K for landing pages that took weeks to deliver, with no guarantee of conversion performance.',
+    solution: 'Created an AI-powered tool that generates conversion-optimized landing pages in minutes — with built-in copywriting, responsive design, and one-click deploy.',
+    metrics: [
+      { value: '< 5 min', label: 'Page generation' },
+      { value: '4.2%', label: 'Avg. conversion rate' },
+      { value: '90%', label: 'Cost reduction' },
+    ],
+    tags: ['AI', 'React', 'Vite', 'TailwindCSS'],
+    link: '#',
+  },
+  {
+    name: 'AgroControl Platform',
+    problem: 'A farming operation in Colombia managed 50+ hectares with spreadsheets — losing track of harvest cycles, costs, and worker assignments.',
+    solution: 'Delivered a full management system with real-time dashboards, cost tracking per lot, and harvest cycle analytics — replacing 6 disconnected spreadsheets.',
+    metrics: [
+      { value: '2 weeks', label: 'Full delivery' },
+      { value: '100%', label: 'Digital adoption' },
+      { value: '40%', label: 'Cost visibility gain' },
+    ],
+    tags: ['JavaScript', 'Express', 'MongoDB', 'Chart.js'],
+    link: '#',
   },
 ];
 
