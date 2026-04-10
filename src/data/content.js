@@ -12,18 +12,24 @@ export const STATS = [
 
 export const SERVICES = [
   {
-    title: 'AI Websites',
-    description: 'Launch modern websites faster using AI-powered development workflows.',
+    title: 'AI-Built Websites',
+    outcome: 'Go from zero to live in under 14 days',
+    description: 'Full websites built with AI-accelerated workflows. While agencies are still drafting proposals, your site is already indexed and bringing in traffic.',
+    proof: '3x faster than traditional development',
     icon: 'layers',
   },
   {
-    title: 'Landing Pages',
-    description: 'High-converting landing pages designed to generate leads and sales.',
+    title: 'Revenue Landing Pages',
+    outcome: 'Turn ad spend into actual paying clients',
+    description: 'Every element — headline, layout, CTA — is engineered to convert. Not just pretty pages, but sales machines that pay for themselves in the first month.',
+    proof: '4.2% average conversion rate',
     icon: 'layout',
   },
   {
-    title: 'Automation',
-    description: 'Automate processes and save time with smart integrations.',
+    title: 'Business Automation',
+    outcome: 'Reclaim 10+ hours every week',
+    description: 'Automated lead capture, follow-ups, reporting, and client onboarding. Stop doing manually what AI and smart integrations can handle while you sleep.',
+    proof: 'Used by teams processing 500+ leads/month',
     icon: 'cog',
   },
 ];
