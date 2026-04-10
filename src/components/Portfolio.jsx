@@ -4,11 +4,6 @@ import Section, { SectionHeader } from './Section';
 import CTAButton from './CTAButton';
 import { PROJECTS } from '../data/content';
 
-const cardHover = {
-  y: -4,
-  transition: { type: 'spring', stiffness: 300, damping: 20 },
-};
-
 const metricVariants = {
   hidden: { opacity: 0, y: 10, scale: 0.9 },
   visible: { opacity: 1, y: 0, scale: 1 },
@@ -28,10 +23,16 @@ export default function Portfolio() {
         {PROJECTS.map((project, i) => (
           <FadeIn key={project.name} delay={i * 0.1} direction={i % 2 === 0 ? 'left' : 'right'}>
             <motion.div
-              whileHover={cardHover}
-              className="group relative overflow-hidden rounded-2xl border border-neutral-800/50 hover:border-accent/30 bg-neutral-900/20 transition-all duration-300 hover:shadow-[0_16px_56px_rgba(99,102,241,0.07)]"
+              whileHover={{ y: -4, borderColor: 'rgba(99,102,241,0.3)' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              className="group relative overflow-hidden rounded-2xl border border-neutral-800/50 bg-neutral-900/20 transition-all duration-300 hover:shadow-[0_16px_56px_rgba(99,102,241,0.07)]"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              />
 
               <div className="relative p-8 md:p-10">
                 <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -43,7 +44,8 @@ export default function Portfolio() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ x: 3 }}
+                      whileHover={{ x: 3, scale: 1.05 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-light transition-colors"
                     >
                       View live
@@ -84,7 +86,13 @@ export default function Portfolio() {
                           }}
                           className="flex items-baseline gap-2"
                         >
-                          <span className="text-xl font-bold text-neutral-100">{metric.value}</span>
+                          <motion.span
+                            className="text-xl font-bold text-neutral-100"
+                            whileHover={{ scale: 1.05, color: '#6366f1' }}
+                            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                          >
+                            {metric.value}
+                          </motion.span>
                           <span className="text-neutral-500 text-sm">{metric.label}</span>
                         </motion.div>
                       ))}
@@ -107,7 +115,8 @@ export default function Portfolio() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: 0.4 + j * 0.05 }}
-                      className="text-xs font-medium text-neutral-500 bg-neutral-800/40 px-3 py-1 rounded-full transition-colors duration-300 group-hover:text-neutral-400 group-hover:bg-neutral-800/70"
+                      whileHover={{ scale: 1.08, backgroundColor: 'rgba(99,102,241,0.15)', color: '#a5b4fc' }}
+                      className="text-xs font-medium text-neutral-500 bg-neutral-800/40 px-3 py-1 rounded-full transition-colors duration-300 cursor-default"
                     >
                       {tag}
                     </motion.span>

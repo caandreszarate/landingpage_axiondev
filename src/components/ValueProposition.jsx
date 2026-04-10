@@ -28,11 +28,6 @@ const ICONS = {
   ),
 };
 
-const cardHover = {
-  y: -4,
-  transition: { type: 'spring', stiffness: 300, damping: 20 },
-};
-
 export default function ValueProposition() {
   return (
     <Section border>
@@ -42,7 +37,9 @@ export default function ValueProposition() {
           <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-6 leading-tight">
             Faster than agencies.
             <br />
-            <span className="text-accent">Smarter than freelancers.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
+              Smarter than freelancers.
+            </span>
           </h2>
           <p className="text-neutral-400 text-lg leading-relaxed">
             Traditional agencies take months and charge a fortune. Most freelancers
@@ -58,16 +55,20 @@ export default function ValueProposition() {
         {HIGHLIGHTS.map((item) => (
           <StaggerItem key={item.title}>
             <motion.div
-              whileHover={cardHover}
-              className="group h-full p-6 rounded-2xl border border-neutral-800/50 hover:border-accent/30 bg-neutral-900/30 hover:bg-neutral-900/60 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(99,102,241,0.06)]"
+              whileHover={{ y: -4, borderColor: 'rgba(99,102,241,0.3)' }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              className="group relative h-full p-6 rounded-2xl border border-neutral-800/50 bg-neutral-900/30 hover:bg-neutral-900/60 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(99,102,241,0.06)] overflow-hidden"
             >
-              <div className="flex items-start gap-4">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <div className="relative flex items-start gap-4">
                 <motion.div
                   initial={{ scale: 0.5, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ type: 'spring', stiffness: 400, damping: 15, delay: 0.2 }}
-                  className="mt-0.5 p-2 rounded-lg bg-accent/10 text-accent shrink-0 transition-colors duration-300 group-hover:bg-accent/20"
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  className="mt-0.5 p-2.5 rounded-xl bg-accent/10 text-accent shrink-0 transition-colors duration-300 group-hover:bg-accent/20"
                 >
                   {ICONS[item.icon]}
                 </motion.div>

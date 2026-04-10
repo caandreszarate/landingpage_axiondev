@@ -1,14 +1,57 @@
-import { motion } from 'framer-motion';
+import { useRef, useCallback } from 'react';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 import FadeIn from './FadeIn';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import Section from './Section';
 import { Icon } from './icons';
 import { SERVICES } from '../data/content';
 
-const cardHover = {
-  y: -6,
-  transition: { type: 'spring', stiffness: 300, damping: 20 },
-};
+function TiltCard({ children, className = '' }) {
+  const ref = useRef(null);
+  const rotateX = useMotionValue(0);
+  const rotateY = useMotionValue(0);
+  const glowX = useMotionValue(50);
+  const glowY = useMotionValue(50);
+
+  const springConfig = { stiffness: 300, damping: 30, restDelta: 0.001 };
+  const smoothRx = useSpring(rotateX, springConfig);
+  const smoothRy = useSpring(rotateY, springConfig);
+
+  const handleMouse = useCallback((e) => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    rotateX.set(py * -8);
+    rotateY.set(px * 8);
+    glowX.set(((e.clientX - rect.left) / rect.width) * 100);
+    glowY.set(((e.clientY - rect.top) / rect.height) * 100);
+  }, [rotateX, rotateY, glowX, glowY]);
+
+  const handleLeave = useCallback(() => {
+    rotateX.set(0);
+    rotateY.set(0);
+  }, [rotateX, rotateY]);
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouse}
+      onMouseLeave={handleLeave}
+      style={{
+        rotateX: smoothRx,
+        rotateY: smoothRy,
+        transformPerspective: 800,
+      }}
+      whileHover={{ y: -6 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
 export default function Services() {
   return (
@@ -19,7 +62,9 @@ export default function Services() {
           <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-6 leading-tight">
             Three ways I put
             <br />
-            <span className="text-accent">money back in your pocket.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
+              money back in your pocket.
+            </span>
           </h2>
           <p className="text-neutral-400 text-lg leading-relaxed">
             Every service is built around one question:{' '}
@@ -32,10 +77,7 @@ export default function Services() {
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {SERVICES.map((service) => (
           <StaggerItem key={service.title}>
-            <motion.div
-              whileHover={cardHover}
-              className="group h-full flex flex-col rounded-2xl border border-neutral-800/50 hover:border-accent/30 bg-neutral-900/20 hover:bg-neutral-900/50 transition-all duration-300 hover:shadow-[0_10px_50px_rgba(99,102,241,0.08)] overflow-hidden"
-            >
+            <TiltCard className="group h-full flex flex-col rounded-2xl border border-neutral-800/50 hover:border-accent/30 bg-neutral-900/20 hover:bg-neutral-900/50 transition-all duration-300 hover:shadow-[0_10px_50px_rgba(99,102,241,0.08)] overflow-hidden">
               <div className="p-8 pb-0 flex-1">
                 <motion.div
                   className="text-accent mb-5 origin-center"
@@ -67,7 +109,7 @@ export default function Services() {
                   <span>{service.proof}</span>
                 </div>
               </div>
-            </motion.div>
+            </TiltCard>
           </StaggerItem>
         ))}
       </StaggerContainer>

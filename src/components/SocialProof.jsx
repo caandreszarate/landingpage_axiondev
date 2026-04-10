@@ -16,7 +16,11 @@ export default function SocialProof() {
       <StaggerContainer className="grid grid-cols-1 sm:grid-cols-3 gap-8">
         {STATS.map((stat, i) => (
           <StaggerItem key={stat.label}>
-            <div className="text-center relative">
+            <motion.div
+              className="text-center relative group cursor-default"
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+            >
               <motion.p
                 initial={{ opacity: 0, scale: 0.5, filter: 'blur(8px)' }}
                 whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
@@ -26,7 +30,7 @@ export default function SocialProof() {
                   delay: 0.15 + i * 0.12,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="text-3xl md:text-4xl font-bold text-neutral-100 mb-2"
+                className="text-3xl md:text-4xl font-bold text-neutral-100 mb-2 group-hover:text-accent transition-colors duration-300"
               >
                 {stat.value}
               </motion.p>
@@ -40,7 +44,7 @@ export default function SocialProof() {
                   className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-gradient-to-b from-transparent via-neutral-700 to-transparent origin-top"
                 />
               )}
-            </div>
+            </motion.div>
           </StaggerItem>
         ))}
       </StaggerContainer>
