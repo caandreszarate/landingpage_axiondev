@@ -144,3 +144,10 @@ export const SOCIAL_LINKS = [
 ];
 
 export const CONTACT_EMAIL = 'mailto:contact@axiondev.com';
+
+// Replace with your real WhatsApp number (international format, no + or spaces)
+export const WHATSAPP_NUMBER = '573001234567';
+export const WHATSAPP_MESSAGE = 'Hi! I visited axiondev.com and I\'m interested in a project.';
+
+// Replace with your Formspree form ID (create one at https://formspree.io)
+export const FORMSPREE_ID = 'xpwzgdok';

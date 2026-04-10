@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import WhatsAppButton from './components/WhatsAppButton';
 
 const SocialProof = lazy(() => import('./components/SocialProof'));
 const Services = lazy(() => import('./components/Services'));
@@ -32,6 +33,7 @@ export default function App() {
       <Suspense>
         <Footer />
       </Suspense>
+      <WhatsAppButton />
     </div>
   );
 }

@@ -1,6 +1,8 @@
+import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
-import CTAButton from './CTAButton';
+
+const ContactForm = lazy(() => import('./ContactForm'));
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -43,18 +45,19 @@ export default function CTA() {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <p className="text-neutral-400 text-lg mb-10 leading-relaxed max-w-xl mx-auto">
+          <p className="text-neutral-400 text-lg mb-4 leading-relaxed max-w-xl mx-auto">
             Every week you wait is a week your competitors are capturing
             the clients you're missing. Let's change that — today.
+          </p>
+          <p className="text-neutral-500 text-sm mb-2">
+            Drop me a message and I'll reply within 24 hours.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.3}>
-          <CTAButton
-            label="Book your free call now &rarr;"
-            microcopy="No commitment. No pitch decks. Just results."
-            size="lg"
-          />
+          <Suspense>
+            <ContactForm />
+          </Suspense>
         </FadeIn>
       </div>
     </section>
