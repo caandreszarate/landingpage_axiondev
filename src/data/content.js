@@ -175,25 +175,60 @@ export const TESTIMONIALS = [
     name: 'Daniel Rojas',
     role: 'CTO, AgriTech Startup',
     initials: 'DR',
+    result: 'Launched MVP in 10 days',
   },
   {
     quote: "I've worked with agencies that charged 10x more and delivered less. AxionDev gave us a landing page that actually converts — our lead gen doubled in the first month.",
     name: 'Sarah Mitchell',
     role: 'Founder, GrowthLab',
     initials: 'SM',
+    result: '2x lead generation in 30 days',
   },
   {
     quote: 'The speed is unreal. What I expected to take a month was live in 5 days. Clean code, great communication, and the final product exceeded expectations.',
     name: 'Andrés Velásquez',
     role: 'Operations Director, LogiCargo',
     initials: 'AV',
+    result: 'Delivered 5x ahead of schedule',
+  },
+  {
+    quote: 'Carlos automated our entire client onboarding — what used to take 3 hours now takes 10 minutes. We freed up our team to focus on closing deals instead of chasing paperwork.',
+    name: 'María Fernanda López',
+    role: 'CEO, Impulsa Digital',
+    initials: 'ML',
+    result: '18x faster onboarding',
+  },
+];
+
+export const TRUST_STATS = [
+  { value: '10+', label: 'Projects shipped' },
+  { value: '100%', label: 'On-time delivery' },
+  { value: '4', label: 'Countries served' },
+  { value: '< 14 days', label: 'Avg. turnaround' },
+];
+
+export const GUARANTEES = [
+  {
+    title: 'Money-back guarantee',
+    description: "If you're not satisfied with the final delivery, you get a full refund. No questions asked.",
+    icon: 'shield',
+  },
+  {
+    title: 'Fixed price, no surprises',
+    description: 'The price we agree on is the price you pay. No hidden fees, no scope creep charges.',
+    icon: 'lock',
+  },
+  {
+    title: 'Post-launch support',
+    description: 'Every project includes free support after launch. You are never left alone with a broken site.',
+    icon: 'support',
   },
 ];
 
 export const ABOUT = {
   name: 'Carlos',
   role: 'AI-Powered Web Developer',
-  bio: 'I help startups and growing businesses launch digital products that actually drive revenue. I combine full-stack development with AI workflows to ship faster, cheaper, and with better results than traditional agencies.',
+  bio: "I've helped startups, agencies, and growing businesses across Colombia, the US, and Latin America launch digital products that actually drive revenue. I combine full-stack development with AI workflows to ship faster, cheaper, and with better results than traditional agencies.",
   location: 'Colombia',
   available: true,
 };
