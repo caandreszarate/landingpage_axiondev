@@ -32,7 +32,7 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           className="text-xl font-bold tracking-tight text-neutral-100"
         >
-          axion<span className="text-accent">dev</span>
+          Axion<span className="text-accent">Dev</span>
         </motion.a>
 
         <div className="hidden md:flex items-center gap-8">

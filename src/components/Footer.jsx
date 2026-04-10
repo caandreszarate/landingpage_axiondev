@@ -10,7 +10,7 @@ export default function Footer() {
         <FadeIn direction="left">
           <div className="flex items-center gap-3">
             <span className="text-lg font-bold tracking-tight text-neutral-100">
-              axion<span className="text-accent">dev</span>
+              Axion<span className="text-accent">Dev</span>
             </span>
             <span className="text-neutral-700">|</span>
             <p className="text-sm text-neutral-500">
