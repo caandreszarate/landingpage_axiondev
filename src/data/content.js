@@ -2,6 +2,7 @@ export const NAV_LINKS = [
   { label: 'Services', href: '#services' },
   { label: 'Work', href: '#portfolio' },
   { label: 'Process', href: '#process' },
+  { label: 'Offers', href: '#offers' },
 ];
 
 export const STATS = [
@@ -93,6 +94,60 @@ export const PROJECTS = [
     ],
     tags: ['JavaScript', 'Express', 'MongoDB', 'Chart.js'],
     link: '#',
+  },
+];
+
+export const PACKAGES = [
+  {
+    name: 'Landing Page',
+    timeline: '5 days',
+    price: 'From $497',
+    tagline: 'Designed to convert and ready to launch',
+    description: 'A single high-converting page engineered to turn visitors into paying clients — live and indexed before your competitors finish their first draft.',
+    deliverables: [
+      'Custom responsive design (mobile-first)',
+      'Conversion-optimized copy & layout',
+      'Contact form + WhatsApp integration',
+      'SEO meta tags & Open Graph setup',
+      'Analytics & speed optimization',
+      'Free hosting setup on Vercel',
+    ],
+    highlighted: false,
+  },
+  {
+    name: 'Full Website',
+    timeline: '10–14 days',
+    price: 'From $997',
+    tagline: 'Your entire digital presence, built to sell',
+    description: 'A complete multi-page website that positions your brand, captures leads 24/7, and pays for itself within the first month of going live.',
+    deliverables: [
+      'Up to 5 custom pages',
+      'Blog or portfolio section',
+      'Lead capture system (forms + CRM)',
+      'WhatsApp + email automation',
+      'SEO & performance optimization',
+      'Admin panel or CMS integration',
+      '30 days post-launch support',
+    ],
+    highlighted: true,
+    badge: 'Most Popular',
+  },
+  {
+    name: 'Automation Suite',
+    timeline: '7–10 days',
+    price: 'From $797',
+    tagline: 'Stop working harder. Start working smarter.',
+    description: 'Custom AI-powered automations that eliminate repetitive tasks, capture leads while you sleep, and give you back 10+ hours every single week.',
+    deliverables: [
+      'Workflow audit & automation roadmap',
+      'Up to 3 custom automations',
+      'Lead capture & auto-follow-up',
+      'CRM or spreadsheet integration',
+      'AI-powered email/chat responses',
+      'Dashboard with real-time metrics',
+      'Training session + documentation',
+    ],
+    highlighted: false,
   },
 ];
 

@@ -10,6 +10,7 @@ const ValueProposition = lazy(() => import('./components/ValueProposition'));
 const Portfolio = lazy(() => import('./components/Portfolio'));
 const Trust = lazy(() => import('./components/Trust'));
 const Process = lazy(() => import('./components/Process'));
+const Offers = lazy(() => import('./components/Offers'));
 const CTA = lazy(() => import('./components/CTA'));
 const Footer = lazy(() => import('./components/Footer'));
 
@@ -27,6 +28,7 @@ export default function App() {
           <Portfolio />
           <Trust />
           <Process />
+          <Offers />
           <CTA />
         </Suspense>
       </main>
