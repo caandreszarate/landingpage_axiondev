@@ -1,15 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const links = [
-  { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#portfolio' },
-  { label: 'Process', href: '#process' },
-];
+import { NAV_LINKS, CONTACT_EMAIL } from '../data/content';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -31,7 +27,7 @@ export default function Navbar() {
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {links.map((link) => (
+          {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -49,9 +45,10 @@ export default function Navbar() {
         </div>
 
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((prev) => !prev)}
           className="md:hidden text-neutral-300 p-2"
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             {menuOpen ? (
@@ -72,11 +69,11 @@ export default function Navbar() {
             className="md:hidden bg-neutral-950/95 backdrop-blur-lg border-b border-neutral-800/50 overflow-hidden"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
-              {links.map((link) => (
+              {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={closeMenu}
                   className="text-neutral-300 hover:text-neutral-100 transition-colors"
                 >
                   {link.label}
@@ -84,7 +81,7 @@ export default function Navbar() {
               ))}
               <a
                 href="#contact"
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
                 className="text-sm font-medium bg-accent text-white px-5 py-2 rounded-lg text-center transition-colors"
               >
                 Book a call

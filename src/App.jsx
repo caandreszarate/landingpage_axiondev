@@ -1,12 +1,14 @@
-import Hero from './components/Hero';
-import SocialProof from './components/SocialProof';
-import Services from './components/Services';
-import ValueProposition from './components/ValueProposition';
-import Portfolio from './components/Portfolio';
-import Process from './components/Process';
-import CTA from './components/CTA';
-import Footer from './components/Footer';
+import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+
+const SocialProof = lazy(() => import('./components/SocialProof'));
+const Services = lazy(() => import('./components/Services'));
+const ValueProposition = lazy(() => import('./components/ValueProposition'));
+const Portfolio = lazy(() => import('./components/Portfolio'));
+const Process = lazy(() => import('./components/Process'));
+const CTA = lazy(() => import('./components/CTA'));
+const Footer = lazy(() => import('./components/Footer'));
 
 export default function App() {
   return (
@@ -14,14 +16,18 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <SocialProof />
-        <Services />
-        <ValueProposition />
-        <Portfolio />
-        <Process />
-        <CTA />
+        <Suspense>
+          <SocialProof />
+          <Services />
+          <ValueProposition />
+          <Portfolio />
+          <Process />
+          <CTA />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

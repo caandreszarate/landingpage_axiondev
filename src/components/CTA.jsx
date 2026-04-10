@@ -1,4 +1,5 @@
 import FadeIn from './FadeIn';
+import { CONTACT_EMAIL } from '../data/content';
 
 export default function CTA() {
   return (
@@ -12,7 +13,7 @@ export default function CTA() {
             Let's talk about how I can help you launch faster with AI-powered development.
           </p>
           <a
-            href="mailto:contact@axiondev.com"
+            href={CONTACT_EMAIL}
             className="inline-flex items-center justify-center bg-accent hover:bg-accent-light text-white font-medium px-10 py-4 rounded-lg transition-colors text-lg"
           >
             Book a call
