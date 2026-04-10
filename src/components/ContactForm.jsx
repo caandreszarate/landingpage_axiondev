@@ -114,7 +114,7 @@ export default function ContactForm() {
 
       <p className="mt-4 text-center text-xs text-neutral-600">
         Or reach out directly via{' '}
-        <a href="mailto:contact@axiondev.com" className="text-neutral-500 hover:text-accent transition-colors underline underline-offset-2">
+        <a href="mailto:carlos@axiondev.dev" className="text-neutral-500 hover:text-accent transition-colors underline underline-offset-2">
           email
         </a>
       </p>

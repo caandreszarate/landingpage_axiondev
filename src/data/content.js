@@ -138,16 +138,26 @@ export const ABOUT = {
 };
 
 export const SOCIAL_LINKS = [
-  { label: 'Email', href: 'mailto:contact@axiondev.com', icon: 'mail' },
+  { label: 'Email', href: 'mailto:carlos@axiondev.dev', icon: 'mail' },
   { label: 'GitHub', href: 'https://github.com/axiondev', icon: 'github' },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/axiondev', icon: 'linkedin' },
 ];
 
-export const CONTACT_EMAIL = 'mailto:contact@axiondev.com';
+export const CONTACT_EMAIL = 'mailto:carlos@axiondev.dev';
 
-// Replace with your real WhatsApp number (international format, no + or spaces)
-export const WHATSAPP_NUMBER = '573001234567';
-export const WHATSAPP_MESSAGE = 'Hi! I visited axiondev.com and I\'m interested in a project.';
+export const WHATSAPP_NUMBER = '573105550703';
+export const WHATSAPP_MESSAGE = `\u{1F44B} Hola, gracias por escribir a *AxionDev*.
 
-// Replace with your Formspree form ID (create one at https://formspree.io)
-export const FORMSPREE_ID = 'xpwzgdok';
+Soy especialista en desarrollo web con IA y ayudo a negocios a crear p\u00E1ginas que realmente generan clientes, no solo se ven bien.
+
+Para poder ayudarte mejor, cu\u00E9ntame:
+
+1\uFE0F\u20E3 \u00BFQu\u00E9 tipo de proyecto necesitas? (landing, web completa, automatizaci\u00F3n, etc.)
+2\uFE0F\u20E3 \u00BFYa tienes algo creado o empiezas desde cero?
+3\uFE0F\u20E3 \u00BFCu\u00E1l es tu objetivo principal? (ventas, leads, visibilidad)
+
+Con eso te doy una propuesta clara y r\u00E1pida \u{1F680}
+
+Si prefieres, tambi\u00E9n puedes agendar una llamada directa y lo vemos contigo paso a paso.`;
+
+export const FORMSPREE_ID = 'xqegvoyk';
