@@ -52,7 +52,7 @@ export default function Navbar() {
             transition={{ duration: 0.4, delay: 0.3 }}
             className="group relative text-sm font-medium bg-accent text-white px-5 py-2 rounded-lg overflow-hidden transition-shadow hover:shadow-[0_0_20px_rgba(99,102,241,0.3)]"
           >
-            <span className="relative z-10">Book a call</span>
+            <span className="relative z-10">Get started &rarr;</span>
             <span className="absolute inset-0 bg-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </motion.a>
         </div>
@@ -101,7 +101,7 @@ export default function Navbar() {
                 onClick={closeMenu}
                 className="text-sm font-medium bg-accent text-white px-5 py-2 rounded-lg text-center transition-colors"
               >
-                Book a call
+                Get started &rarr;
               </a>
             </div>
           </motion.div>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
-import { CONTACT_EMAIL } from '../data/content';
+import CTAButton from './CTAButton';
 
 export default function CTA() {
   return (
@@ -13,19 +13,23 @@ export default function CTA() {
 
       <div className="max-w-3xl mx-auto text-center relative z-10">
         <FadeIn>
-          <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-6">
-            Ready to build your next project?
-          </h2>
-          <p className="text-neutral-400 text-lg mb-10">
-            Let's talk about how I can help you launch faster with AI-powered development.
+          <p className="text-sm text-accent uppercase tracking-widest mb-4">
+            Let's build something great
           </p>
-          <a
-            href={CONTACT_EMAIL}
-            className="group relative inline-flex items-center justify-center bg-accent text-white font-medium px-10 py-4 rounded-lg text-lg overflow-hidden transition-shadow duration-300 hover:shadow-[0_0_40px_rgba(99,102,241,0.35)]"
-          >
-            <span className="relative z-10">Book a call</span>
-            <span className="absolute inset-0 bg-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </a>
+          <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-6 leading-tight">
+            Your next website could be
+            <br className="hidden sm:block" />
+            <span className="text-accent">live in 2 weeks.</span>
+          </h2>
+          <p className="text-neutral-400 text-lg mb-10 leading-relaxed max-w-xl mx-auto">
+            Every week you wait is a week your competitors are capturing
+            the clients you're missing. Let's change that — today.
+          </p>
+          <CTAButton
+            label="Book your free call now &rarr;"
+            microcopy="No commitment. No pitch decks. Just results."
+            size="lg"
+          />
         </FadeIn>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import CTAButton from './CTAButton';
 
 const ease = [0.25, 0.1, 0.25, 1];
 
@@ -88,15 +89,12 @@ export default function Hero() {
 
         <motion.div
           variants={scaleFade}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <a
-            href="#contact"
-            className="group relative inline-flex items-center justify-center bg-accent text-white font-semibold px-10 py-4 rounded-lg text-base overflow-hidden transition-shadow hover:shadow-[0_0_40px_rgba(99,102,241,0.35)]"
-          >
-            <span className="relative z-10">Start your project &rarr;</span>
-            <span className="absolute inset-0 bg-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </a>
+          <CTAButton
+            label="Start your project &rarr;"
+            microcopy="Free consultation — no commitment"
+          />
           <a
             href="#portfolio"
             className="inline-flex items-center justify-center border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-neutral-100 font-medium px-10 py-4 rounded-lg transition-all duration-300 text-base hover:shadow-[0_0_20px_rgba(255,255,255,0.04)]"

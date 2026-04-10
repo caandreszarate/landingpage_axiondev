@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 
 const SocialProof = lazy(() => import('./components/SocialProof'));
 const Services = lazy(() => import('./components/Services'));
+const MidCTA = lazy(() => import('./components/MidCTA'));
 const ValueProposition = lazy(() => import('./components/ValueProposition'));
 const Portfolio = lazy(() => import('./components/Portfolio'));
 const Trust = lazy(() => import('./components/Trust'));
@@ -20,6 +21,7 @@ export default function App() {
         <Suspense>
           <SocialProof />
           <Services />
+          <MidCTA />
           <ValueProposition />
           <Portfolio />
           <Trust />
