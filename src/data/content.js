@@ -29,9 +29,26 @@ export const SERVICES = [
 ];
 
 export const HIGHLIGHTS = [
-  { title: 'Faster delivery', description: 'AI-accelerated workflows cut development time significantly.' },
-  { title: 'Cost-effective', description: 'Get agency-quality results without the agency price tag.' },
-  { title: 'AI-enhanced', description: 'Every project benefits from intelligent automation and optimization.' },
+  {
+    title: 'Ship in days, not months',
+    description: 'AI-powered workflows compress weeks of agency timelines into days. Your project goes live while competitors are still scheduling kickoff calls.',
+    icon: 'speed',
+  },
+  {
+    title: 'Agency quality, freelancer speed',
+    description: 'You get the strategic thinking and polish of a top agency — without the bloated team, endless meetings, or six-figure invoices.',
+    icon: 'quality',
+  },
+  {
+    title: 'AI baked into every pixel',
+    description: 'From code generation to performance optimization, AI isn\'t an afterthought — it\'s the engine. Every decision is data-informed and every build is automated.',
+    icon: 'ai',
+  },
+  {
+    title: 'Built to convert, not just to exist',
+    description: 'Every page is engineered for one goal: turning visitors into clients. No vanity design, no wasted sections — just results.',
+    icon: 'convert',
+  },
 ];
 
 export const PROJECTS = [
