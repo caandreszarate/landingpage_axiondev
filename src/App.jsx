@@ -2,6 +2,8 @@ import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhatsAppButton from './components/WhatsAppButton';
+import Starfield from './components/Starfield';
+import MouseTrail from './components/MouseTrail';
 
 const SocialProof = lazy(() => import('./components/SocialProof'));
 const Services = lazy(() => import('./components/Services'));
@@ -17,9 +19,12 @@ const Footer = lazy(() => import('./components/Footer'));
 
 export default function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main>
+    <div className="min-h-screen relative">
+      <Starfield />
+      <MouseTrail />
+      <div className="relative z-10">
+        <Navbar />
+        <main>
         <Hero />
         <Suspense>
           <SocialProof />
@@ -34,10 +39,11 @@ export default function App() {
           <CTA />
         </Suspense>
       </main>
-      <Suspense>
-        <Footer />
-      </Suspense>
-      <WhatsAppButton />
+        <Suspense>
+          <Footer />
+        </Suspense>
+        <WhatsAppButton />
+      </div>
     </div>
   );
 }

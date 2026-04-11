@@ -8,11 +8,12 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: transparent;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-neutral-950);
+  background-color: transparent;
   color: var(--color-neutral-200);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
