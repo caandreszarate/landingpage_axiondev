@@ -119,7 +119,7 @@ export function TextReveal({ text, className = '', delay = 0 }) {
   );
 }
 
-// ─── Floating particles for Hero ───
+// ─── Floating particles for Hero (CSS-optimized) ───
 export function FloatingParticles({ count = 20 }) {
   const particles = Array.from({ length: count }, (_, i) => ({
     id: i,
@@ -132,25 +132,31 @@ export function FloatingParticles({ count = 20 }) {
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <style>{`
+        @keyframes float-particle {
+          0%, 100% {
+            transform: translateY(0);
+            opacity: 0;
+          }
+          50% {
+            transform: translateY(-30px);
+            opacity: 0.6;
+          }
+        }
+        .particle {
+          will-change: transform, opacity;
+        }
+      `}</style>
       {particles.map((p) => (
-        <motion.div
+        <div
           key={p.id}
-          className="absolute rounded-full bg-accent/20"
+          className="particle absolute rounded-full bg-accent/20"
           style={{
             left: `${p.x}%`,
             top: `${p.y}%`,
             width: p.size,
             height: p.size,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            opacity: [0, 0.6, 0],
-          }}
-          transition={{
-            duration: p.duration,
-            repeat: Infinity,
-            delay: p.delay,
-            ease: 'easeInOut',
+            animation: `float-particle ${p.duration}s ease-in-out ${p.delay}s infinite`,
           }}
         />
       ))}
