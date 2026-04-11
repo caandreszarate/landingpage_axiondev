@@ -70,11 +70,16 @@ export default function Hero() {
       >
         <motion.div variants={fadeUp} className="mb-10 text-center">
           <motion.span
-            className="inline-flex items-center gap-2 text-accent text-xs font-semibold tracking-widest uppercase border border-accent/20 bg-accent/5 px-4 py-1.5 rounded-full"
-            whileHover={{ scale: 1.05, borderColor: 'rgba(99,102,241,0.4)' }}
+            className="inline-flex items-center gap-2 text-accent text-xs font-semibold tracking-widest uppercase border border-accent/30 bg-accent/10 px-4 py-2 rounded-full hover:bg-accent/15 transition-colors"
+            whileHover={{ scale: 1.05, borderColor: 'rgba(99,102,241,0.6)' }}
+            whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <motion.span
+              className="w-2 h-2 rounded-full bg-accent"
+              animate={{ scale: [1, 1.2, 1], opacity: [1, 0.8, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
             Taking on 2 new clients this month
           </motion.span>
         </motion.div>
@@ -86,9 +91,13 @@ export default function Hero() {
           >
             I build websites that
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
+            <motion.span
+              className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light block"
+              animate={{ opacity: [0.7, 1, 0.7] }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+            >
               bring you clients.
-            </span>
+            </motion.span>
             <br />
             <span className="text-neutral-500 text-[0.6em]">Not in months — in days.</span>
           </motion.h1>
@@ -128,18 +137,24 @@ export default function Hero() {
           variants={scaleFade}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <CTAButton
-            label="Book a free strategy call &rarr;"
-            microcopy="Get your website live in days — not months"
-            urgency="Only 2 spots left this month"
-            size="lg"
-          />
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+          >
+            <CTAButton
+              label="Book a free strategy call &rarr;"
+              microcopy="Get your website live in days — not months"
+              urgency="Only 2 spots left this month"
+              size="lg"
+            />
+          </motion.div>
           <motion.a
             href="#offers"
-            whileHover={{ scale: 1.03, borderColor: 'rgba(163,163,163,0.5)' }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={{ scale: 1.05, borderColor: 'rgba(163,163,163,0.6)' }}
+            whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-            className="inline-flex items-center justify-center border border-neutral-700 text-neutral-300 hover:text-neutral-100 font-medium px-10 py-4 rounded-lg transition-all duration-300 text-base hover:shadow-[0_0_20px_rgba(255,255,255,0.04)]"
+            className="inline-flex items-center justify-center border border-neutral-700 text-neutral-300 hover:text-neutral-100 font-medium px-10 py-4 rounded-lg transition-all duration-300 text-base hover:shadow-[0_0_20px_rgba(163,163,163,0.1)]"
           >
             See pricing &amp; packages
           </motion.a>
