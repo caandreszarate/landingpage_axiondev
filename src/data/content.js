@@ -268,8 +268,8 @@ export const ABOUT = {
 
 export const SOCIAL_LINKS = [
   { label: 'Email', href: 'mailto:carlos@axiondev.dev', icon: 'mail' },
-  { label: 'GitHub', href: 'https://github.com/axiondev', icon: 'github' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/axiondev', icon: 'linkedin' },
+  { label: 'GitHub', href: 'https://github.com/caandreszarate', icon: 'github' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/carlos-axiondev', icon: 'linkedin' },
 ];
 
 export const CONTACT_EMAIL = 'mailto:carlos@axiondev.dev';
