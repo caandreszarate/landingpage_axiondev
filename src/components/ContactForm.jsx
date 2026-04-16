@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FORMSPREE_ID } from '../data/content';
+import { FORMSPREE_ID, CAL_LINK } from '../data/content';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -39,6 +39,8 @@ export default function ContactForm() {
       if (res.ok) {
         setStatus('success');
         e.target.reset();
+        setProjectType('');
+        setBudget('');
       } else {
         setStatus('error');
       }
@@ -169,7 +171,7 @@ export default function ContactForm() {
             <p className="text-lg font-semibold text-emerald-400 mb-1">Message sent!</p>
             <p className="text-sm text-neutral-400 mb-4">I'll get back to you within 24 hours.</p>
             <a
-              href="https://app.cal.com/carlos-martinez-kv7rn4"
+              href={CAL_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-accent hover:text-accent-light transition-colors underline underline-offset-2"

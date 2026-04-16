@@ -3,7 +3,7 @@ export const NAV_LINKS = [
   { label: 'Work', href: '#portfolio' },
   { label: 'Process', href: '#process' },
   { label: 'Pricing', href: '#offers' },
-  { label: 'Reviews', href: '#trust' },
+  { label: 'Reviews', href: '#trust', lgOnly: true },
 ];
 
 export const STATS = [

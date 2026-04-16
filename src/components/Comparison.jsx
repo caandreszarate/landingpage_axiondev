@@ -30,7 +30,7 @@ const rows = [
 
 export default function Comparison() {
   return (
-    <Section border>
+    <Section id="comparison" border>
       <FadeIn>
         <p className="text-sm text-accent uppercase tracking-widest mb-4">Why AxionDev</p>
         <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-4 leading-tight">
@@ -42,6 +42,8 @@ export default function Comparison() {
       </FadeIn>
 
       <FadeIn>
+        <div className="relative">
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-neutral-950 to-transparent z-10 md:hidden rounded-r-2xl" />
         <div className="overflow-x-auto rounded-2xl border border-neutral-800/50">
           <table className="w-full text-sm">
             <thead>
@@ -86,6 +88,7 @@ export default function Comparison() {
               ))}
             </tbody>
           </table>
+        </div>
         </div>
       </FadeIn>
 

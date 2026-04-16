@@ -43,7 +43,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.05 }}
-              className="relative text-sm text-neutral-400 hover:text-neutral-100 transition-colors py-1 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
+              className={`relative text-sm text-neutral-400 hover:text-neutral-100 transition-colors py-1 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full ${link.lgOnly ? 'hidden lg:block' : ''}`}
             >
               {link.label}
             </motion.a>

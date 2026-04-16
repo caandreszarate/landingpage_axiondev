@@ -97,7 +97,7 @@ export default function Hero() {
         <motion.div style={{ y: smoothHeadlineY }}>
           <motion.h1
             variants={fadeUp}
-            className="text-center text-[2.5rem] sm:text-6xl md:text-[5.5rem] font-bold tracking-tight text-neutral-100 leading-[1.05] mb-8"
+            className="text-center text-[2rem] sm:text-6xl md:text-[5.5rem] font-bold tracking-tight text-neutral-100 leading-[1.05] mb-8"
           >
             I build websites that
             <br />

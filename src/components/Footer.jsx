@@ -70,7 +70,7 @@ export default function Footer() {
                 </motion.a>
               ))}
               <span className="text-xs text-neutral-600 ml-2">
-                © {new Date().getFullYear()} AxionDev
+                © {new Date().getFullYear()} Axion<span className="text-accent">Dev</span>
               </span>
             </div>
           </FadeIn>

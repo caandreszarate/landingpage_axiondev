@@ -41,7 +41,7 @@ export default function Offers() {
         </FadeIn>
       </div>
 
-      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-center">
         {PACKAGES.map((pkg) => (
           <StaggerItem key={pkg.name}>
             <motion.div
