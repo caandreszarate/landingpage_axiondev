@@ -9,7 +9,7 @@ export function ScrollProgress() {
   return (
     <motion.div
       style={{ scaleX, transformOrigin: '0%' }}
-      className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent via-accent-light to-accent z-[60]"
+      className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-indigo-400 via-purple-300 to-indigo-400 z-[60]"
     />
   );
 }

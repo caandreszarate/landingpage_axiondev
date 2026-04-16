@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import FadeIn from './FadeIn';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import Section, { SectionHeader } from './Section';
-import { STEPS, CAL_LINK } from '../data/content';
+import { STEPS } from '../data/content';
 import CTAButton from './CTAButton';
 
 function ConnectorLine() {
@@ -82,7 +82,6 @@ export default function Process() {
       <FadeIn>
         <div className="mt-16 text-center">
           <CTAButton
-            href={CAL_LINK}
             label="Start your project →"
             microcopy="Discovery call is free — no strings attached"
           />

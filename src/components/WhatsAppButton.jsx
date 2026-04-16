@@ -11,7 +11,6 @@ export default function WhatsAppButton() {
   );
 
   useEffect(() => {
-    // Show tooltip after 3s, hide after 8s, repeat every 30s
     const showTimer = setTimeout(() => setShowTooltip(true), 3000);
     const hideTimer = setTimeout(() => setShowTooltip(false), 11000);
 
@@ -28,27 +27,26 @@ export default function WhatsAppButton() {
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-end gap-3">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       <AnimatePresence>
         {showTooltip && (
           <motion.div
-            initial={{ opacity: 0, x: 10, scale: 0.9 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: 10, scale: 0.9 }}
+            initial={{ opacity: 0, y: 8, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 8, scale: 0.9 }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-            className="hidden sm:block bg-neutral-900 border border-neutral-800 text-neutral-200 text-sm px-4 py-3 rounded-xl shadow-2xl shadow-black/40 max-w-[220px]"
+            className="relative bg-neutral-900 border border-neutral-800 text-neutral-200 text-sm px-4 py-3 rounded-xl shadow-2xl shadow-black/40 max-w-[200px]"
           >
             <p className="font-semibold text-sm">Reply in under 5 min</p>
             <p className="text-neutral-400 text-xs mt-1 leading-relaxed">
               Tell me about your project — I'll send you a free quote.
             </p>
-            <div className="absolute -right-1.5 bottom-5 w-3 h-3 bg-neutral-900 border-r border-b border-neutral-800 rotate-[-45deg]" />
+            <div className="absolute -bottom-1.5 right-5 w-3 h-3 bg-neutral-900 border-r border-b border-neutral-800 rotate-45" />
           </motion.div>
         )}
       </AnimatePresence>
 
       <div className="relative">
-        {/* Ping ring */}
         <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />
 
         <motion.a

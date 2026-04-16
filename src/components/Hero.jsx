@@ -118,10 +118,9 @@ export default function Hero() {
             variants={fadeUp}
             className="text-center text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            For startups and businesses tired of paying agencies $10K+ for
-            websites that don't convert. I use AI to build
-            <span className="text-neutral-200 font-medium"> revenue-generating sites</span> —
-            live, optimized, and bringing in clients in under 14 days.
+            Agencies charge $10K+ and take months. I use AI to ship
+            <span className="text-neutral-200 font-medium"> conversion-optimized websites</span> that
+            actually generate leads — for a fraction of the cost.
             Fixed price. Money-back guarantee.
           </motion.p>
         </motion.div>

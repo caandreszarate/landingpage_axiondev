@@ -30,8 +30,8 @@ export default function MidCTA() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <CTAButton
-              label="Claim your free audit &rarr;"
-              microcopy="I'll show you what's costing you clients"
+              label="Book a free strategy call →"
+              microcopy="30 min — no commitment, no sales pitch"
               urgency={URGENCY_LABEL}
             />
             <motion.a

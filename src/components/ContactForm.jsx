@@ -11,9 +11,17 @@ const PROJECT_TYPES = [
   { value: 'not-sure', label: 'Not sure yet' },
 ];
 
+const BUDGETS = [
+  { value: 'under-500', label: 'Under $500' },
+  { value: '500-1000', label: '$500–$1,000' },
+  { value: '1000-3000', label: '$1,000–$3,000' },
+  { value: '3000+', label: '$3,000+' },
+];
+
 export default function ContactForm() {
   const [status, setStatus] = useState('idle');
   const [projectType, setProjectType] = useState('');
+  const [budget, setBudget] = useState('');
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -61,6 +69,27 @@ export default function ContactForm() {
             ))}
           </div>
           <input type="hidden" name="project_type" value={projectType} />
+        </div>
+
+        <div>
+          <p className="text-xs text-neutral-500 mb-2 text-left">Estimated budget <span className="text-neutral-600">(optional)</span></p>
+          <div className="flex flex-wrap gap-2">
+            {BUDGETS.map((b) => (
+              <button
+                key={b.value}
+                type="button"
+                onClick={() => setBudget(budget === b.value ? '' : b.value)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 ${
+                  budget === b.value
+                    ? 'bg-accent border-accent text-white'
+                    : 'bg-neutral-900/60 border-neutral-800 text-neutral-400 hover:border-neutral-600 hover:text-neutral-300'
+                }`}
+              >
+                {b.label}
+              </button>
+            ))}
+          </div>
+          <input type="hidden" name="budget" value={budget} />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
