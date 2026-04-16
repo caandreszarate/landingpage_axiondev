@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import Section from './Section';
+import CTAButton from './CTAButton';
 import { HIGHLIGHTS } from '../data/content';
 
 const ICONS = {
@@ -85,6 +86,15 @@ export default function ValueProposition() {
           </StaggerItem>
         ))}
       </StaggerContainer>
+
+      <FadeIn delay={0.2}>
+        <div className="mt-16 text-center">
+          <CTAButton
+            label="Let's build yours →"
+            microcopy="Free strategy call — live in days, not months"
+          />
+        </div>
+      </FadeIn>
     </Section>
   );
 }

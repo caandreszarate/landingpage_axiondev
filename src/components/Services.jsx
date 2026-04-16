@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 import FadeIn from './FadeIn';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import Section from './Section';
+import CTAButton from './CTAButton';
 import { Icon } from './icons';
 import { SERVICES } from '../data/content';
 
@@ -109,6 +110,15 @@ export default function Services() {
           </StaggerItem>
         ))}
       </StaggerContainer>
+
+      <FadeIn delay={0.2}>
+        <div className="mt-16 text-center">
+          <CTAButton
+            label="Get started — it's free →"
+            microcopy="30-min strategy call. No commitment."
+          />
+        </div>
+      </FadeIn>
     </Section>
   );
 }

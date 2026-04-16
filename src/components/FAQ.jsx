@@ -6,8 +6,10 @@ import Section from './Section';
 import CTAButton from './CTAButton';
 import { FAQ as FAQ_DATA } from '../data/content';
 
-function FAQItem({ item }) {
+function FAQItem({ item, index }) {
   const [open, setOpen] = useState(false);
+  const panelId = `faq-panel-${index}`;
+  const buttonId = `faq-btn-${index}`;
 
   return (
     <motion.div
@@ -18,6 +20,9 @@ function FAQItem({ item }) {
       }`}
     >
       <button
+        id={buttonId}
+        aria-expanded={open}
+        aria-controls={panelId}
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
       >
@@ -28,6 +33,7 @@ function FAQItem({ item }) {
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
           className="shrink-0 w-8 h-8 rounded-lg bg-neutral-800/60 flex items-center justify-center text-neutral-400"
+          aria-hidden="true"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M12 5v14M5 12h14" />
@@ -38,6 +44,9 @@ function FAQItem({ item }) {
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
+            id={panelId}
+            role="region"
+            aria-labelledby={buttonId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -80,9 +89,9 @@ export default function FAQ() {
         </FadeIn>
 
         <StaggerContainer className="flex flex-col gap-4">
-          {FAQ_DATA.map((item) => (
+          {FAQ_DATA.map((item, i) => (
             <StaggerItem key={item.question}>
-              <FAQItem item={item} />
+              <FAQItem item={item} index={i} />
             </StaggerItem>
           ))}
         </StaggerContainer>

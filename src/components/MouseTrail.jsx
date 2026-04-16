@@ -1,68 +1,59 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './MouseTrail.css';
 
 export default function MouseTrail() {
-  const [particles, setParticles] = useState([]);
+  const containerRef = useRef(null);
+  const particlesRef = useRef([]);
+  const rafRef = useRef(null);
+  const idRef = useRef(0);
+
   const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768 || isTouch);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768 || isTouch);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isTouch]);
+  const [isMobile] = useState(() => window.innerWidth < 768 || isTouch);
 
   useEffect(() => {
     if (isMobile) return;
 
-    let particleId = 0;
+    const container = containerRef.current;
+    if (!container) return;
 
-    const handleMouseMove = (e) => {
-      const { clientX, clientY } = e;
-
-      setParticles((prev) => {
-        const newParticles = [
-          ...prev,
-          {
-            id: particleId++,
-            x: clientX,
-            y: clientY,
-            createdAt: Date.now(),
-          },
-        ];
-
-        return newParticles.filter((p) => Date.now() - p.createdAt < 600);
+    const render = () => {
+      const now = Date.now();
+      particlesRef.current = particlesRef.current.filter((p) => {
+        const age = now - p.createdAt;
+        if (age >= 600) {
+          p.el.remove();
+          return false;
+        }
+        const progress = age / 600;
+        p.el.style.opacity = 1 - progress;
+        p.el.style.transform = `translate(-50%, -50%) scale(${1 - progress * 0.5})`;
+        return true;
       });
+      rafRef.current = requestAnimationFrame(render);
     };
 
+    const handleMouseMove = (e) => {
+      const el = document.createElement('div');
+      el.className = 'trail-particle';
+      el.style.left = `${e.clientX}px`;
+      el.style.top = `${e.clientY}px`;
+      el.style.transform = 'translate(-50%, -50%) scale(1)';
+      container.appendChild(el);
+      particlesRef.current.push({ id: idRef.current++, el, createdAt: Date.now() });
+    };
+
+    rafRef.current = requestAnimationFrame(render);
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(rafRef.current);
+      particlesRef.current.forEach((p) => p.el.remove());
+      particlesRef.current = [];
+    };
   }, [isMobile]);
 
   if (isMobile) return null;
 
-  return (
-    <div className="mouse-trail-container">
-      {particles.map((particle) => {
-        const age = Date.now() - particle.createdAt;
-        const progress = age / 600;
-
-        return (
-          <div
-            key={particle.id}
-            className="trail-particle"
-            style={{
-              left: `${particle.x}px`,
-              top: `${particle.y}px`,
-              opacity: 1 - progress,
-              transform: `scale(${1 - progress * 0.5})`,
-            }}
-          />
-        );
-      })}
-    </div>
-  );
+  return <div ref={containerRef} className="mouse-trail-container" />;
 }
