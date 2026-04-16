@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 import Section, { SectionHeader } from './Section';
 import CTAButton from './CTAButton';
-import { PROJECTS } from '../data/content';
+import { PROJECTS, URGENCY_LABEL } from '../data/content';
 
 const metricVariants = {
   hidden: { opacity: 0, y: 10, scale: 0.9 },
@@ -137,7 +137,7 @@ export default function Portfolio() {
           <CTAButton
             label="Start my project &rarr;"
             microcopy="Same quality. Same speed. Your business."
-            urgency="Taking on 2 new clients this month"
+            urgency={URGENCY_LABEL}
           />
         </div>
       </FadeIn>

@@ -1,7 +1,7 @@
 import { lazy, Suspense, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
-import { WHATSAPP_NUMBER, getWhatsAppMessage } from '../data/content';
+import { WHATSAPP_NUMBER, getWhatsAppMessage, URGENCY_LABEL } from '../data/content';
 
 const ContactForm = lazy(() => import('./ContactForm'));
 
@@ -32,7 +32,7 @@ export default function CTA() {
         <FadeIn>
           <div className="inline-flex items-center gap-2 text-amber-400 text-xs font-semibold tracking-widest uppercase border border-amber-400/20 bg-amber-400/5 px-4 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-            Only 2 spots available this month
+            {URGENCY_LABEL}
           </div>
         </FadeIn>
 

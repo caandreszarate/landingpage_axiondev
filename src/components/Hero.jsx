@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import CTAButton from './CTAButton';
 import { FloatingParticles } from './AnimationUtils';
+import { URGENCY_LABEL } from '../data/content';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -154,7 +155,7 @@ export default function Hero() {
             <CTAButton
               label="Book a free strategy call &rarr;"
               microcopy="Get your website live in days — not months"
-              urgency="Only 2 spots left this month"
+              urgency={URGENCY_LABEL}
               size="lg"
             />
           </motion.div>

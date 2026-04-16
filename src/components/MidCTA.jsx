@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 import CTAButton from './CTAButton';
-import { WHATSAPP_NUMBER, getWhatsAppMessage } from '../data/content';
+import { WHATSAPP_NUMBER, getWhatsAppMessage, URGENCY_LABEL } from '../data/content';
 
 export default function MidCTA() {
   const whatsappUrl = useMemo(
@@ -32,7 +32,7 @@ export default function MidCTA() {
             <CTAButton
               label="Claim your free audit &rarr;"
               microcopy="I'll show you what's costing you clients"
-              urgency="Limited availability"
+              urgency={URGENCY_LABEL}
             />
             <motion.a
               href={whatsappUrl}

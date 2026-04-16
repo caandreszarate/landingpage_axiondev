@@ -329,4 +329,6 @@ export function getWhatsAppMessage() {
   return WHATSAPP_MESSAGE_EN;
 }
 
+export const URGENCY_LABEL = 'Only 2 spots left this month';
+
 export const FORMSPREE_ID = 'xqegvoyk';
