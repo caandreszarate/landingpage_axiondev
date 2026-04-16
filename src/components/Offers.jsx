@@ -113,7 +113,7 @@ export default function Offers() {
         <div className="mt-12 text-center">
           <p className="text-neutral-500 text-sm">
             Not sure which package fits?{' '}
-            <a href="mailto:carlos@axiondev.dev" className="text-accent hover:text-accent-light transition-colors underline underline-offset-2">
+            <a href="#contact" className="text-accent hover:text-accent-light transition-colors underline underline-offset-2">
               Let's talk
             </a>
             {' '}— I'll recommend the right one in under 5 minutes.

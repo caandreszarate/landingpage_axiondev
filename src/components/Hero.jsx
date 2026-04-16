@@ -142,18 +142,12 @@ export default function Hero() {
           variants={scaleFade}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-          >
-            <CTAButton
-              label="Book a free strategy call &rarr;"
-              microcopy="Get your website live in days — not months"
-              urgency={URGENCY_LABEL}
-              size="lg"
-            />
-          </motion.div>
+          <CTAButton
+            label="Book a free strategy call →"
+            microcopy="Get your website live in days — not months"
+            urgency={URGENCY_LABEL}
+            size="lg"
+          />
           <motion.a
             href="#offers"
             whileHover={{ scale: 1.05, borderColor: 'rgba(163,163,163,0.6)' }}

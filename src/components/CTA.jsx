@@ -5,6 +5,25 @@ import { WHATSAPP_NUMBER, getWhatsAppMessage, URGENCY_LABEL } from '../data/cont
 
 const ContactForm = lazy(() => import('./ContactForm'));
 
+function FormSkeleton() {
+  return (
+    <div className="max-w-md mx-auto mt-12 space-y-4 animate-pulse">
+      <div className="flex gap-2 flex-wrap">
+        {[1, 2, 3, 4].map((i) => <div key={i} className="h-9 w-28 rounded-lg bg-neutral-800/60" />)}
+      </div>
+      <div className="flex gap-2 flex-wrap">
+        {[1, 2, 3, 4].map((i) => <div key={i} className="h-9 w-24 rounded-lg bg-neutral-800/60" />)}
+      </div>
+      <div className="grid grid-cols-2 gap-4">
+        <div className="h-11 rounded-lg bg-neutral-800/60" />
+        <div className="h-11 rounded-lg bg-neutral-800/60" />
+      </div>
+      <div className="h-24 rounded-lg bg-neutral-800/60" />
+      <div className="h-12 rounded-lg bg-neutral-800/60" />
+    </div>
+  );
+}
+
 const ease = [0.22, 1, 0.36, 1];
 
 const CHECK = (
@@ -66,7 +85,7 @@ export default function CTA() {
         </FadeIn>
 
         <FadeIn delay={0.3}>
-          <Suspense>
+          <Suspense fallback={<FormSkeleton />}>
             <ContactForm />
           </Suspense>
         </FadeIn>
@@ -81,6 +100,7 @@ export default function CTA() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              aria-label="Chat on WhatsApp"
               className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold px-8 py-3.5 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(37,211,102,0.3)]"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

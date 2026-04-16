@@ -135,7 +135,7 @@ export default function Portfolio() {
             <span className="text-neutral-200 font-medium">Your project could be next.</span>
           </p>
           <CTAButton
-            label="Start my project &rarr;"
+            label="Start my project →"
             microcopy="Same quality. Same speed. Your business."
             urgency={URGENCY_LABEL}
           />
