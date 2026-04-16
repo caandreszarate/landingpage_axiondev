@@ -168,16 +168,48 @@ export default function Trust() {
               )}
 
               <div className="flex items-center gap-3 pt-5 border-t border-neutral-800/50">
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                  className="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-sm font-semibold text-neutral-300 shrink-0"
-                >
-                  {t.initials}
-                </motion.div>
-                <div>
-                  <p className="text-sm font-semibold text-neutral-200">{t.name}</p>
-                  <p className="text-xs text-neutral-500">{t.role}</p>
+                {t.linkedin ? (
+                  <motion.a
+                    href={t.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    title={`${t.name} on LinkedIn`}
+                    className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.avatarColor} flex items-center justify-center text-sm font-bold text-white shrink-0 shadow-md`}
+                  >
+                    {t.initials}
+                  </motion.a>
+                ) : (
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.avatarColor} flex items-center justify-center text-sm font-bold text-white shrink-0 shadow-md`}
+                  >
+                    {t.initials}
+                  </motion.div>
+                )}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <p className="text-sm font-semibold text-neutral-200">{t.name}</p>
+                    {t.linkedin && (
+                      <a
+                        href={t.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#0A66C2] hover:text-[#0A66C2]/80 transition-colors"
+                        title="View LinkedIn profile"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                          <circle cx="4" cy="4" r="2" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                  <p className="text-xs text-neutral-500 truncate">
+                    {t.role}{t.company && <span className="text-neutral-600"> · {t.company}</span>}
+                  </p>
                 </div>
               </div>
             </motion.div>
