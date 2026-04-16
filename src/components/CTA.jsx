@@ -1,12 +1,11 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
-import { WHATSAPP_NUMBER, WHATSAPP_MESSAGE } from '../data/content';
+import { WHATSAPP_NUMBER, getWhatsAppMessage } from '../data/content';
 
 const ContactForm = lazy(() => import('./ContactForm'));
 
 const ease = [0.22, 1, 0.36, 1];
-const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 const CHECK = (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-emerald-400 shrink-0">
@@ -16,6 +15,11 @@ const CHECK = (
 );
 
 export default function CTA() {
+  const whatsappUrl = useMemo(
+    () => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getWhatsAppMessage())}`,
+    []
+  );
+
   return (
     <section id="contact" className="relative py-32 px-6 overflow-hidden">
       <motion.div

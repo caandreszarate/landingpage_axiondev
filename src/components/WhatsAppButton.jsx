@@ -1,11 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { WHATSAPP_NUMBER, WHATSAPP_MESSAGE } from '../data/content';
+import { WHATSAPP_NUMBER, getWhatsAppMessage } from '../data/content';
 
-const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export default function WhatsAppButton() {
   const [showTooltip, setShowTooltip] = useState(false);
+  const whatsappUrl = useMemo(
+    () => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getWhatsAppMessage())}`,
+    []
+  );
 
   useEffect(() => {
     // Show tooltip after 3s, hide after 8s, repeat every 30s
