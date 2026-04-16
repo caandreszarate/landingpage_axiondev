@@ -4,8 +4,16 @@ import { FORMSPREE_ID } from '../data/content';
 
 const ease = [0.22, 1, 0.36, 1];
 
+const PROJECT_TYPES = [
+  { value: 'landing-page', label: 'Landing Page' },
+  { value: 'full-website', label: 'Full Website' },
+  { value: 'automation', label: 'Automation' },
+  { value: 'not-sure', label: 'Not sure yet' },
+];
+
 export default function ContactForm() {
   const [status, setStatus] = useState('idle');
+  const [projectType, setProjectType] = useState('');
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -34,6 +42,27 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-12">
       <div className="flex flex-col gap-4">
+        <div>
+          <p className="text-xs text-neutral-500 mb-2 text-left">What do you need?</p>
+          <div className="flex flex-wrap gap-2">
+            {PROJECT_TYPES.map((pt) => (
+              <button
+                key={pt.value}
+                type="button"
+                onClick={() => setProjectType(pt.value)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 ${
+                  projectType === pt.value
+                    ? 'bg-accent border-accent text-white'
+                    : 'bg-neutral-900/60 border-neutral-800 text-neutral-400 hover:border-neutral-600 hover:text-neutral-300'
+                }`}
+              >
+                {pt.label}
+              </button>
+            ))}
+          </div>
+          <input type="hidden" name="project_type" value={projectType} />
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="name" className="sr-only">Name</label>
