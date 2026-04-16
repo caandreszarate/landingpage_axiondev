@@ -277,8 +277,8 @@ export const FAQ = [
 export const ABOUT = {
   name: 'Carlos',
   role: 'AI-Powered Web Developer',
-  bio: "I've helped startups, agencies, and growing businesses across Colombia, the US, and Latin America launch digital products that actually drive revenue. I combine full-stack development with AI workflows to ship faster, cheaper, and with better results than traditional agencies.",
-  location: 'Colombia',
+  bio: "I've helped startups, agencies, and growing businesses across Colombia, the US, Chile, and Equatorial Guinea launch digital products that actually drive revenue. I combine full-stack development with AI workflows to ship faster, cheaper, and with better results than traditional agencies.",
+  location: 'Colombia · Remote',
   available: true,
 };
 
