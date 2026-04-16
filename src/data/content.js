@@ -11,6 +11,16 @@ export const STATS = [
   { value: '4.2%', label: 'Avg. conversion rate' },
 ];
 
+export const TECH_STACK = [
+  { name: 'React', color: '#61DAFB' },
+  { name: 'Next.js', color: '#ffffff' },
+  { name: 'Node.js', color: '#68A063' },
+  { name: 'Tailwind CSS', color: '#38BDF8' },
+  { name: 'OpenAI', color: '#74AA9C' },
+  { name: 'Vercel', color: '#ffffff' },
+  { name: 'MongoDB', color: '#47A248' },
+];
+
 export const SERVICES = [
   {
     title: 'AI-Built Websites',
