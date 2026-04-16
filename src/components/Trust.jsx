@@ -59,8 +59,12 @@ export default function Trust() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               >
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-accent-light flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-accent/20">
-                  C
+                <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-lg shadow-accent/20">
+                  <img
+                    src="/testimonials/fotoCarlos.jpg"
+                    alt="Carlos"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 {ABOUT.available && (
                   <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 border-2 border-neutral-950 rounded-full flex items-center justify-center">
@@ -168,27 +172,23 @@ export default function Trust() {
               )}
 
               <div className="flex items-center gap-3 pt-5 border-t border-neutral-800/50">
-                {t.linkedin ? (
-                  <motion.a
-                    href={t.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                    title={`${t.name} on LinkedIn`}
-                    className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.avatarColor} flex items-center justify-center text-sm font-bold text-white shrink-0 shadow-md`}
-                  >
-                    {t.initials}
-                  </motion.a>
-                ) : (
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                    className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.avatarColor} flex items-center justify-center text-sm font-bold text-white shrink-0 shadow-md`}
-                  >
-                    {t.initials}
-                  </motion.div>
-                )}
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                  className="w-10 h-10 rounded-full shrink-0 shadow-md overflow-hidden"
+                >
+                  {t.photo ? (
+                    <img
+                      src={t.photo}
+                      alt={t.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className={`w-full h-full bg-gradient-to-br ${t.avatarColor} flex items-center justify-center text-sm font-bold text-white`}>
+                      {t.initials}
+                    </div>
+                  )}
+                </motion.div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
                     <p className="text-sm font-semibold text-neutral-200">{t.name}</p>
