@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { NAV_LINKS } from '../data/content';
+import { NAV_LINKS, CAL_LINK } from '../data/content';
 import { ScrollProgress } from './AnimationUtils';
 
 export default function Navbar() {
@@ -49,13 +49,15 @@ export default function Navbar() {
             </motion.a>
           ))}
           <motion.a
-            href="#contact"
+            href={CAL_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.3 }}
             className="group relative text-sm font-medium bg-accent text-white px-5 py-2 rounded-lg overflow-hidden transition-shadow hover:shadow-[0_0_20px_rgba(99,102,241,0.3)]"
           >
-            <span className="relative z-10">Get started &rarr;</span>
+            <span className="relative z-10">Get started →</span>
             <span className="absolute inset-0 bg-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </motion.a>
         </div>
@@ -100,11 +102,13 @@ export default function Navbar() {
                 </motion.a>
               ))}
               <a
-                href="#contact"
+                href={CAL_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={closeMenu}
                 className="text-sm font-medium bg-accent text-white px-5 py-2 rounded-lg text-center transition-colors"
               >
-                Get started &rarr;
+                Get started →
               </a>
             </div>
           </motion.div>

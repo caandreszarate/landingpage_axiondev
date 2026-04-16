@@ -109,7 +109,7 @@ export default function ContactForm() {
           className="group relative w-full bg-accent text-white font-semibold py-3.5 rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(99,102,241,0.3)] disabled:opacity-60 disabled:cursor-not-allowed"
         >
           <span className="relative z-10">
-            {status === 'sending' ? 'Sending...' : 'Send message'}
+            {status === 'sending' ? 'Sending...' : 'Send my request →'}
           </span>
           <span className="absolute inset-0 bg-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent" />

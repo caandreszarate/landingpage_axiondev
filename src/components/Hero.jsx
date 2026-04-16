@@ -90,7 +90,7 @@ export default function Hero() {
               animate={{ scale: [1, 1.2, 1], opacity: [1, 0.8, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            Taking on 2 new clients this month
+            {URGENCY_LABEL}
           </motion.span>
         </motion.div>
 
@@ -130,7 +130,7 @@ export default function Hero() {
           variants={fadeUp}
           className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-neutral-400 mb-14"
         >
-          {['2x average conversion rate', 'Live in under 14 days', '90% cheaper than agencies'].map((text, i) => (
+          {['4.2% avg. conversion rate', 'Live in under 14 days', '90% cheaper than agencies'].map((text, i) => (
             <motion.span
               key={text}
               className="flex items-center gap-2"

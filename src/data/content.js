@@ -123,7 +123,7 @@ export const PACKAGES = [
       'Free hosting setup on Vercel',
     ],
     highlighted: false,
-    cta: 'Get my landing page &rarr;',
+    cta: 'Get my landing page →',
     ctaMicro: 'Live and converting in 5 business days',
   },
   {
@@ -143,7 +143,7 @@ export const PACKAGES = [
     ],
     highlighted: true,
     badge: 'Most Popular',
-    cta: 'Build my website &rarr;',
+    cta: 'Build my website →',
     ctaMicro: 'Your full digital presence — ready in 2 weeks',
   },
   {
@@ -162,7 +162,7 @@ export const PACKAGES = [
       'Training session + documentation',
     ],
     highlighted: false,
-    cta: 'Automate my business &rarr;',
+    cta: 'Automate my business →',
     ctaMicro: 'Reclaim 10+ hours/week starting in 7 days',
   },
 ];
