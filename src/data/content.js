@@ -274,6 +274,8 @@ export const SOCIAL_LINKS = [
 
 export const CONTACT_EMAIL = 'mailto:carlos@axiondev.dev';
 
+export const CAL_LINK = 'https://app.cal.com/carlos-martinez-kv7rn4';
+
 export const WHATSAPP_NUMBER = '573105550703';
 export const WHATSAPP_MESSAGE = `\u{1F44B} Hola, gracias por escribir a *AxionDev*.
 

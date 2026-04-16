@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CONTACT_EMAIL } from '../data/content';
+import { CAL_LINK } from '../data/content';
 
 export default function CTAButton({ label, microcopy, size = 'base', className = '', urgency, href }) {
   const sizes = {
@@ -23,7 +23,9 @@ export default function CTAButton({ label, microcopy, size = 'base', className =
         </motion.p>
       )}
       <motion.a
-        href={href || CONTACT_EMAIL}
+        href={href || CAL_LINK}
+        target={href ? undefined : '_blank'}
+        rel={href ? undefined : 'noopener noreferrer'}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.98 }}
         transition={{ type: 'spring', stiffness: 400, damping: 17 }}
