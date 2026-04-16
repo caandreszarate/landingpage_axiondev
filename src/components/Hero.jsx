@@ -116,7 +116,7 @@ export default function Hero() {
         <motion.div style={{ y: smoothSubY }}>
           <motion.p
             variants={fadeUp}
-            className="text-center text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="hidden sm:block text-center text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-8 leading-relaxed"
           >
             Agencies charge $10K+ and take months. I use AI to ship
             <span className="text-neutral-200 font-medium"> conversion-optimized websites</span> that
@@ -127,7 +127,7 @@ export default function Hero() {
 
         <motion.div
           variants={fadeUp}
-          className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-neutral-400 mb-14"
+          className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-neutral-400 mb-8"
         >
           {['4.2% avg. conversion rate', 'Live in under 14 days', '90% cheaper than agencies'].map((text, i) => (
             <motion.span
@@ -165,7 +165,7 @@ export default function Hero() {
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             className="inline-flex items-center justify-center border border-neutral-700 text-neutral-300 hover:text-neutral-100 font-medium px-10 py-4 rounded-lg transition-all duration-300 text-base hover:shadow-[0_0_20px_rgba(163,163,163,0.1)]"
           >
-            See pricing &amp; packages
+            See pricing
           </motion.a>
         </motion.div>
       </motion.div>

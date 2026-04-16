@@ -52,11 +52,12 @@ export default function ContactForm() {
       <div className="flex flex-col gap-4">
         <div>
           <p className="text-xs text-neutral-500 mb-2 text-left">What do you need?</p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Project type">
             {PROJECT_TYPES.map((pt) => (
               <button
                 key={pt.value}
                 type="button"
+                aria-pressed={projectType === pt.value}
                 onClick={() => setProjectType(pt.value)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 ${
                   projectType === pt.value
@@ -73,11 +74,12 @@ export default function ContactForm() {
 
         <div>
           <p className="text-xs text-neutral-500 mb-2 text-left">Estimated budget <span className="text-neutral-600">(optional)</span></p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Estimated budget">
             {BUDGETS.map((b) => (
               <button
                 key={b.value}
                 type="button"
+                aria-pressed={budget === b.value}
                 onClick={() => setBudget(budget === b.value ? '' : b.value)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all duration-200 ${
                   budget === b.value
@@ -147,15 +149,34 @@ export default function ContactForm() {
 
       <AnimatePresence mode="wait">
         {status === 'success' && (
-          <motion.p
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease }}
-            className="mt-4 text-center text-sm text-emerald-400"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 16 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.5, ease }}
+            className="mt-6 p-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 text-center"
           >
-            Message sent! I'll get back to you within 24 hours.
-          </motion.p>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 18, delay: 0.1 }}
+              className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500/15 border border-emerald-500/30 mb-4"
+            >
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-emerald-400">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </motion.div>
+            <p className="text-lg font-semibold text-emerald-400 mb-1">Message sent!</p>
+            <p className="text-sm text-neutral-400 mb-4">I'll get back to you within 24 hours.</p>
+            <a
+              href="https://app.cal.com/carlos-martinez-kv7rn4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-accent hover:text-accent-light transition-colors underline underline-offset-2"
+            >
+              Want a faster reply? Book a direct call →
+            </a>
+          </motion.div>
         )}
         {status === 'error' && (
           <motion.p

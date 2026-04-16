@@ -64,6 +64,8 @@ export default function Trust() {
                     src="/testimonials/fotoCarlos.jpg"
                     alt="Carlos"
                     loading="lazy"
+                    width="80"
+                    height="80"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -183,6 +185,8 @@ export default function Trust() {
                       src={t.photo}
                       alt={t.name}
                       loading="lazy"
+                      width="40"
+                      height="40"
                       className="w-full h-full object-cover"
                     />
                   ) : (

@@ -41,14 +41,14 @@ export default function Offers() {
         </FadeIn>
       </div>
 
-      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
         {PACKAGES.map((pkg) => (
           <StaggerItem key={pkg.name}>
             <motion.div
               whileHover={cardHover}
               className={`group relative h-full flex flex-col rounded-2xl border overflow-hidden transition-all duration-300 ${
                 pkg.highlighted
-                  ? 'border-accent/50 bg-accent/[0.04] shadow-[0_0_60px_rgba(99,102,241,0.1)]'
+                  ? 'border-accent/60 bg-gradient-to-b from-accent/[0.08] to-accent/[0.02] shadow-[0_0_80px_rgba(99,102,241,0.15)] md:scale-[1.04] z-10'
                   : 'border-neutral-800/50 hover:border-accent/30 bg-neutral-900/20 hover:bg-neutral-900/50'
               } hover:shadow-[0_10px_50px_rgba(99,102,241,0.08)]`}
             >

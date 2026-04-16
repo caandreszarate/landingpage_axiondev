@@ -11,6 +11,7 @@ import SectionSkeleton, {
   OffersSkeleton,
   FAQSkeleton,
   FooterSkeleton,
+  ComparisonSkeleton,
 } from './components/SectionSkeleton';
 
 const SocialProof = lazy(() => import('./components/SocialProof'));
@@ -21,6 +22,7 @@ const Portfolio = lazy(() => import('./components/Portfolio'));
 const Trust = lazy(() => import('./components/Trust'));
 const Process = lazy(() => import('./components/Process'));
 const Offers = lazy(() => import('./components/Offers'));
+const Comparison = lazy(() => import('./components/Comparison'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const CTA = lazy(() => import('./components/CTA'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -57,6 +59,9 @@ export default function App() {
           </Suspense>
           <Suspense fallback={<OffersSkeleton />}>
             <Offers />
+          </Suspense>
+          <Suspense fallback={<ComparisonSkeleton />}>
+            <Comparison />
           </Suspense>
           <Suspense fallback={<FAQSkeleton />}>
             <FAQ />

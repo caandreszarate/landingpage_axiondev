@@ -73,7 +73,7 @@ export default function CTA() {
 
         <FadeIn delay={0.4}>
           <div className="mt-8 flex flex-col items-center gap-3">
-            <p className="text-neutral-600 text-xs uppercase tracking-widest">or get a faster reply</p>
+            <p className="text-neutral-600 text-xs uppercase tracking-widest">prefer to chat directly?</p>
             <motion.a
               href={whatsappUrl}
               target="_blank"

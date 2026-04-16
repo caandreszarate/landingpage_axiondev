@@ -3,16 +3,17 @@ import './MouseTrail.css';
 
 export default function MouseTrail() {
   const [particles, setParticles] = useState([]);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768 || isTouch);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 768 || isTouch);
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [isTouch]);
 
   useEffect(() => {
     if (isMobile) return;

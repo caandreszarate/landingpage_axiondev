@@ -115,6 +115,10 @@ export function FAQSkeleton() {
   return <SectionSkeleton variant="list" />;
 }
 
+export function ComparisonSkeleton() {
+  return <SectionSkeleton variant="cards" />;
+}
+
 export function FooterSkeleton() {
   return (
     <div className="py-8 px-6 border-t border-neutral-800/50">
