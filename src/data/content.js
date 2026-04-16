@@ -69,7 +69,7 @@ export const PROJECTS = [
       { value: '3x', label: 'Data accuracy' },
     ],
     tags: ['React', 'Node.js', 'MongoDB', 'Express'],
-    link: '#',
+    link: 'https://mvp-airport-management.vercel.app',
   },
   {
     name: 'AI Landing Generator',
@@ -81,7 +81,7 @@ export const PROJECTS = [
       { value: '90%', label: 'Cost reduction' },
     ],
     tags: ['AI', 'React', 'Vite', 'TailwindCSS'],
-    link: '#',
+    link: null,
   },
   {
     name: 'AgroControl Platform',
@@ -93,7 +93,7 @@ export const PROJECTS = [
       { value: '40%', label: 'Cost visibility gain' },
     ],
     tags: ['JavaScript', 'Express', 'MongoDB', 'Chart.js'],
-    link: '#',
+    link: 'https://agrocontrol-nu.vercel.app/#/login',
   },
 ];
 
