@@ -4,6 +4,14 @@ import Hero from './components/Hero';
 import WhatsAppButton from './components/WhatsAppButton';
 import Starfield from './components/Starfield';
 import MouseTrail from './components/MouseTrail';
+import SectionSkeleton, {
+  SocialProofSkeleton,
+  ServicesSkeleton,
+  PortfolioSkeleton,
+  OffersSkeleton,
+  FAQSkeleton,
+  FooterSkeleton,
+} from './components/SectionSkeleton';
 
 const SocialProof = lazy(() => import('./components/SocialProof'));
 const Services = lazy(() => import('./components/Services'));
@@ -25,21 +33,39 @@ export default function App() {
       <div className="relative z-10">
         <Navbar />
         <main>
-        <Hero />
-        <Suspense>
-          <SocialProof />
-          <Services />
-          <MidCTA />
-          <Portfolio />
-          <ValueProposition />
-          <Trust />
-          <Process />
-          <Offers />
-          <FAQ />
-          <CTA />
-        </Suspense>
-      </main>
-        <Suspense>
+          <Hero />
+          <Suspense fallback={<SocialProofSkeleton />}>
+            <SocialProof />
+          </Suspense>
+          <Suspense fallback={<ServicesSkeleton />}>
+            <Services />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton lines={2} />}>
+            <MidCTA />
+          </Suspense>
+          <Suspense fallback={<PortfolioSkeleton />}>
+            <Portfolio />
+          </Suspense>
+          <Suspense fallback={<ServicesSkeleton />}>
+            <ValueProposition />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton lines={4} />}>
+            <Trust />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton variant="list" />}>
+            <Process />
+          </Suspense>
+          <Suspense fallback={<OffersSkeleton />}>
+            <Offers />
+          </Suspense>
+          <Suspense fallback={<FAQSkeleton />}>
+            <FAQ />
+          </Suspense>
+          <Suspense fallback={<SectionSkeleton lines={2} />}>
+            <CTA />
+          </Suspense>
+        </main>
+        <Suspense fallback={<FooterSkeleton />}>
           <Footer />
         </Suspense>
         <WhatsAppButton />
