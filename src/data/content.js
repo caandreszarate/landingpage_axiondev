@@ -278,33 +278,33 @@ export const CAL_LINK = 'https://app.cal.com/carlos-martinez-kv7rn4';
 
 export const WHATSAPP_NUMBER = '573105550703';
 
-const WHATSAPP_MESSAGE_ES = `\u{1F44B} Hola, gracias por escribir a *AxionDev*.
+const WHATSAPP_MESSAGE_ES = `👋 Hola, gracias por escribir a *AxionDev*.
 
-Soy especialista en desarrollo web con IA y ayudo a negocios a crear p\u00E1ginas que realmente generan clientes, no solo se ven bien.
+Soy especialista en desarrollo web con IA y ayudo a negocios a crear páginas que realmente generan clientes, no solo se ven bien.
 
-Para poder ayudarte mejor, cu\u00E9ntame:
+Para poder ayudarte mejor, cuéntame:
 
-1\uFE0F\u20E3 \u00BFQu\u00E9 tipo de proyecto necesitas? (landing, web completa, automatizaci\u00F3n, etc.)
-2\uFE0F\u20E3 \u00BFYa tienes algo creado o empiezas desde cero?
-3\uFE0F\u20E3 \u00BFCu\u00E1l es tu objetivo principal? (ventas, leads, visibilidad)
+1️⃣ ¿Qué tipo de proyecto necesitas? (landing, web completa, automatización, etc.)
+2️⃣ ¿Ya tienes algo creado o empiezas desde cero?
+3️⃣ ¿Cuál es tu objetivo principal? (ventas, leads, visibilidad)
 
-Con eso te doy una propuesta clara y r\u00E1pida \u{1F680}
+Con eso te doy una propuesta clara y rápida 🚀
 
-Si prefieres, tambi\u00E9n puedes agendar una llamada directa y lo vemos contigo paso a paso.`;
+Si prefieres, también puedes agendar una llamada directa y lo vemos contigo paso a paso. 📅`;
 
-const WHATSAPP_MESSAGE_EN = `\u{1F44B} Hi! Thanks for reaching out to *AxionDev*.
+const WHATSAPP_MESSAGE_EN = `👋 Hi! Thanks for reaching out to *AxionDev*.
 
 I specialize in AI-powered web development and help businesses build websites that actually generate clients — not just look good.
 
 To give you a clear proposal quickly, tell me:
 
-1\uFE0F\u20E3 What type of project do you need? (landing page, full website, automation, etc.)
-2\uFE0F\u20E3 Do you already have something built, or are you starting from scratch?
-3\uFE0F\u20E3 What's your main goal? (sales, leads, visibility)
+1️⃣ What type of project do you need? (landing page, full website, automation, etc.)
+2️⃣ Do you already have something built, or are you starting from scratch?
+3️⃣ What's your main goal? (sales, leads, visibility)
 
-With that I'll send you a fast, clear proposal \u{1F680}
+With that I'll send you a fast, clear proposal 🚀
 
-You can also book a direct call and we'll walk through it together step by step.`;
+You can also book a direct call and we'll walk through it together step by step. 📅`;
 
 export function getWhatsAppMessage() {
   if (typeof navigator !== 'undefined' && navigator.language?.startsWith('es')) {
