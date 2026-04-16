@@ -92,7 +92,7 @@ export const PROJECTS = [
       { value: '90%', label: 'Cost reduction' },
     ],
     tags: ['AI', 'React', 'Vite', 'TailwindCSS'],
-    link: null,
+    link: 'https://taskmind-landing.vercel.app',
   },
   {
     name: 'AgroControl Platform',
