@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useCallback } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 
 // ─── Scroll progress bar for navbar ───
@@ -42,8 +42,6 @@ export function Parallax({ children, className = '', speed = 0.3, scale = false 
 // ─── Magnetic hover effect for cards ───
 export function MagneticCard({ children, className = '', intensity = 0.04 }) {
   const ref = useRef(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
   const glowX = useMotionValue(50);

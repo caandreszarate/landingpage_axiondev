@@ -57,11 +57,11 @@ export default function App() {
           <Suspense fallback={<SectionSkeleton variant="list" />}>
             <Process />
           </Suspense>
-          <Suspense fallback={<OffersSkeleton />}>
-            <Offers />
-          </Suspense>
           <Suspense fallback={<ComparisonSkeleton />}>
             <Comparison />
+          </Suspense>
+          <Suspense fallback={<OffersSkeleton />}>
+            <Offers />
           </Suspense>
           <Suspense fallback={<FAQSkeleton />}>
             <FAQ />

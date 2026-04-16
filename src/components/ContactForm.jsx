@@ -104,6 +104,7 @@ export default function ContactForm() {
               name="name"
               type="text"
               required
+              autoComplete="name"
               placeholder="Your name"
               className="w-full bg-neutral-900/60 border border-neutral-800 hover:border-neutral-700 focus:border-accent focus:ring-1 focus:ring-accent/50 text-neutral-200 text-sm rounded-lg px-4 py-3 outline-none transition-all duration-200 placeholder:text-neutral-600"
             />
@@ -115,6 +116,7 @@ export default function ContactForm() {
               name="email"
               type="email"
               required
+              autoComplete="email"
               placeholder="your@email.com"
               className="w-full bg-neutral-900/60 border border-neutral-800 hover:border-neutral-700 focus:border-accent focus:ring-1 focus:ring-accent/50 text-neutral-200 text-sm rounded-lg px-4 py-3 outline-none transition-all duration-200 placeholder:text-neutral-600"
             />

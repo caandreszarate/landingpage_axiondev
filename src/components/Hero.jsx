@@ -85,11 +85,7 @@ export default function Hero() {
             whileTap={{ scale: 0.98 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >
-            <motion.span
-              className="w-2 h-2 rounded-full bg-accent"
-              animate={{ scale: [1, 1.2, 1], opacity: [1, 0.8, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             {URGENCY_LABEL}
           </motion.span>
         </motion.div>

@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import FadeIn from './FadeIn';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import Section, { SectionHeader } from './Section';

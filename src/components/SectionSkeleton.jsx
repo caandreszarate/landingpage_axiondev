@@ -116,7 +116,29 @@ export function FAQSkeleton() {
 }
 
 export function ComparisonSkeleton() {
-  return <SectionSkeleton variant="cards" />;
+  return (
+    <div className="py-16 md:py-24 px-6">
+      <div className="max-w-6xl mx-auto">
+        <motion.div variants={{ initial: { backgroundPosition: '200% center' }, animate: { backgroundPosition: '-200% center' } }} initial="initial" animate="animate" transition={{ duration: 2, repeat: Infinity }} className="h-3 w-24 rounded-full bg-gradient-to-r from-neutral-800 via-neutral-700 to-neutral-800 bg-[length:200%_100%] mb-4" />
+        <motion.div variants={{ initial: { backgroundPosition: '200% center' }, animate: { backgroundPosition: '-200% center' } }} initial="initial" animate="animate" transition={{ duration: 2, repeat: Infinity, delay: 0.1 }} className="h-10 w-64 rounded-lg bg-gradient-to-r from-neutral-800 via-neutral-700 to-neutral-800 bg-[length:200%_100%] mb-10" />
+        <div className="rounded-2xl border border-neutral-800/50 overflow-hidden">
+          <div className="grid grid-cols-4 gap-px bg-neutral-800/30 p-4 border-b border-neutral-800/50">
+            {[35, 21, 22, 22].map((w, i) => (
+              <motion.div key={i} variants={{ initial: { backgroundPosition: '200% center' }, animate: { backgroundPosition: '-200% center' } }} initial="initial" animate="animate" transition={{ duration: 2, repeat: Infinity, delay: 0.05 * i }} className={`h-4 rounded bg-gradient-to-r from-neutral-800 via-neutral-700 to-neutral-800 bg-[length:200%_100%]`} style={{ width: `${w * 0.6}%` }} />
+            ))}
+          </div>
+          {Array.from({ length: 7 }).map((_, i) => (
+            <div key={i} className="grid grid-cols-4 gap-4 px-4 py-3 border-b border-neutral-800/20 last:border-0">
+              <motion.div variants={{ initial: { backgroundPosition: '200% center' }, animate: { backgroundPosition: '-200% center' } }} initial="initial" animate="animate" transition={{ duration: 2, repeat: Infinity, delay: 0.08 * i }} className="h-3 rounded bg-gradient-to-r from-neutral-800 via-neutral-700 to-neutral-800 bg-[length:200%_100%] w-3/4" />
+              {[0, 1, 2].map((j) => (
+                <motion.div key={j} variants={{ initial: { backgroundPosition: '200% center' }, animate: { backgroundPosition: '-200% center' } }} initial="initial" animate="animate" transition={{ duration: 2, repeat: Infinity, delay: 0.08 * i + 0.04 * j }} className="h-3 w-6 rounded bg-gradient-to-r from-neutral-800 via-neutral-700 to-neutral-800 bg-[length:200%_100%] mx-auto" />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export function FooterSkeleton() {
