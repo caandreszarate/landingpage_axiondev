@@ -1,11 +1,15 @@
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 import CTAButton from './CTAButton';
-import { WHATSAPP_NUMBER, WHATSAPP_MESSAGE } from '../data/content';
-
-const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+import { WHATSAPP_NUMBER, getWhatsAppMessage } from '../data/content';
 
 export default function MidCTA() {
+  const whatsappUrl = useMemo(
+    () => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getWhatsAppMessage())}`,
+    []
+  );
+
   return (
     <section className="relative py-20 px-6 border-t border-b border-neutral-800/50 overflow-hidden">
       <motion.div
