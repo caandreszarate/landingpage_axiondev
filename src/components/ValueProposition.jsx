@@ -33,7 +33,7 @@ export default function ValueProposition() {
     <Section border>
       <div className="mb-16 max-w-3xl">
         <FadeIn direction="left">
-          <p className="text-sm text-accent uppercase tracking-widest mb-4">Why AxionDev</p>
+          <p className="text-sm text-accent uppercase tracking-widest mb-4">The difference</p>
           <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-6 leading-tight">
             Faster than agencies.
             <br />

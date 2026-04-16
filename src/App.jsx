@@ -12,6 +12,7 @@ import SectionSkeleton, {
   FAQSkeleton,
   FooterSkeleton,
   ComparisonSkeleton,
+  ValuePropositionSkeleton,
 } from './components/SectionSkeleton';
 
 const SocialProof = lazy(() => import('./components/SocialProof'));
@@ -48,7 +49,7 @@ export default function App() {
           <Suspense fallback={<PortfolioSkeleton />}>
             <Portfolio />
           </Suspense>
-          <Suspense fallback={<ServicesSkeleton />}>
+          <Suspense fallback={<ValuePropositionSkeleton />}>
             <ValueProposition />
           </Suspense>
           <Suspense fallback={<SectionSkeleton lines={4} />}>

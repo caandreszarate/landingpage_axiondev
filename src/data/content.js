@@ -4,6 +4,7 @@ export const NAV_LINKS = [
   { label: 'Process', href: '#process' },
   { label: 'Pricing', href: '#offers' },
   { label: 'Reviews', href: '#trust', lgOnly: true },
+  { label: 'FAQ', href: '#faq', lgOnly: true },
 ];
 
 export const STATS = [

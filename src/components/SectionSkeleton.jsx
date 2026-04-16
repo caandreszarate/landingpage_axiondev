@@ -111,6 +111,24 @@ export function OffersSkeleton() {
   return <SectionSkeleton variant="cards" />;
 }
 
+export function ValuePropositionSkeleton() {
+  return (
+    <div className="py-16 md:py-24 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-16">
+          <motion.div variants={shimmer} initial="initial" animate="animate" transition={{ duration: 2, repeat: Infinity }} className="h-3 w-24 rounded-full bg-gradient-to-r from-neutral-800 via-neutral-700 to-neutral-800 bg-[length:200%_100%] mb-4" />
+          <motion.div variants={shimmer} initial="initial" animate="animate" transition={{ duration: 2, repeat: Infinity, delay: 0.1 }} className="h-10 w-64 rounded-lg bg-gradient-to-r from-neutral-800 via-neutral-700 to-neutral-800 bg-[length:200%_100%]" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <motion.div key={i} variants={shimmer} initial="initial" animate="animate" transition={{ duration: 2, repeat: Infinity, delay: 0.1 * i }} className="rounded-2xl bg-gradient-to-r from-neutral-800 via-neutral-700 to-neutral-800 bg-[length:200%_100%] h-40" />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function FAQSkeleton() {
   return <SectionSkeleton variant="list" />;
 }

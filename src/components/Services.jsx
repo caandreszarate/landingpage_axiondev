@@ -10,8 +10,6 @@ function TiltCard({ children, className = '' }) {
   const ref = useRef(null);
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
-  const glowX = useMotionValue(50);
-  const glowY = useMotionValue(50);
 
   const springConfig = { stiffness: 300, damping: 30, restDelta: 0.001 };
   const smoothRx = useSpring(rotateX, springConfig);
@@ -25,9 +23,7 @@ function TiltCard({ children, className = '' }) {
     const py = (e.clientY - rect.top) / rect.height - 0.5;
     rotateX.set(py * -8);
     rotateY.set(px * 8);
-    glowX.set(((e.clientX - rect.left) / rect.width) * 100);
-    glowY.set(((e.clientY - rect.top) / rect.height) * 100);
-  }, [rotateX, rotateY, glowX, glowY]);
+  }, [rotateX, rotateY]);
 
   const handleLeave = useCallback(() => {
     rotateX.set(0);

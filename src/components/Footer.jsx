@@ -36,7 +36,7 @@ export default function Footer() {
               </span>
               <span className="hidden sm:block text-neutral-700">|</span>
               <nav className="flex items-center gap-5">
-                {NAV_LINKS.map((link) => (
+                {NAV_LINKS.filter((link) => !link.lgOnly).map((link) => (
                   <a
                     key={link.href}
                     href={link.href}

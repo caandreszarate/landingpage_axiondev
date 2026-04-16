@@ -93,7 +93,7 @@ export default function FAQ() {
               Still have doubts? Let's clear them in a 5-minute call.
             </p>
             <CTAButton
-              label="Book a free call &rarr;"
+              label="Book a free call →"
               microcopy="No commitment. No pitch. Just answers."
             />
           </div>

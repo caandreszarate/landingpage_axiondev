@@ -88,7 +88,7 @@ export default function Navbar() {
             className="md:hidden bg-neutral-950/95 backdrop-blur-lg border-b border-neutral-800/50 overflow-hidden"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
-              {NAV_LINKS.map((link, i) => (
+              {NAV_LINKS.filter((link) => !link.lgOnly).map((link, i) => (
                 <motion.a
                   key={link.href}
                   href={link.href}
