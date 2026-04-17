@@ -18,6 +18,12 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.9, ease } },
 };
 
+// LCP-safe variant: starts visible so browser registers paint immediately
+const fadeUpLCP = {
+  hidden: { opacity: 1, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
+};
+
 const scaleFade = {
   hidden: { opacity: 0, scale: 0.92, filter: 'blur(4px)' },
   visible: { opacity: 1, scale: 1, filter: 'blur(0px)', transition: { duration: 0.8, ease } },
@@ -91,7 +97,7 @@ export default function Hero() {
 
         <motion.div style={{ y: smoothHeadlineY }}>
           <motion.h1
-            variants={fadeUp}
+            variants={fadeUpLCP}
             className="text-center text-[2rem] sm:text-6xl md:text-[5.5rem] font-bold tracking-tight text-neutral-100 leading-[1.05] mb-8"
           >
             I build websites that
