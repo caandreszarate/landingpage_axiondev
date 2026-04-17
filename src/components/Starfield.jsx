@@ -5,7 +5,8 @@ export default function Starfield() {
   const [stars, setStars] = useState([]);
 
   useEffect(() => {
-    const generatedStars = Array.from({ length: 90 }, (_, i) => ({
+    const count = window.innerWidth < 768 ? 30 : 90;
+    const generatedStars = Array.from({ length: count }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,

@@ -32,14 +32,18 @@ export default function MouseTrail() {
       rafRef.current = requestAnimationFrame(render);
     };
 
+    let lastMove = 0;
     const handleMouseMove = (e) => {
+      const now = Date.now();
+      if (now - lastMove < 16) return;
+      lastMove = now;
       const el = document.createElement('div');
       el.className = 'trail-particle';
       el.style.left = `${e.clientX}px`;
       el.style.top = `${e.clientY}px`;
       el.style.transform = 'translate(-50%, -50%) scale(1)';
       container.appendChild(el);
-      particlesRef.current.push({ id: idRef.current++, el, createdAt: Date.now() });
+      particlesRef.current.push({ id: idRef.current++, el, createdAt: now });
     };
 
     rafRef.current = requestAnimationFrame(render);
