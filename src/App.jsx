@@ -66,12 +66,12 @@ function LandingPage() {
     setMeta('meta[name="description"]', t.description);
     setMeta('meta[property="og:title"]', t.ogTitle);
     setMeta('meta[property="og:description"]', t.ogDescription);
-    setMeta('meta[property="og:url"]', `https://axiondev.dev/${language}`);
+    setMeta('meta[property="og:url"]', `https://www.axiondev.dev/${language}`);
     setMeta('meta[name="twitter:title"]', t.twitterTitle);
     setMeta('meta[name="twitter:description"]', t.twitterDescription);
 
     const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute('href', `https://axiondev.dev/${language}`);
+    if (canonical) canonical.setAttribute('href', `https://www.axiondev.dev/${language}`);
   }, [language]);
 
   // Lazy sections can shift layout after the browser's native hash scroll runs.

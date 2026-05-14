@@ -119,7 +119,7 @@ export default function Navbar() {
         <button
           onClick={() => setMenuOpen((prev) => !prev)}
           className="md:hidden text-neutral-300 p-2"
-          aria-label="Toggle menu"
+          aria-label={t.menuAriaLabel}
           aria-expanded={menuOpen}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

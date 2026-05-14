@@ -87,6 +87,7 @@ export const CONTENT = {
         { label: 'FAQ', href: '#faq', lgOnly: true },
       ],
       cta: 'Get started →',
+      menuAriaLabel: 'Toggle menu',
     },
     hero: {
       urgencyLabel: 'Only 2 spots left this month',
@@ -544,6 +545,7 @@ export const CONTENT = {
         { label: 'FAQ', href: '#faq', lgOnly: true },
       ],
       cta: 'Comenzar →',
+      menuAriaLabel: 'Abrir/cerrar menú',
     },
     hero: {
       urgencyLabel: 'Solo 2 cupos disponibles este mes',

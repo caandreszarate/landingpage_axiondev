@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://axiondev.dev/sitemap.xml
+Sitemap: https://www.axiondev.dev/sitemap.xml
