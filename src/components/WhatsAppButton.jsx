@@ -53,7 +53,7 @@ export default function WhatsAppButton() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
+          aria-label={t.ariaLabel}
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20, delay: 0.5 }}

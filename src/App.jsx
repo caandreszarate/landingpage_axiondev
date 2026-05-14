@@ -18,6 +18,9 @@ import SectionSkeleton, {
   ValuePropositionSkeleton,
 } from './components/SectionSkeleton';
 
+const HASH_SCROLL_RETRIES = 30;
+const HASH_SCROLL_DELAY = 100;
+
 const SocialProof = lazy(() => import('./components/SocialProof'));
 const Services = lazy(() => import('./components/Services'));
 const MidCTA = lazy(() => import('./components/MidCTA'));
@@ -70,13 +73,34 @@ function LandingPage() {
     if (canonical) canonical.setAttribute('href', `https://axiondev.dev/${language}`);
   }, [language]);
 
-  // Scroll-to-hash after language switch navigation
+  // Lazy sections mount after the browser's native hash scroll has already run.
   useEffect(() => {
-    if (location.hash) {
-      const el = document.querySelector(location.hash);
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (!location.hash) return undefined;
+
+    const targetId = decodeURIComponent(location.hash.slice(1));
+    let attempts = 0;
+    let timeoutId;
+
+    const scrollToHash = () => {
+      const el = document.getElementById(targetId);
+
+      if (el) {
+        el.scrollIntoView({ behavior: 'auto', block: 'start' });
+        return;
+      }
+
+      attempts += 1;
+      if (attempts < HASH_SCROLL_RETRIES) {
+        timeoutId = window.setTimeout(scrollToHash, HASH_SCROLL_DELAY);
+      }
+    };
+
+    timeoutId = window.setTimeout(scrollToHash, 0);
+
+    return () => {
+      if (timeoutId) window.clearTimeout(timeoutId);
     }
-  }, [location.hash]);
+  }, [location.hash, language]);
 
   return (
     <div className="min-h-screen relative">

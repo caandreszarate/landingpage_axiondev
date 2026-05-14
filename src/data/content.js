@@ -518,6 +518,7 @@ export const CONTENT = {
       bookCta: 'Book a free call →',
     },
     whatsapp: {
+      ariaLabel: 'Chat on WhatsApp',
       tooltipTitle: 'Reply in under 5 min',
       tooltipDescription: "Tell me about your project — I'll send you a free quote.",
     },
@@ -974,6 +975,7 @@ export const CONTENT = {
       bookCta: 'Agendar llamada gratis →',
     },
     whatsapp: {
+      ariaLabel: 'Escríbeme por WhatsApp',
       tooltipTitle: 'Respondo en menos de 5 min',
       tooltipDescription: 'Cuéntame sobre tu proyecto — te envío una propuesta gratis.',
     },
