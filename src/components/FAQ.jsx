@@ -4,7 +4,8 @@ import FadeIn from './FadeIn';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import Section from './Section';
 import CTAButton from './CTAButton';
-import { FAQ as FAQ_DATA } from '../data/content';
+import { CONTENT } from '../data/content';
+import { useLanguage } from '../hooks/useLanguage';
 
 function FAQItem({ item, index }) {
   const [open, setOpen] = useState(false);
@@ -26,9 +27,7 @@ function FAQItem({ item, index }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between gap-4 p-6 text-left cursor-pointer"
       >
-        <span className="text-base font-semibold text-neutral-100 leading-snug">
-          {item.question}
-        </span>
+        <span className="text-base font-semibold text-neutral-100 leading-snug">{item.question}</span>
         <motion.div
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
@@ -53,9 +52,7 @@ function FAQItem({ item, index }) {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="px-6 pb-6">
-              <p className="text-neutral-400 text-[0.938rem] leading-relaxed">
-                {item.answer}
-              </p>
+              <p className="text-neutral-400 text-[0.938rem] leading-relaxed">{item.answer}</p>
             </div>
           </motion.div>
         )}
@@ -65,31 +62,34 @@ function FAQItem({ item, index }) {
 }
 
 export default function FAQ() {
+  const lang = useLanguage();
+  const t = CONTENT[lang].faq;
+
   return (
     <Section id="faq" border>
       <div className="max-w-3xl mx-auto">
         <FadeIn>
           <div className="text-center mb-14">
-            <p className="text-sm text-accent uppercase tracking-widest mb-4">FAQ</p>
+            <p className="text-sm text-accent uppercase tracking-widest mb-4">{t.label}</p>
             <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-6 leading-tight">
-              Questions you're probably
+              {t.title1}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
-                already thinking.
+                {t.title2}
               </span>
             </h2>
             <p className="text-neutral-400 text-lg">
-              If your question isn't here,{' '}
+              {t.description}{' '}
               <a href="#contact" className="text-accent hover:text-accent-light transition-colors underline underline-offset-2">
-                just ask
+                {t.descriptionLink}
               </a>
-              . I reply within 24 hours.
+              {t.descriptionSuffix}
             </p>
           </div>
         </FadeIn>
 
         <StaggerContainer className="flex flex-col gap-4">
-          {FAQ_DATA.map((item, i) => (
+          {t.items.map((item, i) => (
             <StaggerItem key={item.question}>
               <FAQItem item={item} index={i} />
             </StaggerItem>
@@ -98,13 +98,8 @@ export default function FAQ() {
 
         <FadeIn delay={0.2}>
           <div className="mt-14 text-center">
-            <p className="text-neutral-500 text-sm mb-6">
-              Still have doubts? Let's clear them in a 5-minute call.
-            </p>
-            <CTAButton
-              label="Book a free call →"
-              microcopy="No commitment. No pitch. Just answers."
-            />
+            <p className="text-neutral-500 text-sm mb-6">{t.bottomText}</p>
+            <CTAButton label={t.cta} microcopy={t.ctaMicro} />
           </div>
         </FadeIn>
       </div>

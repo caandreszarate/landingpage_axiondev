@@ -3,7 +3,8 @@ import FadeIn from './FadeIn';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import Section from './Section';
 import CTAButton from './CTAButton';
-import { HIGHLIGHTS } from '../data/content';
+import { CONTENT } from '../data/content';
+import { useLanguage } from '../hooks/useLanguage';
 
 const ICONS = {
   speed: (
@@ -30,30 +31,33 @@ const ICONS = {
 };
 
 export default function ValueProposition() {
+  const lang = useLanguage();
+  const t = CONTENT[lang].valueProposition;
+
   return (
     <Section border>
       <div className="mb-16 max-w-3xl">
         <FadeIn direction="left">
-          <p className="text-sm text-accent uppercase tracking-widest mb-4">The difference</p>
+          <p className="text-sm text-accent uppercase tracking-widest mb-4">{t.label}</p>
           <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-6 leading-tight">
-            Faster than agencies.
+            {t.title1}
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
-              Smarter than freelancers.
+              {t.title2}
             </span>
           </h2>
           <p className="text-neutral-400 text-lg leading-relaxed">
-            Traditional agencies take months and charge a fortune. Most freelancers
-            can't deliver strategy. I use <span className="text-neutral-200 font-medium">AI-powered
-            development</span> to give you both — premium quality at startup speed,
-            with every decision focused on one thing: <span className="text-neutral-200 font-medium">growing
-            your business</span>.
+            {t.description}
+            <span className="text-neutral-200 font-medium">{t.descriptionHighlight}</span>
+            {t.descriptionMiddle}
+            <span className="text-neutral-200 font-medium">{t.descriptionHighlight2}</span>
+            {t.descriptionSuffix}
           </p>
         </FadeIn>
       </div>
 
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {HIGHLIGHTS.map((item) => (
+        {t.highlights.map((item) => (
           <StaggerItem key={item.title}>
             <motion.div
               whileHover={{ y: -4, borderColor: 'rgba(99,102,241,0.3)' }}
@@ -61,7 +65,6 @@ export default function ValueProposition() {
               className="group relative h-full p-6 rounded-2xl border border-neutral-800/50 bg-neutral-900/30 hover:bg-neutral-900/60 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(99,102,241,0.06)] overflow-hidden"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
               <div className="relative flex items-start gap-4">
                 <motion.div
                   initial={{ scale: 0.5, opacity: 0 }}
@@ -74,12 +77,8 @@ export default function ValueProposition() {
                   {ICONS[item.icon]}
                 </motion.div>
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-100 mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-neutral-400 leading-relaxed text-[0.938rem]">
-                    {item.description}
-                  </p>
+                  <h3 className="text-lg font-semibold text-neutral-100 mb-2">{item.title}</h3>
+                  <p className="text-neutral-400 leading-relaxed text-[0.938rem]">{item.description}</p>
                 </div>
               </div>
             </motion.div>
@@ -89,10 +88,7 @@ export default function ValueProposition() {
 
       <FadeIn delay={0.2}>
         <div className="mt-16 text-center">
-          <CTAButton
-            label="Let's build yours →"
-            microcopy="Free strategy call — live in days, not months"
-          />
+          <CTAButton label={t.cta} microcopy={t.ctaMicro} />
         </div>
       </FadeIn>
     </Section>

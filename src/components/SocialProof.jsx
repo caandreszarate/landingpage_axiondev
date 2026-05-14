@@ -2,19 +2,23 @@ import { motion } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import FadeIn from './FadeIn';
 import Section from './Section';
-import { STATS, TECH_STACK } from '../data/content';
+import { CONTENT, TECH_STACK } from '../data/content';
+import { useLanguage } from '../hooks/useLanguage';
 
 export default function SocialProof() {
+  const lang = useLanguage();
+  const t = CONTENT[lang].socialProof;
+
   return (
     <Section border>
       <FadeIn>
         <p className="text-center text-sm text-neutral-500 uppercase tracking-widest mb-12">
-          Results across 4 countries · Colombia, USA, Chile & Equatorial Guinea
+          {t.tagline}
         </p>
       </FadeIn>
 
       <StaggerContainer className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
-        {STATS.map((stat, i) => (
+        {t.stats.map((stat, i) => (
           <StaggerItem key={stat.label}>
             <motion.div
               className="text-center relative group cursor-default"
@@ -31,7 +35,7 @@ export default function SocialProof() {
                 {stat.value}
               </motion.p>
               <p className="text-neutral-500 text-sm">{stat.label}</p>
-              {i < STATS.length - 1 && (
+              {i < t.stats.length - 1 && (
                 <motion.div
                   initial={{ scaleY: 0 }}
                   whileInView={{ scaleY: 1 }}
@@ -47,7 +51,7 @@ export default function SocialProof() {
 
       <FadeIn>
         <p className="text-center text-xs text-neutral-600 uppercase tracking-widest mb-6">
-          Built with
+          {t.techLabel}
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           {TECH_STACK.map((tech, i) => (

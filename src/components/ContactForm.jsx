@@ -1,24 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FORMSPREE_ID, CAL_LINK } from '../data/content';
+import { FORMSPREE_ID, CAL_LINK, CONTENT, CONTACT_EMAIL } from '../data/content';
+import { useLanguage } from '../hooks/useLanguage';
 
 const ease = [0.22, 1, 0.36, 1];
 
-const PROJECT_TYPES = [
-  { value: 'landing-page', label: 'Landing Page' },
-  { value: 'full-website', label: 'Full Website' },
-  { value: 'automation', label: 'Automation' },
-  { value: 'not-sure', label: 'Not sure yet' },
-];
-
-const BUDGETS = [
-  { value: 'under-500', label: 'Under $500' },
-  { value: '500-1000', label: '$500–$1,000' },
-  { value: '1000-3000', label: '$1,000–$3,000' },
-  { value: '3000+', label: '$3,000+' },
-];
-
 export default function ContactForm() {
+  const lang = useLanguage();
+  const t = CONTENT[lang].contactForm;
+
   const [status, setStatus] = useState('idle');
   const [projectType, setProjectType] = useState('');
   const [budget, setBudget] = useState('');
@@ -53,9 +43,9 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-12">
       <div className="flex flex-col gap-4">
         <div>
-          <p className="text-xs text-neutral-500 mb-2 text-left">What do you need?</p>
-          <div className="flex flex-wrap gap-2" role="group" aria-label="Project type">
-            {PROJECT_TYPES.map((pt) => (
+          <p className="text-xs text-neutral-500 mb-2 text-left">{t.projectTypeLabel}</p>
+          <div className="flex flex-wrap gap-2" role="group" aria-label={t.projectTypeLabel}>
+            {t.projectTypes.map((pt) => (
               <button
                 key={pt.value}
                 type="button"
@@ -75,9 +65,11 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <p className="text-xs text-neutral-500 mb-2 text-left">Estimated budget <span className="text-neutral-600">(optional)</span></p>
-          <div className="flex flex-wrap gap-2" role="group" aria-label="Estimated budget">
-            {BUDGETS.map((b) => (
+          <p className="text-xs text-neutral-500 mb-2 text-left">
+            {t.budgetLabel} <span className="text-neutral-600">{t.budgetOptional}</span>
+          </p>
+          <div className="flex flex-wrap gap-2" role="group" aria-label={t.budgetLabel}>
+            {t.budgets.map((b) => (
               <button
                 key={b.value}
                 type="button"
@@ -98,14 +90,14 @@ export default function ContactForm() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="name" className="sr-only">Name</label>
+            <label htmlFor="name" className="sr-only">{t.namePlaceholder}</label>
             <input
               id="name"
               name="name"
               type="text"
               required
               autoComplete="name"
-              placeholder="Your name"
+              placeholder={t.namePlaceholder}
               className="w-full bg-neutral-900/60 border border-neutral-800 hover:border-neutral-700 focus:border-accent focus:ring-1 focus:ring-accent/50 text-neutral-200 text-sm rounded-lg px-4 py-3 outline-none transition-all duration-200 placeholder:text-neutral-600"
             />
           </div>
@@ -117,20 +109,20 @@ export default function ContactForm() {
               type="email"
               required
               autoComplete="email"
-              placeholder="your@email.com"
+              placeholder={t.emailPlaceholder}
               className="w-full bg-neutral-900/60 border border-neutral-800 hover:border-neutral-700 focus:border-accent focus:ring-1 focus:ring-accent/50 text-neutral-200 text-sm rounded-lg px-4 py-3 outline-none transition-all duration-200 placeholder:text-neutral-600"
             />
           </div>
         </div>
 
         <div>
-          <label htmlFor="message" className="sr-only">Message</label>
+          <label htmlFor="message" className="sr-only">{t.messagePlaceholder}</label>
           <textarea
             id="message"
             name="message"
             required
             rows={3}
-            placeholder="Tell me about your project..."
+            placeholder={t.messagePlaceholder}
             className="w-full bg-neutral-900/60 border border-neutral-800 hover:border-neutral-700 focus:border-accent focus:ring-1 focus:ring-accent/50 text-neutral-200 text-sm rounded-lg px-4 py-3 outline-none transition-all duration-200 placeholder:text-neutral-600 resize-none"
           />
         </div>
@@ -144,7 +136,7 @@ export default function ContactForm() {
           className="group relative w-full bg-accent text-white font-semibold py-3.5 rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-[0_0_30px_rgba(99,102,241,0.3)] disabled:opacity-60 disabled:cursor-not-allowed"
         >
           <span className="relative z-10">
-            {status === 'sending' ? 'Sending...' : 'Send my request →'}
+            {status === 'sending' ? t.submitSending : t.submitIdle}
           </span>
           <span className="absolute inset-0 bg-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
@@ -170,15 +162,15 @@ export default function ContactForm() {
                 <path d="M20 6L9 17l-5-5" />
               </svg>
             </motion.div>
-            <p className="text-lg font-semibold text-emerald-400 mb-1">Message sent!</p>
-            <p className="text-sm text-neutral-400 mb-4">I'll get back to you within 24 hours.</p>
+            <p className="text-lg font-semibold text-emerald-400 mb-1">{t.successTitle}</p>
+            <p className="text-sm text-neutral-400 mb-4">{t.successMessage}</p>
             <a
               href={CAL_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-accent hover:text-accent-light transition-colors underline underline-offset-2"
             >
-              Want a faster reply? Book a direct call →
+              {t.successCallLink}
             </a>
           </motion.div>
         )}
@@ -190,15 +182,15 @@ export default function ContactForm() {
             transition={{ duration: 0.4, ease }}
             className="mt-4 text-center text-sm text-red-400"
           >
-            Something went wrong. Try emailing me directly.
+            {t.errorMessage}
           </motion.p>
         )}
       </AnimatePresence>
 
       <p className="mt-4 text-center text-xs text-neutral-600">
-        Or reach out directly via{' '}
-        <a href="mailto:carlos@axiondev.dev" className="text-neutral-500 hover:text-accent transition-colors underline underline-offset-2">
-          email
+        {t.emailLabel}{' '}
+        <a href={CONTACT_EMAIL} className="text-neutral-500 hover:text-accent transition-colors underline underline-offset-2">
+          {t.emailLinkLabel}
         </a>
       </p>
     </form>

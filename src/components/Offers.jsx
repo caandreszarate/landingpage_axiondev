@@ -3,7 +3,8 @@ import FadeIn from './FadeIn';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import Section from './Section';
 import CTAButton from './CTAButton';
-import { PACKAGES } from '../data/content';
+import { CONTENT } from '../data/content';
+import { useLanguage } from '../hooks/useLanguage';
 
 const cardHover = {
   y: -8,
@@ -24,25 +25,29 @@ const CLOCK = (
 );
 
 export default function Offers() {
+  const lang = useLanguage();
+  const t = CONTENT[lang].offers;
+
   return (
     <Section id="offers" border>
       <div className="mb-16 max-w-3xl">
         <FadeIn>
-          <p className="text-sm text-accent uppercase tracking-widest mb-4">Packages</p>
+          <p className="text-sm text-accent uppercase tracking-widest mb-4">{t.label}</p>
           <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-6 leading-tight">
-            Pick your speed.
+            {t.title1}
             <br />
-            <span className="text-accent">Every plan prints money.</span>
+            <span className="text-accent">{t.title2}</span>
           </h2>
           <p className="text-neutral-400 text-lg leading-relaxed">
-            No hourly billing. No scope creep. You get a{' '}
-            <span className="text-neutral-200 font-medium">fixed price, a hard deadline, and deliverables that pay for themselves</span>.
+            {t.description}
+            <span className="text-neutral-200 font-medium">{t.descriptionHighlight}</span>
+            {t.descriptionSuffix}
           </p>
         </FadeIn>
       </div>
 
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-center">
-        {PACKAGES.map((pkg) => (
+        {t.packages.map((pkg) => (
           <StaggerItem key={pkg.name}>
             <motion.div
               whileHover={cardHover}
@@ -65,19 +70,9 @@ export default function Offers() {
                   {CLOCK}
                   <span>{pkg.timeline}</span>
                 </div>
-
-                <h3 className="text-2xl font-bold text-neutral-100 mb-1">
-                  {pkg.name}
-                </h3>
-
-                <p className="text-accent font-semibold text-sm mb-4">
-                  {pkg.tagline}
-                </p>
-
-                <p className="text-neutral-400 text-[0.938rem] leading-relaxed mb-6">
-                  {pkg.description}
-                </p>
-
+                <h3 className="text-2xl font-bold text-neutral-100 mb-1">{pkg.name}</h3>
+                <p className="text-accent font-semibold text-sm mb-4">{pkg.tagline}</p>
+                <p className="text-neutral-400 text-[0.938rem] leading-relaxed mb-6">{pkg.description}</p>
                 <div className="space-y-3 mb-6">
                   {pkg.deliverables.map((item) => (
                     <div key={item} className="flex items-start gap-2.5 text-sm text-neutral-300">
@@ -86,23 +81,14 @@ export default function Offers() {
                     </div>
                   ))}
                 </div>
-
                 <div className="pt-4 border-t border-neutral-800/40">
-                  <p className="text-2xl font-bold text-neutral-100">
-                    {pkg.price}
-                  </p>
-                  <p className="text-xs text-neutral-500 mt-1">
-                    One-time investment. No recurring fees.
-                  </p>
+                  <p className="text-2xl font-bold text-neutral-100">{pkg.price}</p>
+                  <p className="text-xs text-neutral-500 mt-1">{t.oneTime}</p>
                 </div>
               </div>
 
               <div className="px-8 pb-8">
-                <CTAButton
-                  label={pkg.cta}
-                  microcopy={pkg.ctaMicro}
-                  className="w-full"
-                />
+                <CTAButton label={pkg.cta} microcopy={pkg.ctaMicro} className="w-full" />
               </div>
             </motion.div>
           </StaggerItem>
@@ -112,11 +98,11 @@ export default function Offers() {
       <FadeIn delay={0.3}>
         <div className="mt-12 text-center">
           <p className="text-neutral-500 text-sm">
-            Not sure which package fits?{' '}
+            {t.bottomText}{' '}
             <a href="#contact" className="text-accent hover:text-accent-light transition-colors underline underline-offset-2">
-              Let's talk
+              {t.bottomLink}
             </a>
-            {' '}— I'll recommend the right one in under 5 minutes.
+            {t.bottomSuffix}
           </p>
         </div>
       </FadeIn>

@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 import { Icon } from './icons';
-import { SOCIAL_LINKS, CAL_LINK, NAV_LINKS } from '../data/content';
+import { SOCIAL_LINKS, CAL_LINK, CONTENT } from '../data/content';
+import { useLanguage } from '../hooks/useLanguage';
 
 export default function Footer() {
+  const lang = useLanguage();
+  const t = CONTENT[lang].footer;
+  const navLinks = CONTENT[lang].nav.links;
+
   return (
     <footer className="border-t border-neutral-800/50 pt-16 pb-10 px-6">
       <div className="max-w-6xl mx-auto">
@@ -11,8 +16,8 @@ export default function Footer() {
         <FadeIn>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 pb-12 border-b border-neutral-800/50">
             <div>
-              <p className="text-lg font-semibold text-neutral-100 mb-1">Ready to get started?</p>
-              <p className="text-sm text-neutral-500">Book a free 30-min strategy call — no commitment.</p>
+              <p className="text-lg font-semibold text-neutral-100 mb-1">{t.readyTitle}</p>
+              <p className="text-sm text-neutral-500">{t.readySubtitle}</p>
             </div>
             <motion.a
               href={CAL_LINK}
@@ -23,7 +28,7 @@ export default function Footer() {
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
               className="shrink-0 bg-accent hover:bg-accent-light text-white font-semibold px-7 py-3 rounded-lg transition-colors text-sm hover:shadow-[0_0_24px_rgba(99,102,241,0.3)]"
             >
-              Book a free call →
+              {t.bookCta}
             </motion.a>
           </div>
         </FadeIn>
@@ -36,7 +41,7 @@ export default function Footer() {
               </span>
               <span className="hidden sm:block text-neutral-700">|</span>
               <nav className="flex items-center gap-5">
-                {NAV_LINKS.filter((link) => !link.lgOnly).map((link) => (
+                {navLinks.filter((link) => !link.lgOnly).map((link) => (
                   <a
                     key={link.href}
                     href={link.href}

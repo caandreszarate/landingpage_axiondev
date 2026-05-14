@@ -3,8 +3,9 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import FadeIn from './FadeIn';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import Section, { SectionHeader } from './Section';
-import { STEPS } from '../data/content';
 import CTAButton from './CTAButton';
+import { CONTENT } from '../data/content';
+import { useLanguage } from '../hooks/useLanguage';
 
 function ConnectorLine() {
   const ref = useRef(null);
@@ -26,17 +27,19 @@ function ConnectorLine() {
 }
 
 export default function Process() {
+  const lang = useLanguage();
+  const t = CONTENT[lang].process;
+
   return (
     <Section id="process" border>
       <FadeIn>
-        <SectionHeader label="How it works" title="Simple process. Fast results." />
+        <SectionHeader label={t.label} title={t.title} />
       </FadeIn>
 
       <div className="relative">
         <ConnectorLine />
-
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {STEPS.map((step, i) => (
+          {t.steps.map((step, i) => (
             <StaggerItem key={step.number}>
               <motion.div
                 className="relative group text-center md:text-left"
@@ -47,18 +50,11 @@ export default function Process() {
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{
-                    type: 'spring',
-                    stiffness: 200,
-                    damping: 15,
-                    delay: 0.15 + i * 0.15,
-                  }}
+                  transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.15 + i * 0.15 }}
                   className="relative inline-flex items-center justify-center w-16 h-16 mb-6"
                 >
                   <div className="absolute inset-0 rounded-2xl bg-accent/10 group-hover:bg-accent/20 transition-colors duration-300" />
-                  <span className="relative text-2xl font-bold text-accent">
-                    {step.number}
-                  </span>
+                  <span className="relative text-2xl font-bold text-accent">{step.number}</span>
                   <motion.div
                     className="absolute inset-0 rounded-2xl border-2 border-accent/0 group-hover:border-accent/30"
                     initial={false}
@@ -66,13 +62,8 @@ export default function Process() {
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                   />
                 </motion.div>
-
-                <h3 className="text-xl font-semibold text-neutral-100 mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-neutral-400 leading-relaxed">
-                  {step.description}
-                </p>
+                <h3 className="text-xl font-semibold text-neutral-100 mb-3">{step.title}</h3>
+                <p className="text-neutral-400 leading-relaxed">{step.description}</p>
               </motion.div>
             </StaggerItem>
           ))}
@@ -81,10 +72,7 @@ export default function Process() {
 
       <FadeIn>
         <div className="mt-16 text-center">
-          <CTAButton
-            label="Start your project →"
-            microcopy="Discovery call is free — no strings attached"
-          />
+          <CTAButton label={t.cta} microcopy={t.ctaMicro} />
         </div>
       </FadeIn>
     </Section>

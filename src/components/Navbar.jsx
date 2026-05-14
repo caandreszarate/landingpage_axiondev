@@ -1,9 +1,42 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { NAV_LINKS, CAL_LINK } from '../data/content';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { CONTENT, CAL_LINK } from '../data/content';
+import { useLanguage } from '../hooks/useLanguage';
 import { ScrollProgress } from './AnimationUtils';
 
+function LanguageSelector({ lang, onSwitch }) {
+  return (
+    <div className="flex items-center gap-1 text-xs font-semibold tracking-wide">
+      <button
+        onClick={() => onSwitch('en')}
+        className={`px-1.5 py-0.5 rounded transition-colors ${
+          lang === 'en' ? 'text-accent' : 'text-neutral-500 hover:text-neutral-300'
+        }`}
+        aria-label="Switch to English"
+      >
+        EN
+      </button>
+      <span className="text-neutral-700">|</span>
+      <button
+        onClick={() => onSwitch('es')}
+        className={`px-1.5 py-0.5 rounded transition-colors ${
+          lang === 'es' ? 'text-accent' : 'text-neutral-500 hover:text-neutral-300'
+        }`}
+        aria-label="Cambiar a español"
+      >
+        ES
+      </button>
+    </div>
+  );
+}
+
 export default function Navbar() {
+  const lang = useLanguage();
+  const t = CONTENT[lang].nav;
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
@@ -13,6 +46,17 @@ export default function Navbar() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    navigate(`/${lang}`);
+  };
+
+  const handleLangSwitch = (newLang) => {
+    if (newLang === lang) return;
+    navigate(`/${newLang}${location.hash}`, { replace: false });
+    closeMenu();
+  };
 
   return (
     <>
@@ -26,7 +70,8 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <motion.a
-          href="/"
+          href={`/${lang}`}
+          onClick={handleLogoClick}
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -36,7 +81,7 @@ export default function Navbar() {
         </motion.a>
 
         <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link, i) => (
+          {t.links.map((link, i) => (
             <motion.a
               key={link.href}
               href={link.href}
@@ -48,16 +93,25 @@ export default function Navbar() {
               {link.label}
             </motion.a>
           ))}
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+          >
+            <LanguageSelector lang={lang} onSwitch={handleLangSwitch} />
+          </motion.div>
+
           <motion.a
             href={CAL_LINK}
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.35 }}
             className="group relative text-sm font-medium bg-accent text-white px-5 py-2 rounded-lg overflow-hidden transition-shadow hover:shadow-[0_0_20px_rgba(99,102,241,0.3)]"
           >
-            <span className="relative z-10">Get started →</span>
+            <span className="relative z-10">{t.cta}</span>
             <span className="absolute inset-0 bg-accent-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </motion.a>
         </div>
@@ -88,7 +142,7 @@ export default function Navbar() {
             className="md:hidden bg-neutral-950/95 backdrop-blur-lg border-b border-neutral-800/50 overflow-hidden"
           >
             <div className="px-6 py-4 flex flex-col gap-4">
-              {NAV_LINKS.filter((link) => !link.lgOnly).map((link, i) => (
+              {t.links.filter((link) => !link.lgOnly).map((link, i) => (
                 <motion.a
                   key={link.href}
                   href={link.href}
@@ -101,15 +155,18 @@ export default function Navbar() {
                   {link.label}
                 </motion.a>
               ))}
-              <a
-                href={CAL_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={closeMenu}
-                className="text-sm font-medium bg-accent text-white px-5 py-2 rounded-lg text-center transition-colors"
-              >
-                Get started →
-              </a>
+              <div className="flex items-center justify-between pt-2 border-t border-neutral-800/40">
+                <LanguageSelector lang={lang} onSwitch={handleLangSwitch} />
+                <a
+                  href={CAL_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                  className="text-sm font-medium bg-accent text-white px-5 py-2 rounded-lg transition-colors"
+                >
+                  {t.cta}
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

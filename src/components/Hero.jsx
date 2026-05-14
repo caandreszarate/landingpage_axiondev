@@ -2,7 +2,8 @@ import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import CTAButton from './CTAButton';
 import { FloatingParticles } from './AnimationUtils';
-import { URGENCY_LABEL } from '../data/content';
+import { CONTENT } from '../data/content';
+import { useLanguage } from '../hooks/useLanguage';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -18,7 +19,6 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.9, ease } },
 };
 
-// LCP-safe variant: starts visible so browser registers paint immediately
 const fadeUpLCP = {
   hidden: { opacity: 1, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
@@ -36,6 +36,9 @@ const CHECK = (
 );
 
 export default function Hero() {
+  const lang = useLanguage();
+  const t = CONTENT[lang].hero;
+
   const ref = useRef(null);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
 
@@ -91,7 +94,7 @@ export default function Hero() {
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            {URGENCY_LABEL}
+            {t.urgencyLabel}
           </motion.span>
         </motion.div>
 
@@ -100,17 +103,17 @@ export default function Hero() {
             variants={fadeUpLCP}
             className="text-center text-[2rem] sm:text-6xl md:text-[5.5rem] font-bold tracking-tight text-neutral-100 leading-[1.05] mb-8"
           >
-            I build websites that
+            {t.line1}
             <br />
             <motion.span
               className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light block"
               animate={{ opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
             >
-              bring you clients.
+              {t.line2}
             </motion.span>
             <br />
-            <span className="text-neutral-500 text-[0.6em]">Not in months — in days.</span>
+            <span className="text-neutral-500 text-[0.6em]">{t.line3}</span>
           </motion.h1>
         </motion.div>
 
@@ -119,10 +122,9 @@ export default function Hero() {
             variants={fadeUp}
             className="hidden sm:block text-center text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-8 leading-relaxed"
           >
-            Agencies charge $10K+ and take months. I use AI to ship
-            <span className="text-neutral-200 font-medium"> conversion-optimized websites</span> that
-            actually generate leads — for a fraction of the cost.
-            Fixed price. Money-back guarantee.
+            {t.subheadline}
+            <span className="text-neutral-200 font-medium">{t.subheadlineHighlight}</span>
+            {t.subheadlineSuffix}
           </motion.p>
         </motion.div>
 
@@ -130,7 +132,7 @@ export default function Hero() {
           variants={fadeUp}
           className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-neutral-400 mb-8"
         >
-          {['4.2% avg. conversion rate', 'Live in under 14 days', '90% cheaper than agencies'].map((text, i) => (
+          {t.checks.map((text, i) => (
             <motion.span
               key={text}
               className="flex items-center gap-2"
@@ -148,9 +150,9 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <CTAButton
-            label="Book a free strategy call →"
-            microcopy="Get your website live in days — not months"
-            urgency={URGENCY_LABEL}
+            label={t.primaryCta}
+            microcopy={t.primaryMicro}
+            urgency={t.urgencyLabel}
             size="lg"
           />
           <motion.a
@@ -160,7 +162,7 @@ export default function Hero() {
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             className="inline-flex items-center justify-center border border-neutral-700 text-neutral-300 hover:text-neutral-100 font-medium px-10 py-4 rounded-lg transition-all duration-300 text-base hover:shadow-[0_0_20px_rgba(163,163,163,0.1)]"
           >
-            See pricing
+            {t.secondaryCta}
           </motion.a>
         </motion.div>
       </motion.div>

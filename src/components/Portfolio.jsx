@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 import Section, { SectionHeader } from './Section';
 import CTAButton from './CTAButton';
-import { PROJECTS, URGENCY_LABEL } from '../data/content';
+import { CONTENT } from '../data/content';
+import { useLanguage } from '../hooks/useLanguage';
 
 const metricVariants = {
   hidden: { opacity: 0, y: 10, scale: 0.9 },
@@ -10,17 +11,18 @@ const metricVariants = {
 };
 
 export default function Portfolio() {
+  const lang = useLanguage();
+  const t = CONTENT[lang].portfolio;
+
   return (
     <Section id="portfolio">
       <FadeIn>
-        <SectionHeader label="Portfolio" title="Selected Work" />
-        <p className="text-neutral-400 text-lg -mt-10 mb-16 max-w-2xl">
-          Real projects. Real problems. Real results.
-        </p>
+        <SectionHeader label={t.label} title={t.title} />
+        <p className="text-neutral-400 text-lg -mt-10 mb-16 max-w-2xl">{t.tagline}</p>
       </FadeIn>
 
       <div className="flex flex-col gap-8">
-        {PROJECTS.map((project, i) => (
+        {t.projects.map((project, i) => (
           <FadeIn key={project.name} delay={i * 0.1} direction={i % 2 === 0 ? 'left' : 'right'}>
             <motion.div
               whileHover={{ y: -4, borderColor: 'rgba(99,102,241,0.3)' }}
@@ -36,9 +38,7 @@ export default function Portfolio() {
 
               <div className="relative p-8 md:p-10">
                 <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <h3 className="text-2xl md:text-3xl font-bold text-neutral-100">
-                    {project.name}
-                  </h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-neutral-100">{project.name}</h3>
                   {project.link && (
                     <motion.a
                       href={project.link}
@@ -48,7 +48,7 @@ export default function Portfolio() {
                       transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-light transition-colors"
                     >
-                      View live
+                      {t.viewLive}
                       <motion.svg
                         width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
                         animate={{ x: [0, 2, 0] }}
@@ -62,15 +62,15 @@ export default function Portfolio() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
                   <div>
-                    <p className="text-xs font-semibold text-red-400/80 uppercase tracking-widest mb-2">Problem</p>
+                    <p className="text-xs font-semibold text-red-400/80 uppercase tracking-widest mb-2">{t.problemLabel}</p>
                     <p className="text-neutral-400 text-sm leading-relaxed">{project.problem}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">Solution</p>
+                    <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-2">{t.solutionLabel}</p>
                     <p className="text-neutral-400 text-sm leading-relaxed">{project.solution}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-emerald-400/80 uppercase tracking-widest mb-2">Results</p>
+                    <p className="text-xs font-semibold text-emerald-400/80 uppercase tracking-widest mb-2">{t.resultsLabel}</p>
                     <div className="space-y-3">
                       {project.metrics.map((metric, j) => (
                         <motion.div
@@ -79,11 +79,7 @@ export default function Portfolio() {
                           initial="hidden"
                           whileInView="visible"
                           viewport={{ once: true }}
-                          transition={{
-                            duration: 0.5,
-                            delay: 0.3 + j * 0.1,
-                            ease: [0.22, 1, 0.36, 1],
-                          }}
+                          transition={{ duration: 0.5, delay: 0.3 + j * 0.1, ease: [0.22, 1, 0.36, 1] }}
                           className="flex items-baseline gap-2"
                         >
                           <motion.span
@@ -131,14 +127,10 @@ export default function Portfolio() {
       <FadeIn delay={0.2}>
         <div className="mt-16 text-center">
           <p className="text-neutral-400 text-lg mb-6">
-            Want results like these?{' '}
-            <span className="text-neutral-200 font-medium">Your project could be next.</span>
+            {t.bottomLine}
+            <span className="text-neutral-200 font-medium">{t.bottomHighlight}</span>
           </p>
-          <CTAButton
-            label="Start my project →"
-            microcopy="Same quality. Same speed. Your business."
-            urgency={URGENCY_LABEL}
-          />
+          <CTAButton label={t.cta} microcopy={t.ctaMicro} urgency={t.urgencyLabel} />
         </div>
       </FadeIn>
     </Section>

@@ -2,7 +2,8 @@ import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import Section from './Section';
-import { TESTIMONIALS, ABOUT, TRUST_STATS, GUARANTEES } from '../data/content';
+import { CONTENT, ABOUT_BASE } from '../data/content';
+import { useLanguage } from '../hooks/useLanguage';
 
 function StarIcon() {
   return (
@@ -47,6 +48,9 @@ const cardHover = {
 };
 
 export default function Trust() {
+  const lang = useLanguage();
+  const t = CONTENT[lang].trust;
+
   return (
     <Section id="trust" border>
       {/* Personal intro */}
@@ -61,15 +65,15 @@ export default function Trust() {
               >
                 <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-lg shadow-accent/20">
                   <img
-                    src="/testimonials/fotoCarlos.jpg"
-                    alt="Carlos"
+                    src={ABOUT_BASE.photo}
+                    alt={ABOUT_BASE.name}
                     loading="lazy"
                     width="80"
                     height="80"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {ABOUT.available && (
+                {ABOUT_BASE.available && (
                   <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-emerald-500 border-2 border-neutral-950 rounded-full flex items-center justify-center">
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
                   </div>
@@ -77,34 +81,35 @@ export default function Trust() {
               </motion.div>
             </div>
             <div>
-              <p className="text-sm text-accent uppercase tracking-widest mb-2">About me</p>
+              <p className="text-sm text-accent uppercase tracking-widest mb-2">{t.about.label}</p>
               <h2 className="text-2xl md:text-3xl font-bold text-neutral-100 mb-1">
-                {ABOUT.name} <span className="text-neutral-500 font-normal text-lg">/ {ABOUT.role}</span>
+                {ABOUT_BASE.name}{' '}
+                <span className="text-neutral-500 font-normal text-lg">/ {t.about.role}</span>
               </h2>
               <p className="text-sm text-neutral-500 mb-4 flex items-center gap-1.5">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                {ABOUT.location}
-                {ABOUT.available && (
+                {t.about.location}
+                {ABOUT_BASE.available && (
                   <span className="ml-2 inline-flex items-center gap-1 text-emerald-400 text-xs font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Available for work
+                    {t.about.availableLabel}
                   </span>
                 )}
               </p>
-              <p className="text-neutral-400 leading-relaxed">{ABOUT.bio}</p>
+              <p className="text-neutral-400 leading-relaxed">{t.about.bio}</p>
             </div>
           </div>
         </FadeIn>
       </div>
 
-      {/* Trust stats bar */}
+      {/* Trust stats */}
       <FadeIn>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 p-8 rounded-2xl border border-neutral-800/50 bg-neutral-900/20">
-          {TRUST_STATS.map((stat, i) => (
-            <div key={stat.label} className={`text-center ${i < TRUST_STATS.length - 1 ? 'md:border-r md:border-neutral-800/40' : ''}`}>
+          {t.stats.map((stat, i) => (
+            <div key={stat.label} className={`text-center ${i < t.stats.length - 1 ? 'md:border-r md:border-neutral-800/40' : ''}`}>
               <p className="text-2xl md:text-3xl font-bold text-accent mb-1">{stat.value}</p>
               <p className="text-xs md:text-sm text-neutral-500">{stat.label}</p>
             </div>
@@ -114,19 +119,17 @@ export default function Trust() {
 
       {/* Testimonials header */}
       <FadeIn>
-        <p className="text-sm text-accent uppercase tracking-widest mb-4">Testimonials</p>
+        <p className="text-sm text-accent uppercase tracking-widest mb-4">{t.testimonialLabel}</p>
         <h2 className="text-3xl md:text-5xl font-bold text-neutral-100 mb-4 leading-tight">
-          Don't take my word for it.
+          {t.testimonialTitle}
         </h2>
-        <p className="text-neutral-500 text-lg mb-16">
-          Worked with startups, agencies, and growing businesses across LATAM and the US.
-        </p>
+        <p className="text-neutral-500 text-lg mb-16">{t.testimonialTagline}</p>
       </FadeIn>
 
       {/* Testimonial cards */}
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
-        {TESTIMONIALS.map((t) => (
-          <StaggerItem key={t.name}>
+        {t.testimonials.map((testimonial) => (
+          <StaggerItem key={testimonial.name}>
             <motion.div
               whileHover={cardHover}
               className="group relative flex flex-col h-full p-7 rounded-2xl border border-neutral-800/50 hover:border-accent/20 bg-neutral-900/30 hover:bg-neutral-900/50 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(99,102,241,0.06)]"
@@ -147,12 +150,7 @@ export default function Trust() {
                       initial={{ opacity: 0, scale: 0 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{
-                        type: 'spring',
-                        stiffness: 400,
-                        damping: 15,
-                        delay: 0.2 + j * 0.06,
-                      }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 15, delay: 0.2 + j * 0.06 }}
                     >
                       <StarIcon />
                     </motion.span>
@@ -161,16 +159,16 @@ export default function Trust() {
               </div>
 
               <blockquote className="text-neutral-300 text-[0.938rem] leading-relaxed mb-5 flex-1">
-                &ldquo;{t.quote}&rdquo;
+                &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
 
-              {t.result && (
+              {testimonial.result && (
                 <div className="flex items-center gap-2 text-xs text-emerald-400 font-medium mb-5 bg-emerald-400/5 border border-emerald-400/10 rounded-lg px-3 py-2 w-fit">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="shrink-0">
                     <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
                     <path d="M22 4L12 14.01l-3-3" />
                   </svg>
-                  {t.result}
+                  {testimonial.result}
                 </div>
               )}
 
@@ -180,41 +178,26 @@ export default function Trust() {
                   transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                   className="w-10 h-10 rounded-full shrink-0 shadow-md overflow-hidden"
                 >
-                  {t.photo ? (
+                  {testimonial.photo ? (
                     <img
-                      src={t.photo}
-                      alt={t.name}
+                      src={testimonial.photo}
+                      alt={testimonial.name}
                       loading="lazy"
                       width="40"
                       height="40"
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <div className={`w-full h-full bg-gradient-to-br ${t.avatarColor} flex items-center justify-center text-sm font-bold text-white`}>
-                      {t.initials}
+                    <div className={`w-full h-full bg-gradient-to-br ${testimonial.avatarColor} flex items-center justify-center text-sm font-bold text-white`}>
+                      {testimonial.initials}
                     </div>
                   )}
                 </motion.div>
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <p className="text-sm font-semibold text-neutral-200">{t.name}</p>
-                    {t.linkedin && (
-                      <a
-                        href={t.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#0A66C2] hover:text-[#0A66C2]/80 transition-colors"
-                        title="View LinkedIn profile"
-                      >
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
-                          <circle cx="4" cy="4" r="2" />
-                        </svg>
-                      </a>
-                    )}
-                  </div>
+                  <p className="text-sm font-semibold text-neutral-200">{testimonial.name}</p>
                   <p className="text-xs text-neutral-500 truncate">
-                    {t.role}{t.company && <span className="text-neutral-600"> · {t.company}</span>}
+                    {testimonial.role}
+                    {testimonial.company && <span className="text-neutral-600"> · {testimonial.company}</span>}
                   </p>
                 </div>
               </div>
@@ -226,15 +209,13 @@ export default function Trust() {
       {/* Guarantees */}
       <FadeIn>
         <div className="text-center mb-10">
-          <p className="text-sm text-accent uppercase tracking-widest mb-4">Zero risk</p>
-          <h3 className="text-2xl md:text-3xl font-bold text-neutral-100">
-            Your investment is protected.
-          </h3>
+          <p className="text-sm text-accent uppercase tracking-widest mb-4">{t.guaranteesLabel}</p>
+          <h3 className="text-2xl md:text-3xl font-bold text-neutral-100">{t.guaranteesTitle}</h3>
         </div>
       </FadeIn>
 
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {GUARANTEES.map((g) => (
+        {t.guarantees.map((g) => (
           <StaggerItem key={g.title}>
             <div className="text-center p-6 rounded-2xl border border-neutral-800/30 bg-neutral-900/10">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-accent mb-4">

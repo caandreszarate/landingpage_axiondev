@@ -1,13 +1,15 @@
 import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { WHATSAPP_NUMBER, getWhatsAppMessage } from '../data/content';
-
+import { WHATSAPP_NUMBER, getWhatsAppMessage, CONTENT } from '../data/content';
+import { useLanguage } from '../hooks/useLanguage';
 
 export default function WhatsAppButton() {
+  const lang = useLanguage();
+  const t = CONTENT[lang].whatsapp;
   const [showTooltip, setShowTooltip] = useState(false);
   const whatsappUrl = useMemo(
-    () => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getWhatsAppMessage())}`,
-    []
+    () => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getWhatsAppMessage(lang))}`,
+    [lang]
   );
 
   useEffect(() => {
@@ -37,10 +39,8 @@ export default function WhatsAppButton() {
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
             className="relative bg-neutral-900 border border-neutral-800 text-neutral-200 text-sm px-4 py-3 rounded-xl shadow-2xl shadow-black/40 max-w-[200px]"
           >
-            <p className="font-semibold text-sm">Reply in under 5 min</p>
-            <p className="text-neutral-400 text-xs mt-1 leading-relaxed">
-              Tell me about your project — I'll send you a free quote.
-            </p>
+            <p className="font-semibold text-sm">{t.tooltipTitle}</p>
+            <p className="text-neutral-400 text-xs mt-1 leading-relaxed">{t.tooltipDescription}</p>
             <div className="absolute -bottom-1.5 right-5 w-3 h-3 bg-neutral-900 border-r border-b border-neutral-800 rotate-45" />
           </motion.div>
         )}
