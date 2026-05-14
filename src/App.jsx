@@ -18,8 +18,9 @@ import SectionSkeleton, {
   ValuePropositionSkeleton,
 } from './components/SectionSkeleton';
 
-const HASH_SCROLL_RETRIES = 30;
+const HASH_SCROLL_RETRIES = 40;
 const HASH_SCROLL_DELAY = 100;
+const HASH_SCROLL_TOLERANCE = 4;
 
 const SocialProof = lazy(() => import('./components/SocialProof'));
 const Services = lazy(() => import('./components/Services'));
@@ -73,31 +74,47 @@ function LandingPage() {
     if (canonical) canonical.setAttribute('href', `https://axiondev.dev/${language}`);
   }, [language]);
 
-  // Lazy sections mount after the browser's native hash scroll has already run.
+  // Lazy sections can shift layout after the browser's native hash scroll runs.
   useEffect(() => {
     if (!location.hash) return undefined;
 
     const targetId = decodeURIComponent(location.hash.slice(1));
     let attempts = 0;
+    let animationFrameId;
+    let stableHits = 0;
     let timeoutId;
 
     const scrollToHash = () => {
       const el = document.getElementById(targetId);
+      attempts += 1;
 
       if (el) {
-        el.scrollIntoView({ behavior: 'auto', block: 'start' });
-        return;
+        const targetTop = el.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: targetTop, behavior: 'auto' });
+
+        if (Math.abs(window.scrollY - targetTop) <= HASH_SCROLL_TOLERANCE) {
+          stableHits += 1;
+        } else {
+          stableHits = 0;
+        }
       }
 
-      attempts += 1;
-      if (attempts < HASH_SCROLL_RETRIES) {
-        timeoutId = window.setTimeout(scrollToHash, HASH_SCROLL_DELAY);
+      if (stableHits < 3 && attempts < HASH_SCROLL_RETRIES) {
+        timeoutId = window.setTimeout(() => {
+          animationFrameId = window.requestAnimationFrame(scrollToHash);
+        }, HASH_SCROLL_DELAY);
       }
     };
 
-    timeoutId = window.setTimeout(scrollToHash, 0);
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = 'manual';
+    timeoutId = window.setTimeout(() => {
+      animationFrameId = window.requestAnimationFrame(scrollToHash);
+    }, 0);
 
     return () => {
+      window.history.scrollRestoration = previousScrollRestoration;
+      if (animationFrameId) window.cancelAnimationFrame(animationFrameId);
       if (timeoutId) window.clearTimeout(timeoutId);
     }
   }, [location.hash, language]);
