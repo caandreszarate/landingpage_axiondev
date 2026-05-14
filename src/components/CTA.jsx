@@ -37,6 +37,7 @@ const CHECK = (
 export default function CTA() {
   const lang = useLanguage();
   const t = CONTENT[lang].cta;
+  const whatsappAria = CONTENT[lang].whatsapp.ariaLabel;
 
   const whatsappUrl = useMemo(
     () => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(getWhatsAppMessage(lang))}`,
@@ -104,7 +105,7 @@ export default function CTA() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-              aria-label="Chat on WhatsApp"
+              aria-label={whatsappAria}
               className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold px-8 py-3.5 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(37,211,102,0.3)]"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
