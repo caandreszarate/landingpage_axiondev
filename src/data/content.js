@@ -76,6 +76,7 @@ export const CONTENT = {
       ogDescription: 'Stop losing clients to a bad website. Get a conversion-optimized site live in under 14 days. 90% cheaper than agencies. Money-back guarantee.',
       twitterTitle: 'AxionDev — Websites That Bring You Clients in Days',
       twitterDescription: 'AI-powered websites live in under 14 days. Fixed pricing. Money-back guarantee.',
+      imageAlt: 'AxionDev — AI-powered websites that bring you clients in days',
     },
     nav: {
       links: [
@@ -549,6 +550,7 @@ export const CONTENT = {
       ogDescription: 'Deja de perder clientes por un sitio malo. Obtén un sitio optimizado para conversión en menos de 14 días. 90% más económico que las agencias. Garantía de devolución.',
       twitterTitle: 'AxionDev — Sitios Web Que Te Traen Clientes en Días',
       twitterDescription: 'Sitios web con IA en menos de 14 días. Precio fijo. Garantía de devolución.',
+      imageAlt: 'AxionDev — Sitios web con IA que te traen clientes en días',
     },
     nav: {
       links: [

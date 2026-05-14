@@ -66,6 +66,8 @@ function LandingPage() {
     setMeta('meta[property="og:url"]', `https://www.axiondev.dev/${language}`);
     setMeta('meta[name="twitter:title"]', t.twitterTitle);
     setMeta('meta[name="twitter:description"]', t.twitterDescription);
+    setMeta('meta[property="og:image:alt"]', t.imageAlt);
+    setMeta('meta[name="twitter:image:alt"]', t.imageAlt);
 
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute('href', `https://www.axiondev.dev/${language}`);
