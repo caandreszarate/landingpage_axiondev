@@ -302,9 +302,11 @@ export const SOCIAL_LINKS = [
 
 export const CONTACT_EMAIL = 'mailto:carlos@axiondev.dev';
 
-export const CAL_LINK = 'https://app.cal.com/carlos-martinez-kv7rn4';
+export const CAL_LINK =
+  import.meta.env.VITE_CAL_LINK ?? 'https://app.cal.com/carlos-martinez-kv7rn4';
 
-export const WHATSAPP_NUMBER = '573105550703';
+export const WHATSAPP_NUMBER =
+  import.meta.env.VITE_WHATSAPP_NUMBER ?? '573105550703';
 
 const WHATSAPP_MESSAGE_ES = `👋 Hola, gracias por escribir a *AxionDev*.
 
@@ -343,4 +345,5 @@ export function getWhatsAppMessage() {
 
 export const URGENCY_LABEL = 'Only 2 spots left this month';
 
-export const FORMSPREE_ID = 'xqegvoyk';
+export const FORMSPREE_ID =
+  import.meta.env.VITE_FORMSPREE_ID ?? 'xqegvoyk';

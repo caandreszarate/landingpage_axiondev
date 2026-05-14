@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import WhatsAppButton from './components/WhatsAppButton';
 import Starfield from './components/Starfield';
 import MouseTrail from './components/MouseTrail';
+import ErrorBoundary from './components/ErrorBoundary';
 import SectionSkeleton, {
   SocialProofSkeleton,
   ServicesSkeleton,
@@ -37,43 +38,67 @@ export default function App() {
         <Navbar />
         <main>
           <Hero />
-          <Suspense fallback={<SocialProofSkeleton />}>
-            <SocialProof />
-          </Suspense>
-          <Suspense fallback={<ServicesSkeleton />}>
-            <Services />
-          </Suspense>
-          <Suspense fallback={<SectionSkeleton lines={2} />}>
-            <MidCTA />
-          </Suspense>
-          <Suspense fallback={<PortfolioSkeleton />}>
-            <Portfolio />
-          </Suspense>
-          <Suspense fallback={<ValuePropositionSkeleton />}>
-            <ValueProposition />
-          </Suspense>
-          <Suspense fallback={<SectionSkeleton lines={4} />}>
-            <Trust />
-          </Suspense>
-          <Suspense fallback={<SectionSkeleton variant="list" />}>
-            <Process />
-          </Suspense>
-          <Suspense fallback={<ComparisonSkeleton />}>
-            <Comparison />
-          </Suspense>
-          <Suspense fallback={<OffersSkeleton />}>
-            <Offers />
-          </Suspense>
-          <Suspense fallback={<FAQSkeleton />}>
-            <FAQ />
-          </Suspense>
-          <Suspense fallback={<SectionSkeleton lines={2} />}>
-            <CTA />
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense fallback={<SocialProofSkeleton />}>
+              <SocialProof />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<ServicesSkeleton />}>
+              <Services />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<SectionSkeleton lines={2} />}>
+              <MidCTA />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<PortfolioSkeleton />}>
+              <Portfolio />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<ValuePropositionSkeleton />}>
+              <ValueProposition />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<SectionSkeleton lines={4} />}>
+              <Trust />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<SectionSkeleton variant="list" />}>
+              <Process />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<ComparisonSkeleton />}>
+              <Comparison />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<OffersSkeleton />}>
+              <Offers />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<FAQSkeleton />}>
+              <FAQ />
+            </Suspense>
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <Suspense fallback={<SectionSkeleton lines={2} />}>
+              <CTA />
+            </Suspense>
+          </ErrorBoundary>
         </main>
-        <Suspense fallback={<FooterSkeleton />}>
-          <Footer />
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={<FooterSkeleton />}>
+            <Footer />
+          </Suspense>
+        </ErrorBoundary>
         <WhatsAppButton />
       </div>
     </div>
