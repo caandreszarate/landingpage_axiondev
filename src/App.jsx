@@ -69,6 +69,24 @@ function LandingPage() {
 
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) canonical.setAttribute('href', `https://www.axiondev.dev/${language}`);
+
+    const faqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: CONTENT[language].faq.items.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    };
+    let faqScript = document.getElementById('faq-schema');
+    if (!faqScript) {
+      faqScript = document.createElement('script');
+      faqScript.type = 'application/ld+json';
+      faqScript.id = 'faq-schema';
+      document.head.appendChild(faqScript);
+    }
+    faqScript.textContent = JSON.stringify(faqSchema);
   }, [language]);
 
   // On direct URL load with hash (e.g. /en#services), lazy sections haven't mounted yet
