@@ -13,6 +13,8 @@
     }
   ],
   "rewrites": [
+    { "source": "/es", "destination": "/index-es.html" },
+    { "source": "/es/:path*", "destination": "/index-es.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
