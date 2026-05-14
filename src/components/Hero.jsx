@@ -120,6 +120,12 @@ export default function Hero() {
         <motion.div style={{ y: smoothSubY }}>
           <motion.p
             variants={fadeUp}
+            className="sm:hidden text-center text-base text-neutral-400 max-w-xs mx-auto mb-8 leading-snug"
+          >
+            {t.subheadlineMobile}
+          </motion.p>
+          <motion.p
+            variants={fadeUp}
             className="hidden sm:block text-center text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-8 leading-relaxed"
           >
             {t.subheadline}

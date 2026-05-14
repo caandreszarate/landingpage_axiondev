@@ -97,6 +97,7 @@ export default function Offers() {
 
       <FadeIn delay={0.3}>
         <div className="mt-12 text-center">
+          <p className="text-emerald-400/80 text-sm mb-3">{t.guaranteeLine}</p>
           <p className="text-neutral-500 text-sm">
             {t.bottomText}{' '}
             <a href="#contact" className="text-accent hover:text-accent-light transition-colors underline underline-offset-2">

@@ -86,7 +86,7 @@ export const CONTENT = {
         { label: 'Reviews', href: '#trust', lgOnly: true },
         { label: 'FAQ', href: '#faq', lgOnly: true },
       ],
-      cta: 'Get started →',
+      cta: 'Book a free call →',
       menuAriaLabel: 'Toggle menu',
     },
     hero: {
@@ -97,12 +97,13 @@ export const CONTENT = {
       subheadline: 'Agencies charge $10K+ and take months. I use AI to ship',
       subheadlineHighlight: ' conversion-optimized websites',
       subheadlineSuffix: ' that actually generate leads — for a fraction of the cost. Fixed price. Money-back guarantee.',
+      subheadlineMobile: 'AI-powered. Fixed price from $497. Live in 14 days. Money-back guarantee.',
       checks: [
         '4.2% avg. conversion rate',
         'Live in under 14 days',
         '90% cheaper than agencies',
       ],
-      primaryCta: 'Book a free strategy call →',
+      primaryCta: 'Book a free call →',
       primaryMicro: 'Get your website live in days — not months',
       secondaryCta: 'See pricing',
     },
@@ -153,10 +154,10 @@ export const CONTENT = {
       highlight: ' money left on the table',
       suffix: '.',
       line2: 'Your competitors already have one. How much longer will you wait?',
-      primaryCta: 'Book a free strategy call →',
+      primaryCta: 'Book a free call →',
       primaryMicro: '30 min — no commitment, no sales pitch',
-      urgencyLabel: 'Only 2 spots left this month',
-      whatsappLabel: 'Chat on WhatsApp',
+      urgencyLabel: 'Accepting new clients — Response in 24h',
+      whatsappLabel: 'Chat on WhatsApp — free quote in 5 min',
     },
     portfolio: {
       label: 'Portfolio',
@@ -170,7 +171,7 @@ export const CONTENT = {
       bottomHighlight: ' Your project could be next.',
       cta: 'Start my project →',
       ctaMicro: 'Same quality. Same speed. Your business.',
-      urgencyLabel: 'Only 2 spots left this month',
+      urgencyLabel: '10+ projects delivered on time',
       projects: [
         {
           name: 'Airport Management MVP',
@@ -377,6 +378,7 @@ export const CONTENT = {
       bottomText: "Not sure which package fits?",
       bottomLink: "Let's talk",
       bottomSuffix: " — I'll recommend the right one in under 5 minutes.",
+      guaranteeLine: '✓ Every plan includes a money-back guarantee — if the delivery doesn\'t meet what we agreed, you pay nothing.',
       packages: [
         {
           name: 'Landing Page',
@@ -391,6 +393,7 @@ export const CONTENT = {
             'SEO meta tags & Open Graph setup',
             'Analytics & speed optimization',
             'Free hosting setup on Vercel',
+            '7 days post-launch support',
           ],
           highlighted: false,
           cta: 'Get my landing page →',
@@ -465,12 +468,24 @@ export const CONTENT = {
           answer: 'Everything: design, development, copywriting assistance, SEO setup, hosting configuration, and post-launch support. No hidden fees, no hourly surprises. The price we agree on is the price you pay.',
         },
         {
+          question: 'Who owns the website and code after delivery?',
+          answer: "You own everything after final payment. All source code, files, and accounts are transferred to you at launch. You can take the project to any developer in the future — there's no lock-in with me.",
+        },
+        {
+          question: 'How does payment work?',
+          answer: 'Typically, 50% upfront to reserve your spot and start the project, and 50% on delivery before launch. For larger projects, milestone-based payments are available.',
+        },
+        {
           question: 'Can you work with my existing website or brand?',
           answer: "Absolutely. I can redesign, optimize, or build on top of what you already have. During the discovery call, we'll figure out the fastest path to results — whether that's a fresh start or an upgrade.",
         },
         {
           question: 'What happens after my site goes live?',
           answer: 'Every package includes post-launch support (7–30 days depending on the plan). I monitor for bugs, help with content updates, and make sure everything runs smoothly. After that, I\'m always a message away.',
+        },
+        {
+          question: 'What do I need to have ready to get started?',
+          answer: "Very little. Ideally: your logo, brand colors, and a short description of your business and goals. I handle design, structure, and copywriting. If you have photos or existing content, even better — but it's not required to get started.",
         },
       ],
     },
@@ -482,7 +497,7 @@ export const CONTENT = {
       descriptionHighlight: ' revenue walking out the door',
       descriptionSuffix: ". Let's fix that this week.",
       checks: ['Free strategy call', '24h response guaranteed', 'Money-back guarantee'],
-      preferText: 'prefer to chat directly?',
+      preferText: 'Want a faster reply? Message me directly:',
       whatsappLabel: 'Chat on WhatsApp — reply in 5 min',
     },
     contactForm: {
@@ -503,7 +518,7 @@ export const CONTENT = {
       ],
       namePlaceholder: 'Your name',
       emailPlaceholder: 'your@email.com',
-      messagePlaceholder: 'Tell me about your project...',
+      messagePlaceholder: 'e.g. "Landing page for my coaching business. Goal: more discovery calls. I have a logo and basic copy ready."',
       submitIdle: 'Send my request →',
       submitSending: 'Sending...',
       successTitle: 'Message sent!',
@@ -544,7 +559,7 @@ export const CONTENT = {
         { label: 'Reseñas', href: '#trust', lgOnly: true },
         { label: 'FAQ', href: '#faq', lgOnly: true },
       ],
-      cta: 'Comenzar →',
+      cta: 'Llamada gratis →',
       menuAriaLabel: 'Abrir/cerrar menú',
     },
     hero: {
@@ -555,12 +570,13 @@ export const CONTENT = {
       subheadline: 'Las agencias cobran $10K+ y tardan meses. Uso IA para crear',
       subheadlineHighlight: ' sitios web optimizados para conversión',
       subheadlineSuffix: ' que generan leads reales — a una fracción del costo. Precio fijo. Garantía de devolución.',
+      subheadlineMobile: 'Con IA. Precio fijo desde $497. En vivo en 14 días. Garantía de devolución.',
       checks: [
         '4.2% de tasa de conversión promedio',
         'En vivo en menos de 14 días',
         '90% más económico que las agencias',
       ],
-      primaryCta: 'Agenda una llamada estratégica gratis →',
+      primaryCta: 'Agenda una llamada gratis →',
       primaryMicro: 'Tu sitio en línea en días, no en meses',
       secondaryCta: 'Ver precios',
     },
@@ -611,10 +627,10 @@ export const CONTENT = {
       highlight: ' dinero perdido',
       suffix: '.',
       line2: 'Tus competidores ya lo tienen. ¿Cuánto más vas a esperar?',
-      primaryCta: 'Agenda una llamada estratégica gratis →',
+      primaryCta: 'Agenda una llamada gratis →',
       primaryMicro: '30 min — sin compromiso, sin ventas',
-      urgencyLabel: 'Solo 2 cupos disponibles este mes',
-      whatsappLabel: 'Escríbeme por WhatsApp',
+      urgencyLabel: 'Aceptando nuevos clientes — Respuesta en 24h',
+      whatsappLabel: 'Escríbeme — propuesta gratis en 5 min',
     },
     portfolio: {
       label: 'Portafolio',
@@ -628,7 +644,7 @@ export const CONTENT = {
       bottomHighlight: ' Tu proyecto podría ser el próximo.',
       cta: 'Comenzar mi proyecto →',
       ctaMicro: 'Misma calidad. Misma velocidad. Tu negocio.',
-      urgencyLabel: 'Solo 2 cupos disponibles este mes',
+      urgencyLabel: '10+ proyectos entregados a tiempo',
       projects: [
         {
           name: 'Airport Management MVP',
@@ -835,6 +851,7 @@ export const CONTENT = {
       bottomText: '¿No sabes qué paquete elegir?',
       bottomLink: 'Hablemos',
       bottomSuffix: ' — te recomendaré el adecuado en menos de 5 minutos.',
+      guaranteeLine: '✓ Todos los planes incluyen garantía de devolución — si la entrega no cumple lo acordado, no pagas nada.',
       packages: [
         {
           name: 'Landing Page',
@@ -849,6 +866,7 @@ export const CONTENT = {
             'Meta tags SEO y configuración Open Graph',
             'Analytics y optimización de velocidad',
             'Hosting gratuito en Vercel',
+            '7 días de soporte post-lanzamiento',
           ],
           highlighted: false,
           cta: 'Obtener mi landing page →',
@@ -923,12 +941,24 @@ export const CONTENT = {
           answer: 'Todo: diseño, desarrollo, asistencia con copywriting, configuración SEO, configuración de hosting y soporte post-lanzamiento. Sin cargos ocultos, sin sorpresas por hora. El precio que acordamos es el precio que pagas.',
         },
         {
+          question: '¿Quién es dueño del sitio web y el código al finalizar?',
+          answer: 'Todo es tuyo después del pago final. El código fuente, los archivos y las cuentas te son entregados al lanzamiento. Puedes llevar el proyecto con cualquier otro desarrollador en el futuro — no hay ninguna dependencia conmigo.',
+        },
+        {
+          question: '¿Cómo funciona el pago?',
+          answer: 'Generalmente, 50% al inicio para reservar tu cupo y comenzar el proyecto, y 50% al entregar antes de publicar. Para proyectos grandes, se pueden acordar pagos por hitos.',
+        },
+        {
           question: '¿Puedes trabajar con mi sitio web o marca existente?',
           answer: 'Por supuesto. Puedo rediseñar, optimizar o construir sobre lo que ya tienes. Durante la llamada de descubrimiento, encontraremos el camino más rápido a los resultados — ya sea empezar desde cero o mejorar lo existente.',
         },
         {
           question: '¿Qué pasa después de que mi sitio se publica?',
           answer: 'Cada paquete incluye soporte post-lanzamiento (7–30 días según el plan). Monitoreo errores, ayudo con actualizaciones de contenido y me aseguro de que todo funcione correctamente. Después de eso, siempre estoy a un mensaje de distancia.',
+        },
+        {
+          question: '¿Qué necesito tener listo para empezar?',
+          answer: 'Muy poco. Idealmente: tu logo, colores de marca y una descripción breve de tu negocio y objetivos. Yo me encargo del diseño, la estructura y el copy. Si tienes fotos o contenido existente, mejor — pero no es requisito para empezar.',
         },
       ],
     },
@@ -940,7 +970,7 @@ export const CONTENT = {
       descriptionHighlight: ' dinero que se va',
       descriptionSuffix: '. Solucionémoslo esta semana.',
       checks: ['Llamada estratégica gratis', 'Respuesta garantizada en 24h', 'Garantía de devolución'],
-      preferText: '¿prefieres chatear directamente?',
+      preferText: '¿Quieres respuesta más rápida? Escríbeme directo:',
       whatsappLabel: 'Escríbeme por WhatsApp — respondo en 5 min',
     },
     contactForm: {
@@ -961,7 +991,7 @@ export const CONTENT = {
       ],
       namePlaceholder: 'Tu nombre',
       emailPlaceholder: 'tu@email.com',
-      messagePlaceholder: 'Cuéntame sobre tu proyecto...',
+      messagePlaceholder: 'Ej: "Landing para mi negocio de coaching. Objetivo: más llamadas. Tengo logo y texto básico listo."',
       submitIdle: 'Enviar mi solicitud →',
       submitSending: 'Enviando...',
       successTitle: '¡Mensaje enviado!',
