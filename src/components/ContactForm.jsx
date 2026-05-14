@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FORMSPREE_ID, CAL_LINK, CONTENT, CONTACT_EMAIL } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
+import { trackFormStart, trackFormSubmit } from '../utils/analytics';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -12,6 +13,14 @@ export default function ContactForm() {
   const [status, setStatus] = useState('idle');
   const [projectType, setProjectType] = useState('');
   const [budget, setBudget] = useState('');
+  const formStarted = useRef(false);
+
+  function handleFocus() {
+    if (!formStarted.current) {
+      formStarted.current = true;
+      trackFormStart(lang);
+    }
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -28,6 +37,7 @@ export default function ContactForm() {
 
       if (res.ok) {
         setStatus('success');
+        trackFormSubmit(projectType, budget, lang);
         e.target.reset();
         setProjectType('');
         setBudget('');
@@ -40,7 +50,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-12">
+    <form onSubmit={handleSubmit} onFocus={handleFocus} className="max-w-md mx-auto mt-12">
       <div className="flex flex-col gap-4">
         <div>
           <p className="text-xs text-neutral-500 mb-2 text-left">{t.projectTypeLabel}</p>

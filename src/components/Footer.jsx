@@ -3,6 +3,7 @@ import FadeIn from './FadeIn';
 import { Icon } from './icons';
 import { SOCIAL_LINKS, CAL_LINK, CONTENT } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
+import { trackCalClick } from '../utils/analytics';
 
 export default function Footer() {
   const lang = useLanguage();
@@ -23,6 +24,7 @@ export default function Footer() {
               href={CAL_LINK}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackCalClick('footer', lang)}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}

@@ -6,6 +6,7 @@ import Section from './Section';
 import CTAButton from './CTAButton';
 import { CONTENT } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
+import { trackCalClick } from '../utils/analytics';
 
 function FAQItem({ item, index }) {
   const [open, setOpen] = useState(false);
@@ -99,7 +100,7 @@ export default function FAQ() {
         <FadeIn delay={0.2}>
           <div className="mt-14 text-center">
             <p className="text-neutral-500 text-sm mb-6">{t.bottomText}</p>
-            <CTAButton label={t.cta} microcopy={t.ctaMicro} />
+            <CTAButton label={t.cta} microcopy={t.ctaMicro} onClick={() => trackCalClick('faq', lang)} />
           </div>
         </FadeIn>
       </div>

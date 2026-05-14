@@ -4,6 +4,7 @@ import FadeIn from './FadeIn';
 import CTAButton from './CTAButton';
 import { CONTENT, WHATSAPP_NUMBER, getWhatsAppMessage } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
+import { trackCalClick, trackWhatsAppClick } from '../utils/analytics';
 
 export default function MidCTA() {
   const lang = useLanguage();
@@ -37,6 +38,7 @@ export default function MidCTA() {
               label={t.primaryCta}
               microcopy={t.primaryMicro}
               urgency={t.urgencyLabel}
+              onClick={() => trackCalClick('midcta', lang)}
             />
             <motion.a
               href={whatsappUrl}
@@ -46,6 +48,7 @@ export default function MidCTA() {
               whileTap={{ scale: 0.98 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
               aria-label={whatsappAria}
+              onClick={() => trackWhatsAppClick('midcta', lang)}
               className="inline-flex items-center gap-2 border border-[#25D366]/30 bg-[#25D366]/5 hover:bg-[#25D366]/10 text-[#25D366] font-medium px-8 py-4 rounded-lg transition-all duration-300 text-sm hover:shadow-[0_0_20px_rgba(37,211,102,0.1)]"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

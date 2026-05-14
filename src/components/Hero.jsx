@@ -4,6 +4,7 @@ import CTAButton from './CTAButton';
 import { FloatingParticles } from './AnimationUtils';
 import { CONTENT } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
+import { trackCalClick } from '../utils/analytics';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -160,6 +161,7 @@ export default function Hero() {
             microcopy={t.primaryMicro}
             urgency={t.urgencyLabel}
             size="lg"
+            onClick={() => trackCalClick('hero', lang)}
           />
           <motion.a
             href="#offers"

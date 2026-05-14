@@ -6,6 +6,7 @@ import Section, { SectionHeader } from './Section';
 import CTAButton from './CTAButton';
 import { CONTENT } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
+import { trackCalClick } from '../utils/analytics';
 
 function ConnectorLine() {
   const ref = useRef(null);
@@ -72,7 +73,7 @@ export default function Process() {
 
       <FadeIn>
         <div className="mt-16 text-center">
-          <CTAButton label={t.cta} microcopy={t.ctaMicro} />
+          <CTAButton label={t.cta} microcopy={t.ctaMicro} onClick={() => trackCalClick('process', lang)} />
         </div>
       </FadeIn>
     </Section>

@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { WHATSAPP_NUMBER, getWhatsAppMessage, CONTENT } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 export default function WhatsAppButton() {
   const lang = useLanguage();
@@ -54,6 +55,7 @@ export default function WhatsAppButton() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={t.ariaLabel}
+          onClick={() => trackWhatsAppClick('floating', lang)}
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20, delay: 0.5 }}

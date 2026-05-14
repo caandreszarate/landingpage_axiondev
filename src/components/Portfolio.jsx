@@ -4,6 +4,7 @@ import Section, { SectionHeader } from './Section';
 import CTAButton from './CTAButton';
 import { CONTENT } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
+import { trackCalClick } from '../utils/analytics';
 
 const metricVariants = {
   hidden: { opacity: 0, y: 10, scale: 0.9 },
@@ -130,7 +131,7 @@ export default function Portfolio() {
             {t.bottomLine}
             <span className="text-neutral-200 font-medium">{t.bottomHighlight}</span>
           </p>
-          <CTAButton label={t.cta} microcopy={t.ctaMicro} urgency={t.urgencyLabel} />
+          <CTAButton label={t.cta} microcopy={t.ctaMicro} urgency={t.urgencyLabel} onClick={() => trackCalClick('portfolio', lang)} />
         </div>
       </FadeIn>
     </Section>

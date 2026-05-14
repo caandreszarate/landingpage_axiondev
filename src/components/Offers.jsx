@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 import { StaggerContainer, StaggerItem } from './FadeIn';
@@ -5,6 +6,10 @@ import Section from './Section';
 import CTAButton from './CTAButton';
 import { CONTENT } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
+import { trackPricingCTAClick, trackSectionView } from '../utils/analytics';
+import { useOnceInView } from '../hooks/useOnceInView';
+
+const PKG_SLUGS = ['landing-page', 'full-website', 'automation'];
 
 const cardHover = {
   y: -8,
@@ -28,8 +33,12 @@ export default function Offers() {
   const lang = useLanguage();
   const t = CONTENT[lang].offers;
 
+  const sentinelRef = useRef(null);
+  useOnceInView(sentinelRef, () => trackSectionView('pricing_section_view', lang));
+
   return (
     <Section id="offers" border>
+      <div ref={sentinelRef} />
       <div className="mb-16 max-w-3xl">
         <FadeIn>
           <p className="text-sm text-accent uppercase tracking-widest mb-4">{t.label}</p>
@@ -47,7 +56,7 @@ export default function Offers() {
       </div>
 
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-center">
-        {t.packages.map((pkg) => (
+        {t.packages.map((pkg, i) => (
           <StaggerItem key={pkg.name}>
             <motion.div
               whileHover={cardHover}
@@ -88,7 +97,12 @@ export default function Offers() {
               </div>
 
               <div className="px-8 pb-8">
-                <CTAButton label={pkg.cta} microcopy={pkg.ctaMicro} className="w-full" />
+                <CTAButton
+                  label={pkg.cta}
+                  microcopy={pkg.ctaMicro}
+                  className="w-full"
+                  onClick={() => trackPricingCTAClick(PKG_SLUGS[i], lang)}
+                />
               </div>
             </motion.div>
           </StaggerItem>

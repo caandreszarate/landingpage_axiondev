@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { CONTENT, CAL_LINK } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
 import { ScrollProgress } from './AnimationUtils';
+import { trackCalClick, trackLangSwitch } from '../utils/analytics';
 
 function LanguageSelector({ lang, onSwitch }) {
   return (
@@ -54,6 +55,7 @@ export default function Navbar() {
 
   const handleLangSwitch = (newLang) => {
     if (newLang === lang) return;
+    trackLangSwitch(lang, newLang);
     navigate(`/${newLang}${location.hash}`, { replace: false });
     closeMenu();
   };
@@ -106,6 +108,7 @@ export default function Navbar() {
             href={CAL_LINK}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackCalClick('navbar', lang)}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, delay: 0.35 }}
@@ -161,7 +164,7 @@ export default function Navbar() {
                   href={CAL_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={closeMenu}
+                  onClick={() => { trackCalClick('navbar', lang); closeMenu(); }}
                   className="text-sm font-medium bg-accent text-white px-5 py-2 rounded-lg transition-colors"
                 >
                   {t.cta}

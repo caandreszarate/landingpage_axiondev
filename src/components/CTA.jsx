@@ -1,8 +1,10 @@
-import { lazy, Suspense, useMemo } from 'react';
+import { lazy, Suspense, useMemo, useRef } from 'react';
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 import { CONTENT, WHATSAPP_NUMBER, getWhatsAppMessage } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
+import { trackWhatsAppClick, trackSectionView } from '../utils/analytics';
+import { useOnceInView } from '../hooks/useOnceInView';
 
 const ContactForm = lazy(() => import('./ContactForm'));
 
@@ -44,8 +46,11 @@ export default function CTA() {
     [lang]
   );
 
+  const sectionRef = useRef(null);
+  useOnceInView(sectionRef, () => trackSectionView('contact_section_view', lang));
+
   return (
-    <section id="contact" className="relative py-32 px-6 overflow-hidden">
+    <section ref={sectionRef} id="contact" className="relative py-32 px-6 overflow-hidden">
       <motion.div
         className="absolute inset-0 bg-[radial-gradient(800px_circle_at_50%_50%,_var(--color-accent)_0%,_transparent_60%)] opacity-0"
         animate={{ opacity: [0, 0.05, 0] }}
@@ -106,6 +111,7 @@ export default function CTA() {
               whileTap={{ scale: 0.98 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
               aria-label={whatsappAria}
+              onClick={() => trackWhatsAppClick('cta_section', lang)}
               className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20BD5A] text-white font-semibold px-8 py-3.5 rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(37,211,102,0.3)]"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { CAL_LINK } from '../data/content';
 
-export default function CTAButton({ label, microcopy, size = 'base', className = '', urgency, href }) {
+export default function CTAButton({ label, microcopy, size = 'base', className = '', urgency, href, onClick }) {
   const sizes = {
     base: 'px-10 py-4 text-base',
     lg: 'px-12 py-5 text-lg',
@@ -26,6 +26,7 @@ export default function CTAButton({ label, microcopy, size = 'base', className =
         href={href || CAL_LINK}
         target={href ? undefined : '_blank'}
         rel={href ? undefined : 'noopener noreferrer'}
+        onClick={onClick}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.98 }}
         transition={{ type: 'spring', stiffness: 400, damping: 17 }}

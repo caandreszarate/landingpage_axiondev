@@ -5,6 +5,7 @@ import Section from './Section';
 import CTAButton from './CTAButton';
 import { CONTENT } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
+import { trackCalClick } from '../utils/analytics';
 
 const ICONS = {
   speed: (
@@ -88,7 +89,7 @@ export default function ValueProposition() {
 
       <FadeIn delay={0.2}>
         <div className="mt-16 text-center">
-          <CTAButton label={t.cta} microcopy={t.ctaMicro} />
+          <CTAButton label={t.cta} microcopy={t.ctaMicro} onClick={() => trackCalClick('valueprop', lang)} />
         </div>
       </FadeIn>
     </Section>

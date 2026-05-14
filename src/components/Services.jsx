@@ -7,6 +7,7 @@ import CTAButton from './CTAButton';
 import { Icon } from './icons';
 import { CONTENT } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
+import { trackCalClick } from '../utils/analytics';
 
 function TiltCard({ children, className = '' }) {
   const ref = useRef(null);
@@ -103,7 +104,7 @@ export default function Services() {
 
       <FadeIn delay={0.2}>
         <div className="mt-16 text-center">
-          <CTAButton label={t.cta} microcopy={t.ctaMicro} />
+          <CTAButton label={t.cta} microcopy={t.ctaMicro} onClick={() => trackCalClick('services', lang)} />
         </div>
       </FadeIn>
     </Section>
