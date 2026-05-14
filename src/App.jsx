@@ -18,9 +18,6 @@ import SectionSkeleton, {
   ValuePropositionSkeleton,
 } from './components/SectionSkeleton';
 
-const HASH_SCROLL_RETRIES = 40;
-const HASH_SCROLL_DELAY = 100;
-const HASH_SCROLL_TOLERANCE = 4;
 
 const SocialProof = lazy(() => import('./components/SocialProof'));
 const Services = lazy(() => import('./components/Services'));
@@ -74,49 +71,27 @@ function LandingPage() {
     if (canonical) canonical.setAttribute('href', `https://www.axiondev.dev/${language}`);
   }, [language]);
 
-  // Lazy sections can shift layout after the browser's native hash scroll runs.
+  // On direct URL load with hash (e.g. /en#services), lazy sections haven't mounted yet
+  // when the browser's native scroll fires. We retry until the element appears.
   useEffect(() => {
-    if (!location.hash) return undefined;
-
+    if (!location.hash) return;
     const targetId = decodeURIComponent(location.hash.slice(1));
-    let attempts = 0;
-    let animationFrameId;
-    let stableHits = 0;
-    let timeoutId;
+    let timerId;
 
-    const scrollToHash = () => {
+    const tryScroll = (attempt = 0) => {
       const el = document.getElementById(targetId);
-      attempts += 1;
-
       if (el) {
-        const targetTop = el.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({ top: targetTop, behavior: 'auto' });
-
-        if (Math.abs(window.scrollY - targetTop) <= HASH_SCROLL_TOLERANCE) {
-          stableHits += 1;
-        } else {
-          stableHits = 0;
-        }
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
       }
-
-      if (stableHits < 3 && attempts < HASH_SCROLL_RETRIES) {
-        timeoutId = window.setTimeout(() => {
-          animationFrameId = window.requestAnimationFrame(scrollToHash);
-        }, HASH_SCROLL_DELAY);
+      if (attempt < 25) {
+        timerId = setTimeout(() => tryScroll(attempt + 1), 200);
       }
     };
 
-    const previousScrollRestoration = window.history.scrollRestoration;
-    window.history.scrollRestoration = 'manual';
-    timeoutId = window.setTimeout(() => {
-      animationFrameId = window.requestAnimationFrame(scrollToHash);
-    }, 0);
-
-    return () => {
-      window.history.scrollRestoration = previousScrollRestoration;
-      if (animationFrameId) window.cancelAnimationFrame(animationFrameId);
-      if (timeoutId) window.clearTimeout(timeoutId);
-    }
+    // Initial delay lets lazy chunks and Framer Motion settle before first attempt
+    timerId = setTimeout(() => tryScroll(), 500);
+    return () => clearTimeout(timerId);
   }, [location.hash, language]);
 
   return (
