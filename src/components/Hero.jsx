@@ -106,7 +106,7 @@ export default function Hero() {
             {t.line1}
             <br />
             <motion.span
-              className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light block"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light block pb-1"
               animate={{ opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
             >
