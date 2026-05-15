@@ -6,7 +6,9 @@ import { useLanguage } from '../hooks/useLanguage';
 import { trackWhatsAppClick, trackSectionView } from '../utils/analytics';
 import { useOnceInView } from '../hooks/useOnceInView';
 
-const ContactForm = lazy(() => import('./ContactForm'));
+// Start fetching ContactForm as soon as CTA.js is evaluated — breaks the 3-hop lazy chain
+const _contactFormPreload = import('./ContactForm');
+const ContactForm = lazy(() => _contactFormPreload);
 
 function FormSkeleton() {
   return (

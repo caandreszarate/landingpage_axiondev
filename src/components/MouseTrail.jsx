@@ -8,7 +8,7 @@ export default function MouseTrail() {
   const idRef = useRef(0);
 
   const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  const [isMobile] = useState(() => window.innerWidth < 768 || isTouch);
+  const [isMobile] = useState(() => window.matchMedia('(max-width: 767px)').matches || isTouch);
 
   useEffect(() => {
     if (isMobile) return;
