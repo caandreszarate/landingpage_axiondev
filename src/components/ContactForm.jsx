@@ -126,7 +126,7 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="message" className="sr-only">{t.messagePlaceholder}</label>
+          <label htmlFor="message" className="sr-only">{t.messageLabel}</label>
           <textarea
             id="message"
             name="message"
@@ -156,6 +156,7 @@ export default function ContactForm() {
       <AnimatePresence mode="wait">
         {status === 'success' && (
           <motion.div
+            role="alert"
             initial={{ opacity: 0, scale: 0.9, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
@@ -186,6 +187,7 @@ export default function ContactForm() {
         )}
         {status === 'error' && (
           <motion.p
+            role="alert"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}

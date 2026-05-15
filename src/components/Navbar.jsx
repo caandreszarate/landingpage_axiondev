@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { CONTENT, CAL_LINK } from '../data/content';
@@ -11,6 +11,7 @@ function LanguageSelector({ lang, onSwitch }) {
     <div className="flex items-center gap-1 text-xs font-semibold tracking-wide">
       <button
         onClick={() => onSwitch('en')}
+        aria-pressed={lang === 'en'}
         className={`px-1.5 py-0.5 rounded transition-colors ${
           lang === 'en' ? 'text-accent' : 'text-neutral-500 hover:text-neutral-300'
         }`}
@@ -18,9 +19,10 @@ function LanguageSelector({ lang, onSwitch }) {
       >
         EN
       </button>
-      <span className="text-neutral-700">|</span>
+      <span className="text-neutral-700" aria-hidden="true">|</span>
       <button
         onClick={() => onSwitch('es')}
+        aria-pressed={lang === 'es'}
         className={`px-1.5 py-0.5 rounded transition-colors ${
           lang === 'es' ? 'text-accent' : 'text-neutral-500 hover:text-neutral-300'
         }`}
@@ -41,12 +43,33 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
+  const hamburgerRef = useRef(null);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    if (menuOpen && menuRef.current) {
+      const first = menuRef.current.querySelector('a, button');
+      if (first) first.focus();
+    }
+  }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        closeMenu();
+        hamburgerRef.current?.focus();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [menuOpen, closeMenu]);
 
   const handleLogoClick = (e) => {
     e.preventDefault();
@@ -120,6 +143,7 @@ export default function Navbar() {
         </div>
 
         <button
+          ref={hamburgerRef}
           onClick={() => setMenuOpen((prev) => !prev)}
           className="md:hidden text-neutral-300 p-2"
           aria-label={t.menuAriaLabel}
@@ -138,6 +162,7 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            ref={menuRef}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}

@@ -19,7 +19,7 @@ export default function Starfield() {
   }, []);
 
   return (
-    <div className="starfield">
+    <div className="starfield" aria-hidden="true">
       {stars.map((star) => (
         <div
           key={star.id}

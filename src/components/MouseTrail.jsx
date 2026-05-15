@@ -59,5 +59,5 @@ export default function MouseTrail() {
 
   if (isMobile) return null;
 
-  return <div ref={containerRef} className="mouse-trail-container" />;
+  return <div ref={containerRef} className="mouse-trail-container" aria-hidden="true" />;
 }

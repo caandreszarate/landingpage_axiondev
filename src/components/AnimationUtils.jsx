@@ -8,6 +8,7 @@ export function ScrollProgress() {
 
   return (
     <motion.div
+      aria-hidden="true"
       style={{ scaleX, transformOrigin: '0%' }}
       className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-indigo-400 via-purple-300 to-indigo-400 z-[60]"
     />
@@ -129,7 +130,7 @@ export function FloatingParticles({ count = 20 }) {
   }));
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div aria-hidden="true" className="absolute inset-0 overflow-hidden pointer-events-none">
       <style>{`
         @keyframes float-particle {
           0%, 100% {

@@ -7,7 +7,7 @@ import { useLanguage } from '../hooks/useLanguage';
 
 function StarIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-amber-400">
+    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-amber-400">
       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
     </svg>
   );
@@ -15,7 +15,7 @@ function StarIcon() {
 
 function QuoteIcon() {
   return (
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="text-accent/20">
+    <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="text-accent/20">
       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11h4v10H0z" />
     </svg>
   );
@@ -23,19 +23,19 @@ function QuoteIcon() {
 
 const GUARANTEE_ICONS = {
   shield: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       <path d="M9 12l2 2 4-4" />
     </svg>
   ),
   lock: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
       <rect x="3" y="11" width="18" height="11" rx="2" />
       <path d="M7 11V7a5 5 0 0110 0v4" />
     </svg>
   ),
   support: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
       <path d="M18 18.72a9.094 9.094 0 003.741-7.72A9 9 0 1012 21a8.966 8.966 0 005.066-1.561M16.5 15.5l1.5 3.22" />
       <circle cx="12" cy="12" r="4" />
     </svg>
