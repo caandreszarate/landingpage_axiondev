@@ -19,6 +19,7 @@ export const TECH_STACK = [
   { name: 'OpenAI', color: '#74AA9C' },
   { name: 'Vercel', color: '#ffffff' },
   { name: 'MongoDB', color: '#47A248' },
+  { name: 'PostgreSQL', color: '#336791' },
 ];
 
 export const SOCIAL_LINKS = [
