@@ -47,12 +47,11 @@ export default function Comparison() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-neutral-800/50">
-                  <th className="text-left px-6 py-4 text-neutral-500 font-medium w-[35%]">{t.headers.feature}</th>
-                  <th className="px-6 py-4 text-center w-[21%]">
+                  <th className="text-left px-6 py-4 text-neutral-500 font-medium w-[40%]">{t.headers.feature}</th>
+                  <th className="px-6 py-4 text-center w-[30%]">
                     <span className="text-accent font-bold text-base">AxionDev</span>
                   </th>
-                  <th className="px-6 py-4 text-center text-neutral-500 font-medium w-[22%]">{t.headers.agency}</th>
-                  <th className="px-6 py-4 text-center text-neutral-500 font-medium w-[22%]">{t.headers.freelancer}</th>
+                  <th className="px-6 py-4 text-center text-neutral-500 font-medium w-[30%]">{t.headers.traditional}</th>
                 </tr>
               </thead>
               <tbody>
@@ -69,8 +68,7 @@ export default function Comparison() {
                     <td className="px-6 py-4 text-center bg-accent/[0.03] border-x border-accent/10">
                       {renderCell(row.axion, t, true)}
                     </td>
-                    <td className="px-6 py-4 text-center">{renderCell(row.agency, t)}</td>
-                    <td className="px-6 py-4 text-center">{renderCell(row.freelancer, t)}</td>
+                    <td className="px-6 py-4 text-center">{renderCell(row.traditional, t)}</td>
                   </motion.tr>
                 ))}
               </tbody>

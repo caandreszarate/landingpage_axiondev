@@ -72,11 +72,11 @@ export const CONTENT = {
   en: {
     meta: {
       title: 'AxionDev — Websites That Bring You Clients in Days, Not Months',
-      description: 'Get a high-converting website live in under 14 days. AI-powered development that turns visitors into paying clients. Fixed pricing from $497. Money-back guarantee.',
+      description: 'Get a high-converting website live in under 14 days. AI-powered development that turns visitors into paying clients. Tailored quote. Milestone-based delivery (SLA).',
       ogTitle: 'AxionDev — Websites That Bring You Clients in Days',
-      ogDescription: 'Stop losing clients to a bad website. Get a conversion-optimized site live in under 14 days. Up to 70% lower cost than agencies. Money-back guarantee.',
+      ogDescription: 'Stop losing clients to a bad website. Get a conversion-optimized site live in under 14 days. Up to 70% lower cost than agencies. Milestone-based delivery.',
       twitterTitle: 'AxionDev — Websites That Bring You Clients in Days',
-      twitterDescription: 'AI-powered websites live in under 14 days. Fixed pricing. Money-back guarantee.',
+      twitterDescription: 'AI-powered websites live in under 14 days. Tailored quote. Milestone-based delivery.',
       imageAlt: 'AxionDev — AI-powered websites that bring you clients in days',
     },
     nav: {
@@ -98,8 +98,8 @@ export const CONTENT = {
       line3: 'Not in months — in days.',
       subheadline: 'Agencies charge $10K+ and take months. We use AI to ship',
       subheadlineHighlight: ' conversion-optimized websites',
-      subheadlineSuffix: ' that actually generate leads — for a fraction of the cost. Fixed price. Money-back guarantee.',
-      subheadlineMobile: 'AI-powered. Fixed price from $497. Live in 14 days. Money-back guarantee.',
+      subheadlineSuffix: ' that actually generate leads — for a fraction of the cost. Transparent scope, milestone-based delivery.',
+      subheadlineMobile: 'AI-powered. Live in 14 days. Tailored quote, milestone-based delivery.',
       checks: [
         '4.2% avg. conversion rate',
         'Live in under 14 days',
@@ -328,8 +328,8 @@ export const CONTENT = {
       guaranteesTitle: 'Your investment is protected.',
       guarantees: [
         {
-          title: 'Money-back guarantee',
-          description: "If the final delivery doesn't meet what we agreed, you get a full refund based on the agreed deliverables.",
+          title: 'Milestone-based guarantee (SLA)',
+          description: 'Every project runs against a written SLA with defined milestones and acceptance criteria — you sign off on each stage before we move on, so the outcome is contractually clear.',
           icon: 'shield',
         },
         {
@@ -370,23 +370,23 @@ export const CONTENT = {
     comparison: {
       label: 'Why AxionDev',
       title: 'Stop overpaying for less.',
-      tagline: 'See how we compare to the alternatives — on every metric that matters.',
-      headers: { feature: 'Feature', agency: 'Agency', freelancer: 'Freelancer' },
+      tagline: 'See how the AxionDev model compares to traditional development — on every metric that matters.',
+      headers: { feature: 'Feature', traditional: 'Traditional development' },
       yesLabel: 'Yes',
       noLabel: 'No',
       maybe: 'Sometimes',
       paidExtra: 'Paid extra',
-      cta: 'Get started — it\'s free →',
+      cta: 'Book a strategy call →',
       ctaMicro: 'No commitment. 30-min strategy call.',
       rows: [
-        { feature: 'Delivery time', axion: '< 14 days', agency: '2–6 months', freelancer: '4–8 weeks' },
-        { feature: 'Starting price', axion: 'From $497', agency: '$5K–$50K', freelancer: '$1K–$5K' },
-        { feature: 'AI-powered build', axion: 'check', agency: 'cross', freelancer: 'cross' },
-        { feature: 'Fixed price', axion: 'check', agency: 'cross', freelancer: 'maybe' },
-        { feature: 'Money-back guarantee', axion: 'check', agency: 'cross', freelancer: 'cross' },
-        { feature: 'Conversion-focused', axion: 'check', agency: 'maybe', freelancer: 'cross' },
-        { feature: 'Direct communication', axion: 'check', agency: 'cross', freelancer: 'check' },
-        { feature: 'Post-launch support', axion: 'check', agency: 'paid_extra', freelancer: 'cross' },
+        { feature: 'Delivery time', axion: '< 14 days', traditional: '2–6 months' },
+        { feature: 'Starting cost', axion: 'Tailored quote', traditional: '$5K–$50K' },
+        { feature: 'AI-powered build', axion: 'check', traditional: 'cross' },
+        { feature: 'Fixed scope & timeline', axion: 'check', traditional: 'cross' },
+        { feature: 'Delivery guarantee (SLA)', axion: 'check', traditional: 'cross' },
+        { feature: 'Conversion-focused', axion: 'check', traditional: 'maybe' },
+        { feature: 'Direct communication', axion: 'check', traditional: 'cross' },
+        { feature: 'Post-launch support', axion: 'check', traditional: 'paid_extra' },
       ],
     },
     offers: {
@@ -400,7 +400,7 @@ export const CONTENT = {
       bottomText: "Not sure which package fits?",
       bottomLink: "Let's talk",
       bottomSuffix: " — we'll recommend the right one in under 5 minutes.",
-      guaranteeLine: '✓ Every plan includes a money-back guarantee — if the delivery doesn\'t meet what we agreed, you pay nothing.',
+      guaranteeLine: '✓ Every project is delivered against a milestone-based SLA — you approve each stage before we move on.',
       enterprise: {
         label: 'Enterprise',
         title: 'Complex infrastructure or corporate requirements?',
@@ -412,7 +412,7 @@ export const CONTENT = {
         {
           name: 'Landing Page',
           timeline: '5 days',
-          price: 'From $497',
+          price: 'Custom quote',
           tagline: 'Designed to convert and ready to launch',
           description: 'A single high-converting page engineered to turn visitors into paying clients — live and indexed before your competitors finish their first draft.',
           deliverables: [
@@ -431,7 +431,7 @@ export const CONTENT = {
         {
           name: 'Full Website',
           timeline: '10–14 days',
-          price: 'From $997',
+          price: 'Custom quote',
           tagline: 'Your entire digital presence, built to sell',
           description: 'A complete multi-page website that positions your brand, captures leads 24/7, and pays for itself within the first month of going live.',
           deliverables: [
@@ -451,7 +451,7 @@ export const CONTENT = {
         {
           name: 'Automation Suite',
           timeline: '7–10 days',
-          price: 'From $797',
+          price: 'Custom quote',
           tagline: 'Stop working harder. Start working smarter.',
           description: 'Custom AI-powered automations that eliminate repetitive tasks, capture leads while you sleep, and give you back 10+ hours every single week.',
           deliverables: [
@@ -486,14 +486,14 @@ export const CONTENT = {
         },
         {
           question: "What if I'm not happy with the final result?",
-          answer: "You get a full money-back guarantee. If the final delivery doesn't meet what we agreed on, you pay nothing. We also include revision rounds during the build so you're never surprised.",
+          answer: "We work against a milestone-based SLA. Each stage has clear acceptance criteria you sign off on before we continue, and revision rounds are built into every milestone — so the final delivery matches exactly what we agreed, with no surprises.",
         },
         {
           question: 'Do you only work with startups?',
           answer: "No. We work with startups, small businesses, agencies, and even government projects. If you need a website or automation that drives revenue, we can help — regardless of your industry or size.",
         },
         {
-          question: "What's included in the fixed price?",
+          question: "What's included in your quote?",
           answer: 'Everything: design, development, copywriting assistance, SEO setup, hosting configuration, and post-launch support. No hidden fees, no hourly surprises. The price we agree on is the price you pay.',
         },
         {
@@ -525,7 +525,7 @@ export const CONTENT = {
       description: 'Every day without a high-converting website is',
       descriptionHighlight: ' revenue walking out the door',
       descriptionSuffix: ". Let's fix that this week.",
-      checks: ['Free strategy call', '24h response guaranteed', 'Money-back guarantee'],
+      checks: ['Free strategy call', '24h response guaranteed', 'Milestone-based SLA'],
       preferText: 'Want a faster reply? Message us directly:',
       whatsappLabel: 'Corporate inquiries via WhatsApp',
     },
@@ -574,11 +574,11 @@ export const CONTENT = {
   es: {
     meta: {
       title: 'AxionDev — Sitios Web Que Te Traen Clientes en Días, No Meses',
-      description: 'Obtén un sitio web de alta conversión en menos de 14 días. Desarrollo con IA que convierte visitantes en clientes. Precio fijo desde $497. Garantía de devolución.',
+      description: 'Obtén un sitio web de alta conversión en menos de 14 días. Desarrollo con IA que convierte visitantes en clientes. Cotización a medida. Entrega por hitos (SLA).',
       ogTitle: 'AxionDev — Sitios Web Que Te Traen Clientes en Días',
-      ogDescription: 'Deja de perder clientes por un sitio malo. Obtén un sitio optimizado para conversión en menos de 14 días. Hasta 70% menos costo que las agencias. Garantía de devolución.',
+      ogDescription: 'Deja de perder clientes por un sitio malo. Obtén un sitio optimizado para conversión en menos de 14 días. Hasta 70% menos costo que las agencias. Entrega por hitos.',
       twitterTitle: 'AxionDev — Sitios Web Que Te Traen Clientes en Días',
-      twitterDescription: 'Sitios web con IA en menos de 14 días. Precio fijo. Garantía de devolución.',
+      twitterDescription: 'Sitios web con IA en menos de 14 días. Cotización a medida. Entrega por hitos.',
       imageAlt: 'AxionDev — Sitios web con IA que te traen clientes en días',
     },
     nav: {
@@ -600,8 +600,8 @@ export const CONTENT = {
       line3: 'No en meses — en días.',
       subheadline: 'Las agencias cobran $10K+ y tardan meses. Usamos IA para crear',
       subheadlineHighlight: ' sitios web optimizados para conversión',
-      subheadlineSuffix: ' que generan leads reales — a una fracción del costo. Precio fijo. Garantía de devolución.',
-      subheadlineMobile: 'Con IA. Precio fijo desde $497. En vivo en 14 días. Garantía de devolución.',
+      subheadlineSuffix: ' que generan leads reales — a una fracción del costo. Alcance transparente, entrega por hitos.',
+      subheadlineMobile: 'Con IA. En vivo en 14 días. Cotización a medida, entrega por hitos.',
       checks: [
         '4.2% de tasa de conversión promedio',
         'En vivo en menos de 14 días',
@@ -830,8 +830,8 @@ export const CONTENT = {
       guaranteesTitle: 'Tu inversión está protegida.',
       guarantees: [
         {
-          title: 'Garantía de devolución',
-          description: 'Si la entrega final no cumple lo que acordamos, recibes un reembolso completo según los entregables acordados.',
+          title: 'Garantía por hitos (SLA)',
+          description: 'Cada proyecto se rige por un SLA escrito con hitos definidos y criterios de aceptación — apruebas cada etapa antes de avanzar, de modo que el resultado queda claro contractualmente.',
           icon: 'shield',
         },
         {
@@ -872,23 +872,23 @@ export const CONTENT = {
     comparison: {
       label: 'Por qué AxionDev',
       title: 'Deja de pagar de más por menos.',
-      tagline: 'Mira cómo nos comparamos con las alternativas — en cada métrica que importa.',
-      headers: { feature: 'Característica', agency: 'Agencia', freelancer: 'Freelancer' },
+      tagline: 'Mira cómo se compara el modelo AxionDev con el desarrollo tradicional — en cada métrica que importa.',
+      headers: { feature: 'Característica', traditional: 'Desarrollo tradicional' },
       yesLabel: 'Sí',
       noLabel: 'No',
       maybe: 'A veces',
       paidExtra: 'Costo adicional',
-      cta: 'Comenzar — es gratis →',
+      cta: 'Agendar llamada estratégica →',
       ctaMicro: 'Sin compromiso. Llamada de 30 min.',
       rows: [
-        { feature: 'Tiempo de entrega', axion: '< 14 días', agency: '2–6 meses', freelancer: '4–8 semanas' },
-        { feature: 'Precio inicial', axion: 'Desde $497', agency: '$5K–$50K', freelancer: '$1K–$5K' },
-        { feature: 'Desarrollo con IA', axion: 'check', agency: 'cross', freelancer: 'cross' },
-        { feature: 'Precio fijo', axion: 'check', agency: 'cross', freelancer: 'maybe' },
-        { feature: 'Garantía de devolución', axion: 'check', agency: 'cross', freelancer: 'cross' },
-        { feature: 'Enfocado en conversión', axion: 'check', agency: 'maybe', freelancer: 'cross' },
-        { feature: 'Comunicación directa', axion: 'check', agency: 'cross', freelancer: 'check' },
-        { feature: 'Soporte post-lanzamiento', axion: 'check', agency: 'paid_extra', freelancer: 'cross' },
+        { feature: 'Tiempo de entrega', axion: '< 14 días', traditional: '2–6 meses' },
+        { feature: 'Costo inicial', axion: 'Cotización a medida', traditional: '$5K–$50K' },
+        { feature: 'Desarrollo con IA', axion: 'check', traditional: 'cross' },
+        { feature: 'Alcance y plazo fijos', axion: 'check', traditional: 'cross' },
+        { feature: 'Garantía de entrega (SLA)', axion: 'check', traditional: 'cross' },
+        { feature: 'Enfocado en conversión', axion: 'check', traditional: 'maybe' },
+        { feature: 'Comunicación directa', axion: 'check', traditional: 'cross' },
+        { feature: 'Soporte post-lanzamiento', axion: 'check', traditional: 'paid_extra' },
       ],
     },
     offers: {
@@ -902,7 +902,7 @@ export const CONTENT = {
       bottomText: '¿No sabes qué paquete elegir?',
       bottomLink: 'Hablemos',
       bottomSuffix: ' — te recomendaremos el adecuado en menos de 5 minutos.',
-      guaranteeLine: '✓ Todos los planes incluyen garantía de devolución — si la entrega no cumple lo acordado, no pagas nada.',
+      guaranteeLine: '✓ Cada proyecto se entrega contra un SLA por hitos — apruebas cada etapa antes de avanzar.',
       enterprise: {
         label: 'Enterprise',
         title: '¿Infraestructura compleja o requerimientos corporativos?',
@@ -914,7 +914,7 @@ export const CONTENT = {
         {
           name: 'Landing Page',
           timeline: '5 días',
-          price: 'Desde $497',
+          price: 'Cotización a medida',
           tagline: 'Diseñada para convertir y lista para lanzar',
           description: 'Una sola página de alta conversión para convertir visitantes en clientes — publicada e indexada antes de que tus competidores terminen su primer borrador.',
           deliverables: [
@@ -933,7 +933,7 @@ export const CONTENT = {
         {
           name: 'Sitio Web Completo',
           timeline: '10–14 días',
-          price: 'Desde $997',
+          price: 'Cotización a medida',
           tagline: 'Tu presencia digital completa, construida para vender',
           description: 'Un sitio web multi-página completo que posiciona tu marca, captura leads 24/7 y se paga solo en el primer mes de publicación.',
           deliverables: [
@@ -953,7 +953,7 @@ export const CONTENT = {
         {
           name: 'Suite de Automatización',
           timeline: '7–10 días',
-          price: 'Desde $797',
+          price: 'Cotización a medida',
           tagline: 'Deja de trabajar más duro. Empieza a trabajar con inteligencia.',
           description: 'Automatizaciones personalizadas con IA que eliminan tareas repetitivas, capturan leads mientras duermes y te devuelven 10+ horas cada semana.',
           deliverables: [
@@ -988,14 +988,14 @@ export const CONTENT = {
         },
         {
           question: '¿Qué pasa si no estoy satisfecho con el resultado final?',
-          answer: 'Tienes garantía total de devolución. Si la entrega final no cumple lo que acordamos, no pagas nada. También incluimos rondas de revisión durante el desarrollo para que nunca te lleves sorpresas.',
+          answer: 'Trabajamos contra un SLA por hitos. Cada etapa tiene criterios de aceptación claros que apruebas antes de continuar, y las rondas de revisión están integradas en cada hito — así la entrega final coincide exactamente con lo acordado, sin sorpresas.',
         },
         {
           question: '¿Solo trabajas con startups?',
           answer: 'No. Trabajamos con startups, pequeñas empresas, agencias e incluso proyectos gubernamentales. Si necesitas un sitio web o automatización que genere ingresos, podemos ayudarte — sin importar tu industria o tamaño.',
         },
         {
-          question: '¿Qué incluye el precio fijo?',
+          question: '¿Qué incluye la cotización?',
           answer: 'Todo: diseño, desarrollo, asistencia con copywriting, configuración SEO, configuración de hosting y soporte post-lanzamiento. Sin cargos ocultos, sin sorpresas por hora. El precio que acordamos es el precio que pagas.',
         },
         {
@@ -1027,7 +1027,7 @@ export const CONTENT = {
       description: 'Cada día sin un sitio web que convierta es',
       descriptionHighlight: ' dinero que se va',
       descriptionSuffix: '. Solucionémoslo esta semana.',
-      checks: ['Llamada estratégica gratis', 'Respuesta garantizada en 24h', 'Garantía de devolución'],
+      checks: ['Llamada estratégica gratis', 'Respuesta garantizada en 24h', 'Garantía por hitos (SLA)'],
       preferText: '¿Quieres respuesta más rápida? Escríbenos directo:',
       whatsappLabel: 'Atención comercial por WhatsApp',
     },
