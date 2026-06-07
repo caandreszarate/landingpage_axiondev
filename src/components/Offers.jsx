@@ -109,6 +109,25 @@ export default function Offers() {
         ))}
       </StaggerContainer>
 
+      {t.enterprise && (
+        <FadeIn delay={0.2}>
+          <div className="mt-8 rounded-2xl border border-neutral-800/60 bg-neutral-900/30 p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div className="md:max-w-xl">
+              <p className="text-sm text-accent uppercase tracking-widest mb-2">{t.enterprise.label}</p>
+              <h3 className="text-2xl font-bold text-neutral-100 mb-2">{t.enterprise.title}</h3>
+              <p className="text-neutral-400 text-[0.938rem] leading-relaxed">{t.enterprise.description}</p>
+            </div>
+            <div className="shrink-0">
+              <CTAButton
+                label={t.enterprise.ctaLabel}
+                microcopy={t.enterprise.ctaMicro}
+                onClick={() => trackPricingCTAClick('enterprise', lang)}
+              />
+            </div>
+          </div>
+        </FadeIn>
+      )}
+
       <FadeIn delay={0.3}>
         <div className="mt-12 text-center">
           <p className="text-emerald-400/80 text-sm mb-3">{t.guaranteeLine}</p>

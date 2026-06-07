@@ -36,7 +36,7 @@ export const ABOUT_BASE = {
 
 const WA_ES = `👋 Hola, gracias por escribir a *AxionDev*.
 
-Soy especialista en desarrollo web con IA y ayudo a negocios a crear páginas que realmente generan clientes, no solo se ven bien.
+Somos especialistas en desarrollo web con IA y ayudamos a negocios a crear páginas que realmente generan clientes, no solo se ven bien.
 
 Para poder ayudarte mejor, cuéntame:
 
@@ -44,13 +44,13 @@ Para poder ayudarte mejor, cuéntame:
 2️⃣ ¿Ya tienes algo creado o empiezas desde cero?
 3️⃣ ¿Cuál es tu objetivo principal? (ventas, leads, visibilidad)
 
-Con eso te doy una propuesta clara y rápida 🚀
+Con eso te damos una propuesta clara y rápida 🚀
 
 Si prefieres, también puedes agendar una llamada directa y lo vemos contigo paso a paso. 📅`;
 
 const WA_EN = `👋 Hi! Thanks for reaching out to *AxionDev*.
 
-I specialize in AI-powered web development and help businesses build websites that actually generate clients — not just look good.
+We specialize in AI-powered web development and help businesses build websites that actually generate clients — not just look good.
 
 To give you a clear proposal quickly, tell me:
 
@@ -58,7 +58,7 @@ To give you a clear proposal quickly, tell me:
 2️⃣ Do you already have something built, or are you starting from scratch?
 3️⃣ What's your main goal? (sales, leads, visibility)
 
-With that I'll send you a fast, clear proposal 🚀
+With that we'll send you a fast, clear proposal 🚀
 
 You can also book a direct call and we'll walk through it together step by step. 📅`;
 
@@ -74,7 +74,7 @@ export const CONTENT = {
       title: 'AxionDev — Websites That Bring You Clients in Days, Not Months',
       description: 'Get a high-converting website live in under 14 days. AI-powered development that turns visitors into paying clients. Fixed pricing from $497. Money-back guarantee.',
       ogTitle: 'AxionDev — Websites That Bring You Clients in Days',
-      ogDescription: 'Stop losing clients to a bad website. Get a conversion-optimized site live in under 14 days. 90% cheaper than agencies. Money-back guarantee.',
+      ogDescription: 'Stop losing clients to a bad website. Get a conversion-optimized site live in under 14 days. Up to 70% lower cost than agencies. Money-back guarantee.',
       twitterTitle: 'AxionDev — Websites That Bring You Clients in Days',
       twitterDescription: 'AI-powered websites live in under 14 days. Fixed pricing. Money-back guarantee.',
       imageAlt: 'AxionDev — AI-powered websites that bring you clients in days',
@@ -93,17 +93,17 @@ export const CONTENT = {
     },
     hero: {
       urgencyLabel: 'Only 2 spots left this month',
-      line1: 'I build websites that',
+      line1: 'We build websites that',
       line2: 'bring you clients.',
       line3: 'Not in months — in days.',
-      subheadline: 'Agencies charge $10K+ and take months. I use AI to ship',
+      subheadline: 'Agencies charge $10K+ and take months. We use AI to ship',
       subheadlineHighlight: ' conversion-optimized websites',
       subheadlineSuffix: ' that actually generate leads — for a fraction of the cost. Fixed price. Money-back guarantee.',
       subheadlineMobile: 'AI-powered. Fixed price from $497. Live in 14 days. Money-back guarantee.',
       checks: [
         '4.2% avg. conversion rate',
         'Live in under 14 days',
-        '90% cheaper than agencies',
+        'Up to 70% lower cost than agencies',
       ],
       primaryCta: 'Book a free call →',
       primaryMicro: 'Get your website live in days — not months',
@@ -119,12 +119,12 @@ export const CONTENT = {
       ],
     },
     services: {
-      label: 'What I deliver',
-      title1: 'Three ways I put',
+      label: 'What we deliver',
+      title1: 'Three ways we put',
       title2: 'money back in your pocket.',
       description: 'Every service is built around one question:',
       descriptionHighlight: ' will this make or save you money?',
-      descriptionSuffix: ' If the answer isn\'t yes, I don\'t build it.',
+      descriptionSuffix: ' If the answer isn\'t yes, we don\'t build it.',
       cta: 'Get started — it\'s free →',
       ctaMicro: '30-min strategy call. No commitment.',
       items: [
@@ -159,16 +159,16 @@ export const CONTENT = {
       primaryCta: 'Book a free call →',
       primaryMicro: '30 min — no commitment, no sales pitch',
       urgencyLabel: 'Accepting new clients — Response in 24h',
-      whatsappLabel: 'Chat on WhatsApp — free quote in 5 min',
+      whatsappLabel: 'Corporate inquiries via WhatsApp',
     },
     portfolio: {
       label: 'Portfolio',
       title: 'Selected Work',
       tagline: 'Real projects. Real problems. Real results.',
       viewLive: 'View live',
-      problemLabel: 'Problem',
-      solutionLabel: 'Solution',
-      resultsLabel: 'Results',
+      problemLabel: 'Challenge',
+      solutionLabel: 'Architectural Solution',
+      resultsLabel: 'Business Impact',
       bottomLine: 'Want results like these?',
       bottomHighlight: ' Your project could be next.',
       cta: 'Start my project →',
@@ -217,7 +217,7 @@ export const CONTENT = {
       label: 'The difference',
       title1: 'Faster than agencies.',
       title2: 'Smarter than freelancers.',
-      description: 'Traditional agencies take months and charge a fortune. Most freelancers can\'t deliver strategy. I use',
+      description: 'Traditional agencies take months and charge a fortune. Most freelancers can\'t deliver strategy. We use',
       descriptionHighlight: ' AI-powered development',
       descriptionMiddle: ' to give you both — premium quality at startup speed, with every decision focused on one thing:',
       descriptionHighlight2: ' growing your business',
@@ -249,9 +249,9 @@ export const CONTENT = {
     },
     trust: {
       about: {
-        label: 'About me',
-        role: 'AI-Powered Web Developer',
-        bio: "I've helped startups, agencies, and growing businesses across Colombia, the US, Chile, and Equatorial Guinea launch digital products that actually drive revenue. I combine full-stack development with AI workflows to ship faster, cheaper, and with better results than traditional agencies.",
+        label: 'About us',
+        role: 'Founder & Technical Lead',
+        bio: "We help startups, agencies, and growing businesses across Colombia, the US, Chile, and Equatorial Guinea launch digital products that actually drive revenue. Led by founder Carlos, we combine full-stack development with AI workflows to ship faster, leaner, and with better results than traditional agencies.",
         location: 'Colombia · Remote',
         availableLabel: 'Available for work',
       },
@@ -262,7 +262,7 @@ export const CONTENT = {
         { value: '< 14 days', label: 'Avg. turnaround' },
       ],
       testimonialLabel: 'Testimonials',
-      testimonialTitle: "Don't take my word for it.",
+      testimonialTitle: "Don't just take our word for it.",
       testimonialTagline: 'Worked with startups, agencies, and growing businesses across LATAM and the US.',
       testimonials: [
         {
@@ -311,7 +311,7 @@ export const CONTENT = {
       guarantees: [
         {
           title: 'Money-back guarantee',
-          description: "If you're not satisfied with the final delivery, you get a full refund. No questions asked.",
+          description: "If the final delivery doesn't meet what we agreed, you get a full refund based on the agreed deliverables.",
           icon: 'shield',
         },
         {
@@ -340,7 +340,7 @@ export const CONTENT = {
         {
           number: '02',
           title: 'Design & Build',
-          description: 'I design and develop your project using AI-enhanced workflows for speed and quality.',
+          description: 'We design and develop your project using AI-enhanced workflows for speed and quality.',
         },
         {
           number: '03',
@@ -381,8 +381,15 @@ export const CONTENT = {
       oneTime: 'One-time investment. No recurring fees.',
       bottomText: "Not sure which package fits?",
       bottomLink: "Let's talk",
-      bottomSuffix: " — I'll recommend the right one in under 5 minutes.",
+      bottomSuffix: " — we'll recommend the right one in under 5 minutes.",
       guaranteeLine: '✓ Every plan includes a money-back guarantee — if the delivery doesn\'t meet what we agreed, you pay nothing.',
+      enterprise: {
+        label: 'Enterprise',
+        title: 'Complex infrastructure or corporate requirements?',
+        description: 'For larger systems, custom integrations, or enterprise-grade architecture, we scope a tailored solution around your business needs.',
+        ctaLabel: 'Request a consultation →',
+        ctaMicro: 'Custom quote — no commitment.',
+      },
       packages: [
         {
           name: 'Landing Page',
@@ -450,22 +457,22 @@ export const CONTENT = {
       title2: 'already thinking.',
       description: "If your question isn't here,",
       descriptionLink: 'just ask',
-      descriptionSuffix: '. I reply within 24 hours.',
+      descriptionSuffix: '. We reply within 24 hours.',
       bottomText: 'Still have doubts? Let\'s clear them in a 5-minute call.',
       cta: 'Book a free call →',
       ctaMicro: 'No commitment. No pitch. Just answers.',
       items: [
         {
           question: 'How can you deliver a full website in under 14 days?',
-          answer: 'AI-powered workflows. I use AI for code generation, design iteration, and testing — cutting out the manual bottlenecks that make agencies take months. The result is the same quality in a fraction of the time.',
+          answer: 'AI-powered workflows. We use AI for code generation, design iteration, and testing — cutting out the manual bottlenecks that make agencies take months. The result is the same quality in a fraction of the time.',
         },
         {
           question: "What if I'm not happy with the final result?",
-          answer: "You get a full money-back guarantee. If the final delivery doesn't meet what we agreed on, you pay nothing. I also include revision rounds during the build so you're never surprised.",
+          answer: "You get a full money-back guarantee. If the final delivery doesn't meet what we agreed on, you pay nothing. We also include revision rounds during the build so you're never surprised.",
         },
         {
           question: 'Do you only work with startups?',
-          answer: "No. I work with startups, small businesses, agencies, and even government projects. If you need a website or automation that drives revenue, I can help — regardless of your industry or size.",
+          answer: "No. We work with startups, small businesses, agencies, and even government projects. If you need a website or automation that drives revenue, we can help — regardless of your industry or size.",
         },
         {
           question: "What's included in the fixed price?",
@@ -473,7 +480,7 @@ export const CONTENT = {
         },
         {
           question: 'Who owns the website and code after delivery?',
-          answer: "You own everything after final payment. All source code, files, and accounts are transferred to you at launch. You can take the project to any developer in the future — there's no lock-in with me.",
+          answer: "You own everything after final payment. All source code, files, and accounts are transferred to you at launch. You can take the project to any developer in the future — there's no lock-in with us.",
         },
         {
           question: 'How does payment work?',
@@ -481,15 +488,15 @@ export const CONTENT = {
         },
         {
           question: 'Can you work with my existing website or brand?',
-          answer: "Absolutely. I can redesign, optimize, or build on top of what you already have. During the discovery call, we'll figure out the fastest path to results — whether that's a fresh start or an upgrade.",
+          answer: "Absolutely. We can redesign, optimize, or build on top of what you already have. During the discovery call, we'll figure out the fastest path to results — whether that's a fresh start or an upgrade.",
         },
         {
           question: 'What happens after my site goes live?',
-          answer: 'Every package includes post-launch support (7–30 days depending on the plan). I monitor for bugs, help with content updates, and make sure everything runs smoothly. After that, I\'m always a message away.',
+          answer: 'Every package includes post-launch support (7–30 days depending on the plan). We monitor for bugs, help with content updates, and make sure everything runs smoothly. After that, we\'re always a message away.',
         },
         {
           question: 'What do I need to have ready to get started?',
-          answer: "Very little. Ideally: your logo, brand colors, and a short description of your business and goals. I handle design, structure, and copywriting. If you have photos or existing content, even better — but it's not required to get started.",
+          answer: "Very little. Ideally: your logo, brand colors, and a short description of your business and goals. We handle design, structure, and copywriting. If you have photos or existing content, even better — but it's not required to get started.",
         },
       ],
     },
@@ -501,8 +508,8 @@ export const CONTENT = {
       descriptionHighlight: ' revenue walking out the door',
       descriptionSuffix: ". Let's fix that this week.",
       checks: ['Free strategy call', '24h response guaranteed', 'Money-back guarantee'],
-      preferText: 'Want a faster reply? Message me directly:',
-      whatsappLabel: 'Chat on WhatsApp — reply in 5 min',
+      preferText: 'Want a faster reply? Message us directly:',
+      whatsappLabel: 'Corporate inquiries via WhatsApp',
     },
     contactForm: {
       projectTypeLabel: 'What do you need?',
@@ -527,9 +534,9 @@ export const CONTENT = {
       submitIdle: 'Send my request →',
       submitSending: 'Sending...',
       successTitle: 'Message sent!',
-      successMessage: "I'll get back to you within 24 hours.",
+      successMessage: "We'll get back to you within 24 hours.",
       successCallLink: 'Want a faster reply? Book a direct call →',
-      errorMessage: 'Something went wrong. Try emailing me directly.',
+      errorMessage: 'Something went wrong. Try emailing us directly.',
       emailLabel: 'Or reach out directly via',
       emailLinkLabel: 'email',
     },
@@ -540,8 +547,8 @@ export const CONTENT = {
     },
     whatsapp: {
       ariaLabel: 'Chat on WhatsApp',
-      tooltipTitle: 'Reply in under 5 min',
-      tooltipDescription: "Tell me about your project — I'll send you a free quote.",
+      tooltipTitle: 'Fast business reply',
+      tooltipDescription: "Tell us about your project — we'll send you a proposal.",
     },
   },
 
@@ -551,7 +558,7 @@ export const CONTENT = {
       title: 'AxionDev — Sitios Web Que Te Traen Clientes en Días, No Meses',
       description: 'Obtén un sitio web de alta conversión en menos de 14 días. Desarrollo con IA que convierte visitantes en clientes. Precio fijo desde $497. Garantía de devolución.',
       ogTitle: 'AxionDev — Sitios Web Que Te Traen Clientes en Días',
-      ogDescription: 'Deja de perder clientes por un sitio malo. Obtén un sitio optimizado para conversión en menos de 14 días. 90% más económico que las agencias. Garantía de devolución.',
+      ogDescription: 'Deja de perder clientes por un sitio malo. Obtén un sitio optimizado para conversión en menos de 14 días. Hasta 70% menos costo que las agencias. Garantía de devolución.',
       twitterTitle: 'AxionDev — Sitios Web Que Te Traen Clientes en Días',
       twitterDescription: 'Sitios web con IA en menos de 14 días. Precio fijo. Garantía de devolución.',
       imageAlt: 'AxionDev — Sitios web con IA que te traen clientes en días',
@@ -570,17 +577,17 @@ export const CONTENT = {
     },
     hero: {
       urgencyLabel: 'Solo 2 cupos disponibles este mes',
-      line1: 'Creo sitios web que',
+      line1: 'Creamos sitios web que',
       line2: 'te traen clientes.',
       line3: 'No en meses — en días.',
-      subheadline: 'Las agencias cobran $10K+ y tardan meses. Uso IA para crear',
+      subheadline: 'Las agencias cobran $10K+ y tardan meses. Usamos IA para crear',
       subheadlineHighlight: ' sitios web optimizados para conversión',
       subheadlineSuffix: ' que generan leads reales — a una fracción del costo. Precio fijo. Garantía de devolución.',
       subheadlineMobile: 'Con IA. Precio fijo desde $497. En vivo en 14 días. Garantía de devolución.',
       checks: [
         '4.2% de tasa de conversión promedio',
         'En vivo en menos de 14 días',
-        '90% más económico que las agencias',
+        'Hasta 70% menos costo que las agencias',
       ],
       primaryCta: 'Agenda una llamada gratis →',
       primaryMicro: 'Tu sitio en línea en días, no en meses',
@@ -596,12 +603,12 @@ export const CONTENT = {
       ],
     },
     services: {
-      label: 'Qué ofrezco',
-      title1: 'Tres formas en que pongo',
+      label: 'Qué ofrecemos',
+      title1: 'Tres formas en que ponemos',
       title2: 'dinero de vuelta en tu bolsillo.',
       description: 'Cada servicio se construye en torno a una pregunta:',
       descriptionHighlight: ' ¿esto te generará o ahorrará dinero?',
-      descriptionSuffix: ' Si la respuesta no es sí, no lo construyo.',
+      descriptionSuffix: ' Si la respuesta no es sí, no lo construimos.',
       cta: 'Comenzar — es gratis →',
       ctaMicro: 'Llamada estratégica de 30 min. Sin compromiso.',
       items: [
@@ -636,16 +643,16 @@ export const CONTENT = {
       primaryCta: 'Agenda una llamada gratis →',
       primaryMicro: '30 min — sin compromiso, sin ventas',
       urgencyLabel: 'Aceptando nuevos clientes — Respuesta en 24h',
-      whatsappLabel: 'Escríbeme — propuesta gratis en 5 min',
+      whatsappLabel: 'Atención comercial por WhatsApp',
     },
     portfolio: {
       label: 'Portafolio',
       title: 'Trabajos Destacados',
       tagline: 'Proyectos reales. Problemas reales. Resultados reales.',
       viewLive: 'Ver en vivo',
-      problemLabel: 'Problema',
-      solutionLabel: 'Solución',
-      resultsLabel: 'Resultados',
+      problemLabel: 'Desafío',
+      solutionLabel: 'Solución Arquitectónica',
+      resultsLabel: 'Impacto en el Negocio',
       bottomLine: '¿Quieres resultados como estos?',
       bottomHighlight: ' Tu proyecto podría ser el próximo.',
       cta: 'Comenzar mi proyecto →',
@@ -694,7 +701,7 @@ export const CONTENT = {
       label: 'La diferencia',
       title1: 'Más rápido que las agencias.',
       title2: 'Más inteligente que los freelancers.',
-      description: 'Las agencias tradicionales tardan meses y cobran una fortuna. La mayoría de los freelancers no ofrecen estrategia. Uso',
+      description: 'Las agencias tradicionales tardan meses y cobran una fortuna. La mayoría de los freelancers no ofrecen estrategia. Usamos',
       descriptionHighlight: ' desarrollo con IA',
       descriptionMiddle: ' para darte ambas cosas — calidad premium a velocidad de startup, con cada decisión enfocada en una cosa:',
       descriptionHighlight2: ' hacer crecer tu negocio',
@@ -726,9 +733,9 @@ export const CONTENT = {
     },
     trust: {
       about: {
-        label: 'Sobre mí',
-        role: 'Desarrollador Web con IA',
-        bio: 'He ayudado a startups, agencias y negocios en crecimiento en Colombia, EE.UU., Chile y Guinea Ecuatorial a lanzar productos digitales que realmente generan ingresos. Combino desarrollo full-stack con flujos de trabajo de IA para entregar más rápido, más económico y con mejores resultados que las agencias tradicionales.',
+        label: 'Sobre nosotros',
+        role: 'Fundador y Dirección Técnica',
+        bio: 'Ayudamos a startups, agencias y negocios en crecimiento en Colombia, EE.UU., Chile y Guinea Ecuatorial a lanzar productos digitales que realmente generan ingresos. Liderados por nuestro fundador Carlos, combinamos desarrollo full-stack con flujos de trabajo de IA para entregar más rápido, con menos costo y con mejores resultados que las agencias tradicionales.',
         location: 'Colombia · Remoto',
         availableLabel: 'Disponible para trabajar',
       },
@@ -739,8 +746,8 @@ export const CONTENT = {
         { value: '< 14 días', label: 'Tiempo promedio' },
       ],
       testimonialLabel: 'Testimonios',
-      testimonialTitle: 'No lo creas solo porque lo digo.',
-      testimonialTagline: 'He trabajado con startups, agencias y negocios en crecimiento en LATAM y EE.UU.',
+      testimonialTitle: 'No lo creas solo porque lo decimos.',
+      testimonialTagline: 'Hemos trabajado con startups, agencias y negocios en crecimiento en LATAM y EE.UU.',
       testimonials: [
         {
           quote: 'Necesitábamos una plataforma rápido y Carlos la entregó en menos de dos semanas. El enfoque con IA nos ahorró meses de idas y vueltas. Nuestro equipo quedó genuinamente impresionado.',
@@ -788,7 +795,7 @@ export const CONTENT = {
       guarantees: [
         {
           title: 'Garantía de devolución',
-          description: 'Si no estás satisfecho con la entrega final, recibes un reembolso completo. Sin preguntas.',
+          description: 'Si la entrega final no cumple lo que acordamos, recibes un reembolso completo según los entregables acordados.',
           icon: 'shield',
         },
         {
@@ -817,7 +824,7 @@ export const CONTENT = {
         {
           number: '02',
           title: 'Diseño y Desarrollo',
-          description: 'Diseño y desarrollo tu proyecto usando flujos de trabajo mejorados con IA para velocidad y calidad.',
+          description: 'Diseñamos y desarrollamos tu proyecto usando flujos de trabajo mejorados con IA para velocidad y calidad.',
         },
         {
           number: '03',
@@ -858,8 +865,15 @@ export const CONTENT = {
       oneTime: 'Inversión única. Sin pagos recurrentes.',
       bottomText: '¿No sabes qué paquete elegir?',
       bottomLink: 'Hablemos',
-      bottomSuffix: ' — te recomendaré el adecuado en menos de 5 minutos.',
+      bottomSuffix: ' — te recomendaremos el adecuado en menos de 5 minutos.',
       guaranteeLine: '✓ Todos los planes incluyen garantía de devolución — si la entrega no cumple lo acordado, no pagas nada.',
+      enterprise: {
+        label: 'Enterprise',
+        title: '¿Infraestructura compleja o requerimientos corporativos?',
+        description: 'Para sistemas más grandes, integraciones a medida o arquitectura de nivel corporativo, diseñamos una solución personalizada según las necesidades de tu negocio.',
+        ctaLabel: 'Solicitar consultoría →',
+        ctaMicro: 'Cotización personalizada — sin compromiso.',
+      },
       packages: [
         {
           name: 'Landing Page',
@@ -927,22 +941,22 @@ export const CONTENT = {
       title2: 'ya te estás haciendo.',
       description: 'Si tu pregunta no está aquí,',
       descriptionLink: 'solo pregunta',
-      descriptionSuffix: '. Respondo en menos de 24 horas.',
+      descriptionSuffix: '. Respondemos en menos de 24 horas.',
       bottomText: '¿Aún tienes dudas? Aclarémonoslas en una llamada de 5 minutos.',
       cta: 'Agendar una llamada gratis →',
       ctaMicro: 'Sin compromiso. Sin ventas. Solo respuestas.',
       items: [
         {
           question: '¿Cómo puedes entregar un sitio web completo en menos de 14 días?',
-          answer: 'Flujos de trabajo con IA. Uso IA para generación de código, iteración de diseño y pruebas — eliminando los cuellos de botella manuales que hacen que las agencias tarden meses. El resultado es la misma calidad en una fracción del tiempo.',
+          answer: 'Flujos de trabajo con IA. Usamos IA para generación de código, iteración de diseño y pruebas — eliminando los cuellos de botella manuales que hacen que las agencias tarden meses. El resultado es la misma calidad en una fracción del tiempo.',
         },
         {
           question: '¿Qué pasa si no estoy satisfecho con el resultado final?',
-          answer: 'Tienes garantía total de devolución. Si la entrega final no cumple lo que acordamos, no pagas nada. También incluyo rondas de revisión durante el desarrollo para que nunca te lleves sorpresas.',
+          answer: 'Tienes garantía total de devolución. Si la entrega final no cumple lo que acordamos, no pagas nada. También incluimos rondas de revisión durante el desarrollo para que nunca te lleves sorpresas.',
         },
         {
           question: '¿Solo trabajas con startups?',
-          answer: 'No. Trabajo con startups, pequeñas empresas, agencias e incluso proyectos gubernamentales. Si necesitas un sitio web o automatización que genere ingresos, puedo ayudarte — sin importar tu industria o tamaño.',
+          answer: 'No. Trabajamos con startups, pequeñas empresas, agencias e incluso proyectos gubernamentales. Si necesitas un sitio web o automatización que genere ingresos, podemos ayudarte — sin importar tu industria o tamaño.',
         },
         {
           question: '¿Qué incluye el precio fijo?',
@@ -950,7 +964,7 @@ export const CONTENT = {
         },
         {
           question: '¿Quién es dueño del sitio web y el código al finalizar?',
-          answer: 'Todo es tuyo después del pago final. El código fuente, los archivos y las cuentas te son entregados al lanzamiento. Puedes llevar el proyecto con cualquier otro desarrollador en el futuro — no hay ninguna dependencia conmigo.',
+          answer: 'Todo es tuyo después del pago final. El código fuente, los archivos y las cuentas te son entregados al lanzamiento. Puedes llevar el proyecto con cualquier otro desarrollador en el futuro — no hay ninguna dependencia con nosotros.',
         },
         {
           question: '¿Cómo funciona el pago?',
@@ -958,15 +972,15 @@ export const CONTENT = {
         },
         {
           question: '¿Puedes trabajar con mi sitio web o marca existente?',
-          answer: 'Por supuesto. Puedo rediseñar, optimizar o construir sobre lo que ya tienes. Durante la llamada de descubrimiento, encontraremos el camino más rápido a los resultados — ya sea empezar desde cero o mejorar lo existente.',
+          answer: 'Por supuesto. Podemos rediseñar, optimizar o construir sobre lo que ya tienes. Durante la llamada de descubrimiento, encontraremos el camino más rápido a los resultados — ya sea empezar desde cero o mejorar lo existente.',
         },
         {
           question: '¿Qué pasa después de que mi sitio se publica?',
-          answer: 'Cada paquete incluye soporte post-lanzamiento (7–30 días según el plan). Monitoreo errores, ayudo con actualizaciones de contenido y me aseguro de que todo funcione correctamente. Después de eso, siempre estoy a un mensaje de distancia.',
+          answer: 'Cada paquete incluye soporte post-lanzamiento (7–30 días según el plan). Monitoreamos errores, ayudamos con actualizaciones de contenido y nos aseguramos de que todo funcione correctamente. Después de eso, siempre estamos a un mensaje de distancia.',
         },
         {
           question: '¿Qué necesito tener listo para empezar?',
-          answer: 'Muy poco. Idealmente: tu logo, colores de marca y una descripción breve de tu negocio y objetivos. Yo me encargo del diseño, la estructura y el copy. Si tienes fotos o contenido existente, mejor — pero no es requisito para empezar.',
+          answer: 'Muy poco. Idealmente: tu logo, colores de marca y una descripción breve de tu negocio y objetivos. Nosotros nos encargamos del diseño, la estructura y el copy. Si tienes fotos o contenido existente, mejor — pero no es requisito para empezar.',
         },
       ],
     },
@@ -978,8 +992,8 @@ export const CONTENT = {
       descriptionHighlight: ' dinero que se va',
       descriptionSuffix: '. Solucionémoslo esta semana.',
       checks: ['Llamada estratégica gratis', 'Respuesta garantizada en 24h', 'Garantía de devolución'],
-      preferText: '¿Quieres respuesta más rápida? Escríbeme directo:',
-      whatsappLabel: 'Escríbeme por WhatsApp — respondo en 5 min',
+      preferText: '¿Quieres respuesta más rápida? Escríbenos directo:',
+      whatsappLabel: 'Atención comercial por WhatsApp',
     },
     contactForm: {
       projectTypeLabel: '¿Qué necesitas?',
@@ -1004,10 +1018,10 @@ export const CONTENT = {
       submitIdle: 'Enviar mi solicitud →',
       submitSending: 'Enviando...',
       successTitle: '¡Mensaje enviado!',
-      successMessage: 'Te responderé en menos de 24 horas.',
+      successMessage: 'Te responderemos en menos de 24 horas.',
       successCallLink: '¿Quieres una respuesta más rápida? Agenda una llamada directa →',
-      errorMessage: 'Algo salió mal. Intenta escribirme directamente por correo.',
-      emailLabel: 'O contáctame directamente por',
+      errorMessage: 'Algo salió mal. Intenta escribirnos directamente por correo.',
+      emailLabel: 'O contáctanos directamente por',
       emailLinkLabel: 'correo',
     },
     footer: {
@@ -1016,9 +1030,9 @@ export const CONTENT = {
       bookCta: 'Agendar llamada gratis →',
     },
     whatsapp: {
-      ariaLabel: 'Escríbeme por WhatsApp',
-      tooltipTitle: 'Respondo en menos de 5 min',
-      tooltipDescription: 'Cuéntame sobre tu proyecto — te envío una propuesta gratis.',
+      ariaLabel: 'Escríbenos por WhatsApp',
+      tooltipTitle: 'Respuesta comercial rápida',
+      tooltipDescription: 'Cuéntanos sobre tu proyecto — te enviamos una propuesta.',
     },
   },
 };
