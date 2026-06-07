@@ -89,6 +89,34 @@ function LandingPage() {
       document.head.appendChild(faqScript);
     }
     faqScript.textContent = JSON.stringify(faqSchema);
+
+    const portfolioSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: CONTENT[language].portfolio.title,
+      itemListElement: CONTENT[language].portfolio.projects.map((project, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'CreativeWork',
+          name: project.name,
+          abstract: project.summary,
+          about: project.sector,
+          ...(project.link && { url: project.link }),
+          ...(project.image && { image: `https://www.axiondev.dev${project.image}` }),
+          keywords: project.tags.join(', '),
+          creator: { '@id': 'https://www.axiondev.dev/#organization' },
+        },
+      })),
+    };
+    let portfolioScript = document.getElementById('portfolio-schema');
+    if (!portfolioScript) {
+      portfolioScript = document.createElement('script');
+      portfolioScript.type = 'application/ld+json';
+      portfolioScript.id = 'portfolio-schema';
+      document.head.appendChild(portfolioScript);
+    }
+    portfolioScript.textContent = JSON.stringify(portfolioSchema);
   }, [language]);
 
   // On direct URL load with hash (e.g. /en#services), lazy sections haven't mounted yet
