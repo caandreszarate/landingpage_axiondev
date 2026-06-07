@@ -13,7 +13,10 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: transparent;
+  /* Dark base so the static hero shell (in index.html #root) is visible before JS
+     mounts the Starfield. Matches .starfield gradient — seamless once it mounts. */
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  background-attachment: fixed;
   color: var(--color-neutral-200);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
