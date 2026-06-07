@@ -111,7 +111,7 @@ export const CONTENT = {
     },
     socialProof: {
       tagline: 'Results across 4 countries · Colombia, USA, Chile & Equatorial Guinea',
-      techLabel: 'Built with',
+      techLabel: 'Technology architecture',
       stats: [
         { value: '10+', label: 'Projects shipped on time' },
         { value: '< 14 days', label: 'Average delivery time' },
@@ -595,7 +595,7 @@ export const CONTENT = {
     },
     socialProof: {
       tagline: 'Resultados en 4 países · Colombia, EE.UU., Chile y Guinea Ecuatorial',
-      techLabel: 'Construido con',
+      techLabel: 'Arquitectura tecnológica',
       stats: [
         { value: '10+', label: 'Proyectos entregados a tiempo' },
         { value: '< 14 días', label: 'Tiempo promedio de entrega' },
