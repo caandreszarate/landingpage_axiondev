@@ -6,7 +6,6 @@ import WhatsAppButton from './components/WhatsAppButton';
 import Starfield from './components/Starfield';
 import MouseTrail from './components/MouseTrail';
 import ErrorBoundary from './components/ErrorBoundary';
-import ClientOnly from './components/ClientOnly';
 import { CONTENT } from './data/content';
 import SectionSkeleton, {
   SocialProofSkeleton,
@@ -33,20 +32,21 @@ const FAQ = lazy(() => import('./components/FAQ'));
 const CTA = lazy(() => import('./components/CTA'));
 const Footer = lazy(() => import('./components/Footer'));
 
+function RootRedirect() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const saved = localStorage.getItem('axiondev-lang');
+    const preferred = saved ?? (navigator.language?.startsWith('es') ? 'es' : 'en');
+    const lang = preferred === 'es' ? 'es' : 'en';
+    navigate(`/${lang}`, { replace: true });
+  }, [navigate]);
+  return null;
+}
+
 function LandingPage() {
   const { lang } = useParams();
   const language = lang === 'es' ? 'es' : 'en';
   const location = useLocation();
-  const navigate = useNavigate();
-
-  // At bare "/" (no lang param) the page renders English (clean prerender + hydration);
-  // redirect Spanish-preferring visitors to /es client-side after mount.
-  useEffect(() => {
-    if (lang) return;
-    const saved = localStorage.getItem('axiondev-lang');
-    const preferred = saved ?? (navigator.language?.startsWith('es') ? 'es' : 'en');
-    if (preferred === 'es') navigate('/es', { replace: true });
-  }, [lang, navigate]);
 
   useEffect(() => {
     localStorage.setItem('axiondev-lang', language);
@@ -144,8 +144,8 @@ function LandingPage() {
 
   return (
     <div className="min-h-screen relative">
-      <ClientOnly><Starfield /></ClientOnly>
-      <ClientOnly><MouseTrail /></ClientOnly>
+      <Starfield />
+      <MouseTrail />
       <div className="relative z-10">
         <Navbar />
         <main>
@@ -220,7 +220,7 @@ function LandingPage() {
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<LandingPage />} />
+      <Route path="/" element={<RootRedirect />} />
       <Route path="/:lang" element={<LandingPage />} />
       <Route path="*" element={<Navigate to="/en" replace />} />
     </Routes>
