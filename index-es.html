@@ -86,43 +86,7 @@
 </head>
 
 <body>
-  <div id="root">
-    <!-- Static hero shell (Sprint 12 perf): paints FCP/LCP before the JS bundle loads.
-         React (createRoot) replaces #root on mount with the real, animated Hero.
-         MAINTENANCE: keep copy in sync with CONTENT.es.hero in src/data/content.js -->
-    <section class="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
-      <div class="max-w-5xl mx-auto relative z-10">
-        <div class="mb-10 text-center">
-          <span class="inline-flex items-center gap-2 text-accent text-xs font-semibold tracking-widest uppercase border border-accent/30 bg-accent/10 px-4 py-2 rounded-full">
-            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-            Solo 2 cupos disponibles este mes
-          </span>
-        </div>
-        <h1 class="text-center text-[2rem] sm:text-6xl md:text-[5.5rem] font-bold tracking-tight text-neutral-100 leading-[1.05] mb-8">
-          Creamos sitios web que
-          <br>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light block pb-1">te traen clientes.</span>
-          <br>
-          <span class="text-neutral-500 text-[0.6em]">No en meses — en días.</span>
-        </h1>
-        <p class="sm:hidden text-center text-base text-neutral-400 max-w-xs mx-auto mb-8 leading-snug">Con IA. En vivo en 14 días. Cotización a medida, entrega por hitos.</p>
-        <p class="hidden sm:block text-center text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-8 leading-relaxed">Las agencias cobran $10K+ y tardan meses. Usamos IA para crear<span class="text-neutral-200 font-medium"> sitios web optimizados para conversión</span> que generan leads reales — a una fracción del costo. Alcance transparente, entrega por hitos.</p>
-        <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-neutral-400 mb-8">
-          <span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-emerald-400" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> 4.2% de tasa de conversión promedio</span>
-          <span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-emerald-400" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> En vivo en menos de 14 días</span>
-          <span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-emerald-400" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Hasta 70% menos costo que las agencias</span>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <div class="inline-flex flex-col items-center gap-2">
-            <p class="flex items-center gap-1.5 text-xs text-amber-400 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span> Solo 2 cupos disponibles este mes</p>
-            <a href="https://app.cal.com/carlos-martinez-kv7rn4" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center justify-center bg-accent text-white font-semibold rounded-lg overflow-hidden transition-shadow duration-300 px-12 py-5 text-lg"><span class="relative z-10">Agenda una llamada gratis →</span></a>
-            <p class="text-xs text-neutral-500">Tu sitio en línea en días, no en meses</p>
-          </div>
-          <a href="#offers" class="inline-flex items-center justify-center border border-neutral-700 text-neutral-300 font-medium px-10 py-4 rounded-lg transition-all duration-300 text-base">Ver precios</a>
-        </div>
-      </div>
-    </section>
-  </div>
+  <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

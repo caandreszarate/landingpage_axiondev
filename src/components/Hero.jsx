@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import CTAButton from './CTAButton';
+import ClientOnly from './ClientOnly';
 import { FloatingParticles } from './AnimationUtils';
 import { CONTENT } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
@@ -41,10 +42,12 @@ export default function Hero() {
   const t = CONTENT[lang].hero;
 
   const ref = useRef(null);
-  const [isMobile, setIsMobile] = useState(() => window.matchMedia('(max-width: 767px)').matches);
+  // Start false so SSR/prerender and first hydration render match; real value set on mount.
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.matchMedia('(max-width: 767px)').matches);
+    checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
@@ -78,7 +81,7 @@ export default function Hero() {
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
       />
 
-      {!isMobile && <FloatingParticles count={15} />}
+      <ClientOnly>{!isMobile && <FloatingParticles count={15} />}</ClientOnly>
 
       <motion.div
         variants={container}
