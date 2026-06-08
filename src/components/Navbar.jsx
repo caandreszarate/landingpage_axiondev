@@ -100,9 +100,9 @@ export default function Navbar() {
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-xl font-bold tracking-tight text-neutral-100"
+          className="flex items-center"
         >
-          Axion<span className="text-accent">Dev</span>
+          <img src="/logo.svg" alt="AxionDev" width="148" height="35" className="h-7 w-auto" />
         </motion.a>
 
         <div className="hidden md:flex items-center gap-8">
